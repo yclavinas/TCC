@@ -1,0 +1,371 @@
+\chapter{Metodologia Proposta}
+\section{Estrutura da solução}
+Antes de começar o desenvolvimento do código do algoritmo genético foi necessário criar estruturas, funções e cálculos, assim como estabelecer quais seriam os dados utilizados, como obtê-los e depois como definir qual grupo dentre os dados seriam utilizados para treino.\\
+
+%arrumar aqui por causa dos dados
+A primeira estrutura definida foi relacionada aos {\it bins}, $b \in \beta$. Foi necessário definir qual seria o tamanho ideal para cada {\it bin}, pois, como foi dito no capítulo anterior, a resolução de uma previsão é inversamente proporcional ao tamanho do {\it bin}. Foi decidido que cada {\it bin} teria um valor escolhido para representar a variação geográfica de 5 quilômetros, 0.1 graus, utilizado para a construção de cada {\it bin}.\\
+
+%arrumar aqui por causa dos dados
+%Em seguida, era necessário estruturar o vetor de expectativas, $\lambda_i$, baseado nos eventos reais, $\omega_i$. Para isso, primeiramente era fundamental possuir dados confiáveis das observações de sismos ocorridos no Japão, com seus parâmetros disponíveis. Esses dados foram obtidos na página da {\it Japan Metereological Agency} - JMA\footnote[2]{\url {http://www.jma.go.jp/jma/index.html}}. Os dados obtidos eram compostos por longitude, latitude, data e horário da ocorrência, magnitude e profundidade. Para os dados de treino, foram separados os sismos 
+%considerados mais homogêneos, formando o grupo cuja latitude e longitude na superfície representam abalos em áreas terrestres (terremotos), pouco profundos (acima de 20 km de profundidade) e com magnitude acima de 2.5 grau na escala Richter, durante os anos de 1997 a 2013. Ao separar os dados em grupos mais similares, espera-se que o algoritmo genético possa aprender características semelhantes que possam existir nos dados.\\
+%inserir: The Elevation API provides elevation data for all locations on the surface of the earth, including depth locations on the ocean floor (which return negative values). In those cases where Google does not possess exact elevation measurements at the precise location you request, the service will interpolate and return an averaged value using the four nearest locations.
+
+%{\it The Google Elevation API}\footnote[3]{\url {https://developers.google.com/maps/documentation/elevation/?hl=pt-es}} tem como objetivo fornecer informações sobre todos os locais sobre a superfície terrestre e oceânica. Ela foi utilizada por oferecer uma interface HTTP para consulta de dados de elevação territorial, que recebe via url os parâmetros latitude e longitude e retorna, em formato {\it JavaScript Object Notation} (JSON), o resultado da pesquisa.\\
+
+%Como a informação sobre o local do evento (sismos que caracterizavam terremotos ou não) não estava disponível no dados colhidos da JMA, a {\it Application Programming Interface} (API) acima descrita foi utilizada para calcular a altitude relativa ao nível do mar baseada na latitude e longitude do evento. Os abalos cuja coordenadas na superfície terrestre tivessem altitude relativa ao nível do mar acima de 0.0 foram selecionados.\\
+
+%arrumar o próximo parágrafo
+%sensor (required) specifies whether the application requesting elevation data is using a sensor (such as a GPS device) to determine the user's location. Accepts true or false.
+%locations (required) defines the location(s) on the earth from which to return elevation data.
+%Depois de particionar o resultado da pesquisa, o campo do vetor, {\it results}, na posição {\it elevation} mostra a altitude relativa ao mar. Em seguida, seguem dois exemplos compostos pela url utilizada para a pesquisa e o resultado, em JSON, encontrado. \\
+
+Em seguida, era necessário estruturar o vetor de expectativas, $\lambda_i$, baseado nos eventos reais, $\omega_i$. Após obter os vetores de expectativas, a função do {\it log-likelihood} e a de L-test foram desenvolvidos como especificado na Seção 2.2.1. Para um maior entendimento do seu comportamento, o valor do {\it Log-likelihood} foi calculado tanto para os eventos quanto para um vetor de expectativas e observações pseudo-aleatório, e uma comparação entre eles foi feita. E para o entendimento do L-test, esses valores anteriores foram utilizados como os parâmetros da função.
+
+\section{Definição do Algoritmo Genético - Simple L-test Fitness Function}
+Inicialmente, para acelerar a prototipação, foi decidido que o Algoritmo Genético seria implementado utilizando {\it Distributed Evolutionary Algorithms in Python} - DEAP \cite{DeRainville:2012:DPF:2330784.2330799}, um {\it framework} para prototipação rápida que almeja por deixar estruturas de dados e algoritmos transparentes \cite{DeRainville:2012:DPF:2330784.2330799}. Para começar o aprendizado de implementações foram utilizados os exemplos de algoritmo genético disponíveis no sub-diretório do framework como base de aprendizado.\\
+
+Foi priorizado o desenvolvimento de um aplicação simples, para que fosse possível analisar o comportamento da função de {\it fitness}. Por esse motivo, por enquanto, o foco das atividades não foi direcionado para os parâmetros da evolução. Por exemplo, {\it crossover} e mutação ainda possuem valores fixos que não consideram a características da população ou dos indivíduos, porém são capazes de garantir uma evolução da população, não prejudicando o objetivo inicial da aplicação.\\
+
+Para a função de {\it fitness} foi utilizado o L-test, comparando o {\it likelihood} dos eventos com o {\it likelihood} dos indivíduos que compõe a população. O indivíduo mais apto, aquele com maior valor do L-test, era mantido na próxima geração, garantindo que a solução de uma geração seja  igual ou maior que a da geração anterior.\\
+
+Janikow e Michalewicz, em \cite{janikow1991experimental}, indicam que utilizar uma representação em ponto flutuante deve ter maior precisão, ser mais consistente, possuir acurácia em performance maior quando comparada a uma representação por bits. Portanto, a escolha de utilizar indivíduos definidos como vetores de números reais, iniciados pseudo-aleatoriamente, pode ser explicada tanto pelos motivos acima descritos tanto pela definição do próprio problema (calcular um modelo de probabilidades).\\
+
+Uma vez que não foi investido muito esforço na análise dos valores escolhidos, o tamanho da população inicial (assim como os valores dos parâmetros) foi definido por tentativa e erros, até que um tempo de convergência aceitável fosse encontrado.\\
+
+
+\subsection{Crossover}
+
+Os resultados obtidos a partir de execuções do {\it Simple L-test Fitness Function} utilizaram dois operadores de {\it crossover}, o {\it Blend} e o {\it Two Points}, que serão descritos a seguir.\\
+
+
+%O operarador de {\it crossover} utilizado foi o cxBlend, implementado pelo pacote DEAP,
+
+O {\it crossover Blend}, (BLX-$\alpha$) é um operador para representações em ponto flutuante. Como foi definido em \cite{takahashi2001crossover}, a geração futura é gerada da seguinte forma:
+
+\begin{enumerate}
+  \item Escolha dois pais, $x^1$ e $x^2$, aleatoriamente.
+  \item Um valor para cada elemento do filho $x^c_i$ da próxima geração é escolhido aleatoriamente do intervalo $[X^1_i, X^2_i]$ da seguinte distribuição:
+\begin{center}
+	\begin{equation}
+	\begin{split}
+		X^1_i = min(x^1_i,x^2_i) - \alpha d_i		\\
+		X^2_i = max(x^1_i,x^2_i) + \alpha d_i 		\\
+d_i = |x^1_i,x^2_i| \\
+	\end{split}
+	\end{equation}
+\end{center}
+onde $x^1_i$ e $x^2_i$ são o i-ésimo elementos de $x^1_i$ e $x^2_i$, respectivamente, e $\alpha$ é um parâmetro positivo.
+\end{enumerate}
+
+Herrera, Lozano e Verdegay \citep{herrera1998tackling} afirmam que com valor de $\alpha$ = 0.5 a relação entre convergência ({\it exploitation}) e divergência ({\it exploration}) alcança equilíbrio. A escolha do valor de$\alpha$ da aplicação GA é de 0.5, baseada nesta afirmação e na relação de equilíbrio.\\
+
+O {\it crossover Two Points} foi utilizado para efeito de comparação entre o operador para números reais e operadores tradicionais. Definido por Goldeberg em \cite{Goldberg:1989:GAS:534133}, pode seguir dois passos. Esse {\it crossover} é uma instância do {\it n-point crossover}, que por sua vez é uma generalização do {\it simple crossover}, \cite{herrera1998tackling}.\\
+
+Primeiro, dois pais são escolhidos para a reprodução aleatoriamente. Depois, cada pai é dividido em duas partes em uma posição {\it k} selecionada uniformemente e aleatoriamente entre 1 e o tamanho {\it l} dos indivíduos menos 1, $[1, {\it l} -1]$. O filho é, então, gerado ao trocar os dados das posições ${\it k} + 1$ até o fim do indivíduo.\\
+
+Em \cite{herrera1998tackling}, os autores citam o trabalho de Schaffer, Caruana, Eshelman \cite{schaffer1989study}, para definir o {\it n-point crossover}. O {\it crossover} em questão, segue os mesmos princípios que o {\it simple crossover}, porém escolhe {\it n} posições aleatoriamente e esses segmentos criados que são trocados para gerar o filho. No caso do {\it Two Points}, ${\it n} = 2$.
+
+\subsection{Mutação}
+
+O operador de mutação escolhido foi o {\it FlipBit} que é desenvolvido para implementações binárias. Ele inverte o valor de um atributo escolhido aleatoriamente da entrada do indivíduo e usa uma probabilidade para decidir se um atributo sofrerá a mutação, novamente definido em \citep{Goldberg:1989:GAS:534133}.
+
+
+\subsection{Seleção}
+
+Para seleção foi utilizado Torneio Simples e Elitismo. O Torneio Simples foi utilizado para selecionar, baseado nos valores de {\it fitness} obtidos, os indivíduos para reprodução. O Elitismo foi empregado a fim de ter-se o melhor membro da população presente na geração seguinte, garantindo que a geração atual seja igual ou superior a anterior, quando analisados valores de {\it fitness}.\\
+
+Os parâmetros utilizados pela aplicação {\it Simple L-test} estão descritos na tabela \ref{GAParameters}.\\
+
+\begin{table}[!h]
+  \begin{center}
+  \begin{tabular}{|l|r|}
+    \hline
+    Tamanho da população & 500\\
+    Número de gerações & 100\\
+    cxBlend $\alpha$ & 0.5\\
+    Mutação FlipBit & 0.2\\
+    Mutação do atributo (indpb) & 0.05 \\
+    Tamanho do torneio & 3\\
+    \hline    
+  \end{tabular}
+  \end{center}
+  \caption{Parâmetros utilizados.}
+  \label{GAParameters}
+\end{table}
+
+\section{Definição do Algoritmo Genético - Time-slice Log-Likelihood Fitness Function}
+Após análises realizadas a partir dos resultados obtidos pela metodologia anterior que demonstram a ocorrência de {\it overfitting} (situação descrita no Capítulo 6), algumas alterações foram realizadas.\\
+
+%arrumar aqui por causa dos dados
+A primeira mudança foi em relação a função de {\it fitness}. Ela foi modificada, passando-se a utilizar o valor do {\it Log-Likelihood}. Já a segunda mudança, foi em relação a base de treino. Ela foi alterada para gerar fatias anuais da base de treino anterior, baseadas nos dados cronológicos disponíveis nos dados da JMA. As fatias são definidas da seguinte forma: Se a base refere-se a sismos ocorridos em um espaço de 10 anos, a base será divida por 10, gerando fatias anuais (por exemplo, de 2004 até 2005). A última foi em relação a área analisada. Como buscamos entender os padrões dos sismos, escolhemos uma região do Japão para focar o experimento, a região de Kanto. Essa região foi escolhida por conter uma grande quantidade de dados terrestres.\\
+
+
+%Novamente, como feito anteriormente, a primeira estrutura definida foi relacionada aos {\it bins}.  Foi decidido que cada {\it bin} teria um valor escolhido para representar cada uma da regiões geográficas já definidas, Kanto, Tohoku, Leste do Japão e Kansai. Cada {\it bin} é representado por uma variável do tipo {\it double} que em Python tem precisão IEEE 754 (utiliza 64 bits) e contém a expectativa de ocorrência de terremotos na área por ele delimitada. Para converter os valores de expectativas para um valor inteiro que representasse a quantidade de ocorrências para cada {\it bin}, utilizamos um algoritmo modificado de extração desviada de Poisson\citep{NumericalRecipes} (Capítulo 7.3.12).\\
+
+
+
+\subsection{Operadores Estudados}
+A escolha dos operadores do {\it Time-slice Log-Likelihood Fitness Function} será feita diferentemente do ocorrido com o {\it Simple L-test Fitness Function}. Para o segundo, as escolhas tiveram de caráter arbitrário e, em contrapartida, as escolhas para o primeiro serão feitas comparações entre o desempenho da aplicação para cada combinação de operadores. \\
+
+A fim de obter resultados consistentes e gerais, foram feitas 50 rodadas de execuções de cada combinação de operadores visando analisar valores médios. Dessa forma, pontos dispersos que não representam o comportamento da aplicação terão pequena ou nenhuma influência nas análises finais. 
+
+\subsubsection{Descrição dos Operadores do pacote DEAP}
+%arrumar aqui, descrevendo paramentros de entrada e saida, essas coisas todas dos operadores
+%falar de como foi feito mais os testes do cec
+Uma vez que operadores específicos ainda não foram definidos, todos os operadores disponíveis no pacote DEAP possíveis de serem testados serão explicados a seguir (com exceção para o {\it Two Points}, o {\it Blend}, {\it Flip Bit} e o {\it Tournament} (já descritos anteriormente). Todas as descrições a seguir foram adaptadas da página do DEAP\footnote[4]{\url {http://deap.gel.ulaval.ca/doc/default/api/tools.html}}.\\
+
+Os parâmetros utilizados pela aplicação {\it Time-slice Log-Likelihood} estão descritos na tabela \ref{GAParameters-2}.\\
+
+\begin{table}[!h]
+  \begin{center}
+  \begin{tabular}{|l|r|}
+    \hline
+    Tamanho da população & 500\\
+    Número de gerações & 100\\
+    Operador de {\it crossover} & 0.9\\
+    Operador de mutação & 0.1\\
+    \hline    
+  \end{tabular}
+  \end{center}
+  \caption{Parâmetros utilizados.}
+  \label{GAParameters-2}
+\end{table}
+
+\paragraph{Crossover}
+Os operadores de {\it crossover} testados foram: {\it One Point}, {\it Uniform}, {\it Two Points}, {\it Partially Matched}, {\it Ordered} e {\it Simulated Binary}.\\
+
+\subparagraph{One Point}
+Executa o {\it crossover} de um ponto. Os dois indivíduos de entrada (pais) são modificados e os indivíduos resultantes (filhos) tem o mesmo tamanho dos pais, respectivamente.\\
+
+\begin{table}[!h]
+  \begin{center}
+  \begin{tabular}{|l|r|}
+    \hline
+    Parâmetro (1) & O primeiro indivíduo participante da operação \\
+    Parâmetro (2) & O segundo indivíduo participante da operação \\
+    Retorno & 2 indivíduos modificados\\
+    \hline    
+  \end{tabular}
+  \end{center}
+  \caption{Parâmetros e retorno do {\it One Point}}
+  \label{One Point}
+\end{table}
+
+\subparagraph{Uniform}
+Executa um {\it crossover} uniforme que modifica os dois pais. Os atributos são trocados de acordo com uma probabilidade, usualmente com valor 0.5.\\
+
+\begin{table}[!h]
+  \begin{center}
+  \begin{tabular}{|l|r|}
+    \hline
+    Parâmetro (1) & O primeiro indivíduo participante da operação \\
+    Parâmetro (2) & O segundo indivíduo participante da operação \\
+    Parâmetro (3) & Probabilidade independente para troca de cada atributo\\
+    Retorno & 2 indivíduos modificados\\
+    \hline    
+  \end{tabular}
+  \end{center}
+  \caption{Parâmetros e retorno do {\it Uniform}}
+  \label{Uniform}
+\end{table}
+
+\subparagraph{Partially Matched}
+Executa, nos pais, um {\it crossover} parcialmente correspondido. Os indivíduos gerados são criados pela correspondência de pares de índices dos pais em um dado intervalo e pela troca dos valores de seus índices.\\
+
+\begin{table}[!h]
+  \begin{center}
+  \begin{tabular}{|l|r|}
+    \hline
+    Parâmetro (1) & O primeiro indivíduo participante da operação \\
+    Parâmetro (2) & O segundo indivíduo participante da operação \\
+%    Parâmetro (3) & Probabilidade independente para troca de cada atributo\\
+    Retorno & 2 indivíduos modificados\\
+    \hline    
+  \end{tabular}
+  \end{center}
+  \caption{Parâmetros e retorno do {\it Partially Matched}}
+  \label{Partially Matched}
+\end{table}
+
+\subparagraph{Uniform and Partially Matched}
+Executa uma combinação entre o {\it Uniform} e o {\it Partially Matched}. Segue o mesmo comportamento desse último, porém o pareamento dos índices é feito aleatoriamente a partir de uma probabilidade, assim como o {\it Uniform}.\\
+
+\begin{table}[!h]
+  \begin{center}
+  \begin{tabular}{|l|r|}
+    \hline
+    Parâmetro (1) & O primeiro indivíduo participante da operação \\
+    Parâmetro (2) & O segundo indivíduo participante da operação \\
+%    Parâmetro (3) & Probabilidade independente para troca de cada atributo\\
+    Retorno & 2 indivíduos modificados\\
+    \hline    
+  \end{tabular}
+  \end{center}
+  \caption{Parâmetros e retorno do {\it Uniform and Partialy Matched}}
+  \label{Uniform and Partially Matched}
+\end{table}
+
+\subparagraph{Ordered}
+Gera "buracos" nos indivíduos de entrada. São criados quando um atributo de um indivíduo está entre 2 pontos de outro indivíduo. O elemento é rotacionado de tal forma que todos os elementos entre os pontos de {\it crossover} são preenchidos com os elementos removidos, em ordem.\\
+
+\begin{table}[!h]
+  \begin{center}
+  \begin{tabular}{|l|r|}
+    \hline
+    Parâmetro (1) & O primeiro indivíduo participante da operação \\
+    Parâmetro (2) & O segundo indivíduo participante da operação \\
+%    Parâmetro (3) & Probabilidade independente para troca de cada atributo\\
+    Retorno & 2 indivíduos modificados\\
+    \hline    
+  \end{tabular}
+  \end{center}
+  \caption{Parâmetros e retorno do {\it Ordered}}
+  \c{Ordered}
+\end{table}
+
+\subparagraph{Simulated Binary}
+Faz um {\it crossover} por simulação binária que modifica os indivíduos de entrada. Espera uma seqüência de indivíduos em ponto flutuante. Além de dois indivíduos, recebe também um valor para $\beta$ (Um $\beta$ alto produz filhos parecidos com os pais e um $\beta$ baixo produz filhos mais diferentes).\\
+
+
+\paragraph{Mutação}
+Os operadores de mutação testados foram: {\it Shuffle Indexes} e {\it Uniform Integer}.\\
+\subparagraph{Shuffle Indexes}
+Embaralha os atributos do indivíduo de entrada. Geralmente aplicada em vetor de índices.\\
+
+\begin{table}[!h]
+  \begin{center}
+  \begin{tabular}{|l|r|}
+    \hline
+    Parâmetro (1) & O primeiro indivíduo participante da operação \\
+%    Parâmetro (2) & O segundo indivíduo participante da operação \\
+    Parâmetro (2) & Prob. independente para troca de cada atributo para outra posição\\
+    Retorno & 1 indivíduo modificado\\
+    \hline    
+  \end{tabular}
+  \end{center}
+  \caption{Parâmetros e retorno do {\it Shuffle Indexes}}
+  \label{Shuffle Indexes}
+\end{table}
+
+\subparagraph{Uniform Integer}
+Aplica mutação no indivíduo ao substituir alguns de seus atributos por um inteiro uniformemente retirado de um intervalo definido.\\
+
+\begin{table}[!h]
+  \begin{center}
+  \begin{tabular}{|l|r|}
+    \hline
+    Parâmetro (1) & O primeiro indivíduo participante da operação \\
+%    Parâmetro (2) & O segundo indivíduo participante da operação \\
+    Parâmetro (2) & Prob. independente para troca de cada atributo para outra posição\\
+    Retorno & 1 indivíduo modificado\\
+    \hline    
+  \end{tabular}
+  \end{center}
+  \caption{Parâmetros e retorno do {\it Uniform Integer}}
+  \label{Uniform Integer}
+\end{table}
+
+\paragraph{Seleção}
+Os operadores de seleção testados foram: {\it Roulette} e {\it Random}, {\it Best} e {\it Worst}.\\
+
+\subparagraph{Roulette}
+Seleciona indivíduos a partir de giros da roleta. A seleção é feita levando-se em conta espaços que representam a aptidão relativa de cada indivíduo.\\
+
+\begin{table}[!h]
+  \begin{center}
+  \begin{tabular}{|l|r|}
+    \hline
+    Parâmetro (1) & 1 lista de indivíduos a serem selecionados \\
+    Parâmetro (2) & K, número de indivíduos a selecionar \\
+%    Parâmetro (3) & Prob. independente para troca de cada atributo para outra posição\\
+    Retorno & 1 lista dos indivíduos selecionados\\
+    \hline    
+  \end{tabular}
+  \end{center}
+  \caption{Parâmetros e retorno do {\it Roulette}}
+  \label{Roulette}
+\end{table}
+
+\subparagraph{Random}
+Seleciona indivíduos aleatoriamente da entrada, com substituição. \\
+
+\begin{table}[!h]
+  \begin{center}
+  \begin{tabular}{|l|r|}
+    \hline
+    Parâmetro (1) & 1 lista de indivíduos a serem selecionados \\
+    Parâmetro (2) & K, número de indivíduos a selecionar \\
+%    Parâmetro (3) & Prob. independente para troca de cada atributo para outra posição\\
+    Retorno & 1 lista dos indivíduos selecionados\\
+    \hline    
+  \end{tabular}
+  \end{center}
+  \caption{Parâmetros e retorno do {\it Random}}
+  \label{Random}
+\end{table}
+
+\subparagraph{Best}
+Seleciona os melhores indivíduos.\\
+
+\begin{table}[!h]
+  \begin{center}
+  \begin{tabular}{|l|r|}
+    \hline
+    Parâmetro (1) & 1 lista de indivíduos a serem selecionados \\
+    Parâmetro (2) & K, número de indivíduos a selecionar \\
+%    Parâmetro (3) & Prob. independente para troca de cada atributo para outra posição\\
+    Retorno & 1 lista dos indivíduos selecionados\\
+    \hline    
+  \end{tabular}
+  \end{center}
+  \caption{Parâmetros e retorno do {\it Best}}
+  \label{Best}
+\end{table}
+
+\subparagraph{Worst}
+Seleciona os piores indivíduos.\\
+
+\begin{table}[!h]
+  \begin{center}
+  \begin{tabular}{|l|r|}
+    \hline
+    Parâmetro (1) & 1 lista de indivíduos a serem selecionados \\
+    Parâmetro (2) & K, número de indivíduos a selecionar \\
+%    Parâmetro (3) & Prob. independente para troca de cada atributo para outra posição\\
+    Retorno & 1 lista dos indivíduos selecionados\\
+    \hline    
+  \end{tabular}
+  \end{center}
+  \caption{Parâmetros e retorno do {\it Worst}}
+  \label{Worst}
+\end{table}
+
+\clearpage
+
+\section{Estudo dos Operadores - Funções CEC'13}
+Com objetivo único de aprimorar os conhecimentos sobres os operadores do DEAP e entender melhor o comportamento de Algoritimos Genéticos em problemas de otimização, as primeiras análises foram feitos sobre a suíte de testes do CEC'13 - Congress on Evolutionary Computation - que inclui 28 funções de referência. Dentre as 28 funções, oito representavam um grupo interessante para nossos objetivos. Todas as oitos são funções compostas que combinam as propriedades das sub-funções além de terem comportamento contínuo próximo ao ótimos locais e global. Para maiores informações acerca das funções, recomendamos a leitura do artigo \citep{liang2013problem}.\\
+
+O CEC, além de fornecer todas as informações necessárias para o entendimento das funções e suas características, ainda disponibiliza códigos da suíte em C, Java e Matlab.\\% para {\it download}\footnote[5]{\url {http://www.ntu.edu.sg/home/EPNSugan/index_files/CEC2013/CEC2013.htm}}.\\
+
+Uma vez que a integração entre Python e C é facilitada pelo uso da biblioteca {\it ctypes}, não foi necessário implementar nenhuma das oito funções. Somente foi necessário criar essa integração entre o código em C disponibilizado e a aplicação de GA em python. O método utilizado pode ser encontrado junto ao repositório Git do Peabox \footnote[6]{\url {https://github.com/stromatolith/peabox/tree/master/cec2013_testfuncs_via_ctypes}}.\\
+
+
+
+\section{Análises GA - Time-slice Log-Likelihood Fitness Function}
+Posteriormente, estendemos os estudos para o contexto da aplicação. Seguimos duas direções para termos objetivos comparativos: a primeira, testar a GA {\it Time-slice Log Likelihood Fitness Function} com as diferentes combinações de operadores; a segunda, testar o comportamento da mesma GA juntamente da técnica de pesos adaptativos dos operadores.\\
+
+A técnica de pesos adaptativos utiliza valores variáveis para os operadores ao longo dos ensaios, valores que periodicamente são ajustados para refletirem a performance recente do operador. A maior justificativa para seu uso é: operadores podem mudar de importância ao longo do ensaio, e, portanto, sua influência deve ser alterada de acordo com o grau de importância adequado.\\ %Conseqüentemente, essa técnica possui elevadas chances de obter valores mais próximos dos ótimos.\\
+
+Para a nossa aplicação, utilizamos operadores mais tradicionais, a fim de facilitar futuras análises e comparações. O operador de {\it crossover} utilizado foi o  {\it Two Points}, o de mutação, {\it Shuffle Indexes} e o de seleção, a roleta. A probabilidade inicial para o {\it crossover} foi de 0.9 e para a mutação, 0.1, valores arbitrários. Como inicialmente queremos abranger o espaço de busca o máximo possível, priorizamos o operador {\it crossover}. Ao final da execução, o espaço de busca já está bem definido, e, nesse caso, queremos especificar a busca, e, portanto, elevamos a prioridade de ocorrência de mutação para 30\% mais provável (conseqüentemente, precisamos diminuir a probabilidade do {\it crossover} em 30\%). Essa variação nos valores dos operadores acontece suavemente durante os ensaios, quando, a cada rodada, os valores dos operadores é alterado pelo valor = [30\%/(número de gerações)].\\
+
+
+%\subsubsection{Dificuldades Enfrentadas}
+
+%arrumar aqui por causa do profiler
+Algumas adversidades foram encontradas durante as execuções, que contribuíram para o atraso da definição dos operadores. Entre elas, a de maior destaque foi a fraca performance do cálculo do fatorial, necessário para a função de {\it fitness}. Para melhor compreender o comportamento da aplicação e descobrir e confirmar quais eram gargalos da aplicação, foi utilizado um {\it profiler}\footnote[7]{\url {https://pythonhosted.org/line_profiler/}}.\\
+
+Um {\it profiler} é uma ferramenta para análise dinâmica da execução de programas. A motivação é analisar o quanto de recurso computacional cada parte do código consome. Em específico, o {\it profiler} verifica a freqüência e a duração das chamadas do código. Após a descoberta dos pontos críticos e a confirmação de que o função de cálculo do fatorial realmente era um ponto crítico, substituímos a função por uma tabela em memória dos valores do fatorial.\\
+
+%Ainda é possível que, a partir de análise de complexidade e reexecuções do {\it profiler}, outros gargalos sejam descobertos e tratados, melhorando a performance temporal da aplicação.\\
+
+As análises realizadas com as funções CEC'13, ao contrário do esperado, não nos direcionaram na escolha de um grupo de operadores capaz de oferecer uma desempenho significativamente maior, seja ele em termos de convergência mais rápida ou em termos de soluções mais robustas.\\

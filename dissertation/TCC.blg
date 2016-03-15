@@ -1,0 +1,52 @@
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: TCC.aux
+The style file: plain.bst
+Database file #1: bibliografia.bib
+Warning--I didn't find a database entry for "hawkins2004problem"
+Warning--I didn't find a database entry for "liang2013problem"
+Warning--I didn't find a database entry for "zechartheme"
+Warning--empty journal in eberhard2014multiscale
+Warning--empty journal in omori1895after
+You've used 52 entries,
+            2118 wiz_defined-function locations,
+            829 strings with 14041 characters,
+and the built_in function-call counts, 18000 in all, are:
+= -- 1820
+> -- 817
+< -- 15
++ -- 326
+- -- 268
+* -- 1269
+:= -- 2958
+add.period$ -- 165
+call.type$ -- 52
+change.case$ -- 290
+chr.to.int$ -- 0
+cite$ -- 54
+duplicate$ -- 675
+empty$ -- 1397
+format.name$ -- 268
+if$ -- 3788
+int.to.chr$ -- 0
+int.to.str$ -- 52
+missing$ -- 49
+newline$ -- 264
+num.names$ -- 106
+pop$ -- 280
+preamble$ -- 1
+purify$ -- 237
+quote$ -- 0
+skip$ -- 499
+stack$ -- 0
+substring$ -- 1151
+swap$ -- 154
+text.length$ -- 15
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 204
+warning$ -- 2
+while$ -- 189
+width$ -- 54
+write$ -- 581
+(There were 5 warnings)

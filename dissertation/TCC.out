@@ -1,0 +1,33 @@
+\BOOKMARK [0][-]{acknowledgements.0}{Agradecimentos}{}% 1
+\BOOKMARK [0][-]{resumo.0}{Resumo}{}% 2
+\BOOKMARK [0][-]{abstract.0}{Abstract}{}% 3
+\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 4
+\BOOKMARK [1][-]{section.1.1}{Earthquakes}{chapter.1}% 5
+\BOOKMARK [1][-]{section.1.2}{Earthquake Prediction}{chapter.1}% 6
+\BOOKMARK [0][-]{chapter.2}{Theoretical foundation}{}% 7
+\BOOKMARK [1][-]{section.2.1}{What are Genetic Algorithms}{chapter.2}% 8
+\BOOKMARK [1][-]{section.2.2}{Earthquake Likelihood Model Testing}{chapter.2}% 9
+\BOOKMARK [2][-]{subsection.2.2.1}{The Log-Likelihood Function}{section.2.2}% 10
+\BOOKMARK [2][-]{subsection.2.2.2}{Uncertainties in Earthquake Parameters}{section.2.2}% 11
+\BOOKMARK [2][-]{subsection.2.2.3}{Vetor de expectativas e suas observa\347\365es}{section.2.2}% 12
+\BOOKMARK [2][-]{subsection.2.2.4}{L-test - Data-consistency test}{section.2.2}% 13
+\BOOKMARK [2][-]{subsection.2.2.5}{N-test - Number test}{section.2.2}% 14
+\BOOKMARK [2][-]{subsection.2.2.6}{R-test - Hypotheses Comparison}{section.2.2}% 15
+\BOOKMARK [0][-]{chapter.3}{Computa\347\343o Evolutiva e Previs\343o de Sismos}{}% 16
+\BOOKMARK [0][-]{chapter.4}{An\341lise dos Dados}{}% 17
+\BOOKMARK [1][-]{section.4.1}{Dados de sismos}{chapter.4}% 18
+\BOOKMARK [0][-]{chapter.5}{Metodologia Proposta}{}% 19
+\BOOKMARK [1][-]{section.5.1}{Estrutura da solu\347\343o}{chapter.5}% 20
+\BOOKMARK [1][-]{section.5.2}{Defini\347\343o do Algoritmo Gen\351tico - Simple L-test Fitness Function}{chapter.5}% 21
+\BOOKMARK [2][-]{subsection.5.2.1}{Crossover}{section.5.2}% 22
+\BOOKMARK [2][-]{subsection.5.2.2}{Muta\347\343o}{section.5.2}% 23
+\BOOKMARK [2][-]{subsection.5.2.3}{Sele\347\343o}{section.5.2}% 24
+\BOOKMARK [1][-]{section.5.3}{Defini\347\343o do Algoritmo Gen\351tico - Time-slice Log-Likelihood Fitness Function}{chapter.5}% 25
+\BOOKMARK [2][-]{subsection.5.3.1}{Operadores Estudados}{section.5.3}% 26
+\BOOKMARK [1][-]{section.5.4}{Estudo dos Operadores - Fun\347\365es CEC'13}{chapter.5}% 27
+\BOOKMARK [1][-]{section.5.5}{An\341lises GA - Time-slice Log-Likelihood Fitness Function}{chapter.5}% 28
+\BOOKMARK [0][-]{chapter.6}{Resultados Obtidos}{}% 29
+\BOOKMARK [1][-]{section.6.1}{Simple L-test Fitness Function}{chapter.6}% 30
+\BOOKMARK [1][-]{section.6.2}{Time-slice Log Likelihood Fitness Function}{chapter.6}% 31
+\BOOKMARK [0][-]{chapter.7}{Conclus\343o}{}% 32
+\BOOKMARK [0][-]{section*.27}{Refer\352ncias}{}% 33

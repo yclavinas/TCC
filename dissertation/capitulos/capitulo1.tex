@@ -1,0 +1,39 @@
+\chapter{Introduction}
+In this chapter we present a general specification of the problem, its relevance and what are the goals of this study.
+
+\section{Earthquakes}
+Earthquakes may cause lots of damages environment and consequently may represent, directly or inderectly, a risk to human lives. They manifest themselves by shaking and sometimes displacement of the ground. They may also cause tsunamis, landslides, volcano activities, etc.\\
+
+%TODO: explain aftershock
+%TODO: i may need to add references of the quakes
+There are many examples that show how devastating one large earthquake can be. In April 2015,there was a magnitude 7.8 $M_w$ earthquake in Nepal. It cause 8000 deaths and triggered two avalanches, one of them in the Mount Everest. Also, many people were made homeless, it destroyed UNESCO World Heritage sites and had many aftershocks, including a magnitude $M_w$ 7.3 quake that caused 200 deaths. Another example happened in March 2011, Japan. It was a 9.0 $M_w$ earthquake, and it is considered the most powerful earthquake to ever hit Japan and the 4th most powerful in the world. It caused tsunami waves that reached more than 40 meters, moved the main island in Japan more than 2 meters east and also changed the Earth axis. It was reported that it caused more than 15000 deaths, made more than 200000 people homeless and provoked a meltdown of the Fukushima Daiichi Nuclear Power Plant complex. (see Figure 1.1 for a picture of the devastation) (May i use this picture?). Also in 2011 a magnitude $M_w$ 7.1 earthquake hit Van,Turkey and caused lots of deaths and great damages.These are only three very recent examples of large earthquake damages of how dangerous earthquakes can be.\\
+
+Those earthquakes, and many others that hazard the human society, have some common characteristics. They not only are powerful quakes but they happened nearby populated areas, which increase the damaged provoked. To minimize as much as possible future earthquake disaster, a lot can be done. That include to developing goos urban planings, for example to build structures with techniques that can withstand the forces of earthquakes, to create earthquake warning systems, to create more precise civil enginnering codes, and such.\\
+
+To be able to prevent as many casualty as possible, we need the patterns and mechanisms behind the occurrence of earthquakes. We need to know if there is any relationship between the earhquake locations and its time of occurrance, how they are related to each other, et cetera. With this information, it is possible to to create better seismic risk forecast models, indicating which regions show a higher probability of earthquake occurrence at certain periods in time. \\
+
+Until by now, it has been difficult to clearly understand the many different seismic variables (hours, magnitude, local, depth,...) influences the quakes and either exists a mathemathical model capable of supplying detailed and precise information about the relations and ways to estimate them. Therefore, to develop a prediction earthquake model can prove itself very complex.\\
+
+\section{Earthquake Prediction}
+
+Earthquake prediction is a polemic subject. No research has even come close to suggesting that individual large scale earthquakes can be predicted~\cite{ecta14} and many scientists think that earthquake prediction may not be fully impossible but that the resources needed for such a prediction may be out of reach~\cite{eberhard2014multiscale}.\\
+
+%TODO: check the nature1999 
+In the context of this study, we do not aim to predict any individual earthquake and its major characteristics. Our goal relies on the fact that earthquakes do cluster in time and space. We want to use computer techniques to learn and to generate risk models. There is a lot of value behind the study of earthquake mechanisms, with the goal of generating statistical models of earthquake risk~\cite{Nature1999}.\\
+
+In~\cite{Koza2003}, Koza says that Evolutionary Computation (EC) may find, by try trial and error, based on a great amount of data, better solutions for problems that human beings may not find it easy to solve. EC is a family of subfield of artificial intelligence that aim to extract patterns and to solve problems using a great amount of data, by trial and error.We may also say that without any domain knowl- edge about the problem to be controlled, the EC learns about it by trial and error~\cite{Michie94machinelearning}.\
+
+%TODO": what are black box problems?
+EC are based on methaheuristic or stochastic optimization, and are mostly applied for black box problems. They are interesting to be used specially in cases that are difficult to understand and the knowledge available is not sufficiently available.\\
+
+Based on these information and on the difficulty to understand how earthquakes behave, we want to explore historical earthquake data using EC. It is expected that it will help to find new ideas about earthquakes, their patterns and their mechanisms behind each earthquake occurrence. For doing so, we need first to outline the forecast problem, then verify the suitability of Evolutionary Computation to the problem of generating earthquake forecast models.\\
+
+Next, we will study ways to improve the generated methods using both EC and other computer techniques and any siesmological knowledge. For this phase we want to propose different representations aiming to refire the algorithm performance and to incorporate seismology methods to refine the models proposed.\\
+
+
+%\section{Objetivos}
+%Este trabalho visa construir um modelo baseado em dados históricos para estimar ocorrência de sismos utilizando dados reais obtido pela {\it Japan Metereological Agency} (JMA). O modelo gera indivíduos que são possíveis soluções para o problema e os indivíduos de cada população são avaliados pela função de {\it fitness} que utiliza testes sugeridos pela {\it Study of Earthquake Predictability} (CSEP).\\
+%
+%O objetivo principal do trabalho é mostrar que criar um modelo de previsão de terremotos desenvolvido a partir de Computação Evolutiva é possível e promissor, como também garantir uma qualidade do modelo perante outros modelos de previsão de riscos. %Esperamos atrair mais atenção para futuras pesquisas nessa área.
+%%arrumar aqui 
+%

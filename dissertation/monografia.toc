@@ -1,0 +1,54 @@
+\select@language {american}
+\select@language {brazil}
+\select@language {american}
+\select@language {american}
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Earthquakes}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}Earthquake Prediction}{2}{section.1.2}
+\contentsline {chapter}{\numberline {2}Fundamenta\IeC {\c c}\IeC {\~a}o Te\IeC {\'o}rica}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Algoritmos Gen\IeC {\'e}ticos}{3}{section.2.1}
+\contentsline {section}{\numberline {2.2}Earthquake Likelihood Model Testing}{4}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Fundamenta\IeC {\c c}\IeC {\~a}o Te\IeC {\'o}rica}{4}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Incertezas}{5}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Vetor de expectativas e suas observa\IeC {\c c}\IeC {\~o}es}{5}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.4}L-test - Data-consistency test}{6}{subsection.2.2.4}
+\contentsline {subsection}{\numberline {2.2.5}N-test - Number test}{6}{subsection.2.2.5}
+\contentsline {subsection}{\numberline {2.2.6}R-test - Hypotheses Comparison}{7}{subsection.2.2.6}
+\contentsline {chapter}{\numberline {3}Computa\IeC {\c c}\IeC {\~a}o Evolutiva e Previs\IeC {\~a}o de Sismos}{8}{chapter.3}
+\contentsline {chapter}{\numberline {4}An\IeC {\'a}lise dos Dados}{9}{chapter.4}
+\contentsline {section}{\numberline {4.1}Dados de sismos}{9}{section.4.1}
+\contentsline {paragraph}{Kanto}{10}{section*.7}
+\contentsline {paragraph}{Kansai}{10}{section*.8}
+\contentsline {paragraph}{Touhoku}{10}{section*.9}
+\contentsline {paragraph}{Leste do Jap\IeC {\~a}o}{10}{section*.10}
+\contentsline {chapter}{\numberline {5}Metodologia Proposta}{11}{chapter.5}
+\contentsline {section}{\numberline {5.1}Estrutura da solu\IeC {\c c}\IeC {\~a}o}{11}{section.5.1}
+\contentsline {section}{\numberline {5.2}Defini\IeC {\c c}\IeC {\~a}o do Algoritmo Gen\IeC {\'e}tico - Simple L-test Fitness Function}{11}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Crossover}{12}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Muta\IeC {\c c}\IeC {\~a}o}{13}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}Sele\IeC {\c c}\IeC {\~a}o}{13}{subsection.5.2.3}
+\contentsline {section}{\numberline {5.3}Defini\IeC {\c c}\IeC {\~a}o do Algoritmo Gen\IeC {\'e}tico - Time-slice Log-Likelihood Fitness Function}{14}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Operadores Estudados}{14}{subsection.5.3.1}
+\contentsline {subsubsection}{Descri\IeC {\c c}\IeC {\~a}o dos Operadores do pacote DEAP}{14}{section*.11}
+\contentsline {paragraph}{Crossover}{14}{section*.12}
+\contentsline {subparagraph}{One Point}{15}{section*.13}
+\contentsline {subparagraph}{Uniform}{15}{section*.14}
+\contentsline {subparagraph}{Partially Matched}{15}{section*.15}
+\contentsline {subparagraph}{Uniform and Partially Matched}{16}{section*.16}
+\contentsline {subparagraph}{Ordered}{16}{section*.17}
+\contentsline {subparagraph}{Simulated Binary}{16}{section*.18}
+\contentsline {paragraph}{Muta\IeC {\c c}\IeC {\~a}o}{16}{section*.19}
+\contentsline {subparagraph}{Shuffle Indexes}{16}{section*.20}
+\contentsline {subparagraph}{Uniform Integer}{17}{section*.21}
+\contentsline {paragraph}{Sele\IeC {\c c}\IeC {\~a}o}{17}{section*.22}
+\contentsline {subparagraph}{Roulette}{17}{section*.23}
+\contentsline {subparagraph}{Random}{17}{section*.24}
+\contentsline {subparagraph}{Best}{17}{section*.25}
+\contentsline {subparagraph}{Worst}{17}{section*.26}
+\contentsline {section}{\numberline {5.4}Estudo dos Operadores - Fun\IeC {\c c}\IeC {\~o}es CEC'13}{19}{section.5.4}
+\contentsline {section}{\numberline {5.5}An\IeC {\'a}lises GA - Time-slice Log-Likelihood Fitness Function}{19}{section.5.5}
+\contentsline {chapter}{\numberline {6}Resultados Obtidos}{21}{chapter.6}
+\contentsline {section}{\numberline {6.1}Simple L-test Fitness Function}{21}{section.6.1}
+\contentsline {section}{\numberline {6.2}Time-slice Log Likelihood Fitness Function}{22}{section.6.2}
+\contentsline {chapter}{\numberline {7}Conclus\IeC {\~a}o}{25}{chapter.7}
+\contentsline {chapter}{Refer\^encias}{27}{section*.27}
