@@ -84,6 +84,12 @@ Frank Hutter, Holger~H Hoos, and Kevin Leyton-Brown.
 \newblock Technical report, Technical Report TR-2010-10, University of British
   Columbia, Computer Science, 2010.
 
+\bibitem{irmak2012source}
+T~Serkan Irmak, B{\"u}lent Do{\u{g}}an, and Ahmet Karaka{\c{s}}.
+\newblock Source mechanism of the 23 october, 2011, van (turkey) earthquake (m
+  w= 7.1) and aftershocks with its tectonic implications.
+\newblock {\em Earth, Planets and Space}, 64(11):991--1003, 2012.
+
 \bibitem{janikow1991experimental}
 Cezary~Z Janikow and Zbigniew Michalewicz.
 \newblock An experimental comparison of binary and floating point
@@ -135,6 +141,13 @@ John~R. Koza, Martin~A. Keane, and Matthew~J. Streeter.
 \bibitem{Michie94machinelearning}
 D.~Michie, D.~J. Spiegelhalter, and C.C. Taylor.
 \newblock Machine learning, neural and statistical classification, 1994.
+
+\bibitem{mimura2011damage}
+Nobuo Mimura, Kazuya Yasuhara, Seiki Kawagoe, Hiromune Yokoki, and So~Kazama.
+\newblock Damage from the great east japan earthquake and tsunami-a quick
+  report.
+\newblock {\em Mitigation and Adaptation Strategies for Global Change},
+  16(7):803--818, 2011.
 
 \bibitem{Nanjo2011}
 K.~Z. Nanjo.
@@ -245,6 +258,14 @@ Danijel Schorlemmer, J~Douglas Zechar, Maximilian~J Werner, Edward~H Field,
   experiment.
 \newblock {\em Pure and Applied Geophysics}, 167(8-9):859--876, 2010.
 
+\bibitem{simons20112011}
+Mark Simons, Sarah~E Minson, Anthony Sladen, Francisco Ortega, Junle Jiang,
+  Susan~E Owen, Lingsen Meng, Jean-Paul Ampuero, Shengji Wei, Risheng Chu,
+  et~al.
+\newblock The 2011 magnitude 9.0 tohoku-oki earthquake: Mosaicking the
+  megathrust from seconds to centuries.
+\newblock {\em science}, 332(6036):1421--1425, 2011.
+
 \bibitem{Someya2013}
 Hiroshi Someya.
 \newblock Striking a mean- and parent-centric balance in real-valued crossover
@@ -259,11 +280,31 @@ Masato Takahashi and Hajime Kita.
 \newblock In {\em Evolutionary Computation, 2001. Proceedings of the 2001
   Congress on}, volume~1, pages 643--649. IEEE, 2001.
 
+\bibitem{utsu1970aftershocks}
+Tokuji Utsu.
+\newblock Aftershocks and earthquake statistics (1): Some parameters which
+  characterize an aftershock sequence and their interrelations.
+\newblock {\em Journal of the Faculty of Science, Hokkaido University. Series
+  7, Geophysics}, 3(3):129--195, 1970.
+
 \bibitem{utsu1995centenary}
 Tokuji Utsu and Yosihiko Ogata.
 \newblock The centenary of the omori formula for a decay law of aftershock
   activity.
 \newblock {\em Journal of Physics of the Earth}, 43(1):1--33, 1995.
+
+\bibitem{van2012seismicity}
+Thomas van Stiphout, Jiancang Zhuang, and David Marsan.
+\newblock Seismicity declustering.
+\newblock {\em Community Online Resource for Statistical Seismicity Analysis},
+  10, 2012.
+
+\bibitem{wilkinson20152015}
+S~Wilkinson, G~Chiaro, Rama~Mohan Pokhrel, T~Kiyota, Toshihiko Katagiri, Keshab
+  Sharma, and K~Goda.
+\newblock The 2015 gorkha nepal earthquake: Insights from earthquake damage
+  survey.
+\newblock 2015.
 
 \bibitem{yamanaka1990scaling}
 Yoshiko Yamanaka and Kunihiko Shimazaki.

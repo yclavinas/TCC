@@ -1,38 +1,181 @@
-\chapter{Conclusão}
-Este projeto apresentou uma proposta de desenvolvimento de um modelo de previsão de probabilidades elaborado a partir de uma implementação simples de algoritmos genéticos. Foi possível perceber uma evolução do modelo em relação ao modelo completamente aleatório, caracterizado pela população inicial.\\
+\chapter{Resultados Obtidos}\label{chapter7}
+\section{Simple L-test Fitness Function}
+O operador escolhido como parâmetro de {\it crossover} foi o {\it Blend}, e a preferência por ele dentre os demais implementados pelo pacote DEAP foi pela observação empírica de crescimento dos valores de L-test e pelo fato de o operador ser específico para indivíduos formados por números reais, situação encontrada na aplicação. A média do resultado de 10 execuções:  \\
+%arrumar dados
+%O L-test do melhor indivíduo da população inicial é: 2.57371265858 e o valor mais alto de L-test obtido é: 6328.5844906
 
-Foram muitos os desafios enfrentados ao utilizar os testes propostos pelo RELM como função de {\it fitness} pelo algoritmo genético. O primeiro está relacionada ao tempo de execução e o uso desses a cada geração como função de {\it fitness}. Por se tratar de testes com uma grande quantidade de cálculos em grande quantidades de observações, o tempo gasto para analisar as informações poderia ser demasiado grande para ser viável continuar a utilizar os testes junto ao algoritmo. O segundo problema estava vinculado ao comportamento desses testes em uma aplicação de algoritmos genéticos, pois não havia conhecimento anterior sobre a aplicabilidade desses com Computação Evolutiva e se aplicável, se o resultado seria promissor.\\
+\begin{table}[!h]
+  \begin{center}
+  \begin{tabular}{|l|r|}
+    \hline
+    Primeira geração (s) & 145.6644\\
+    Última geração (s) & 113.4796\\
+    Valor do L-test da primeira geração & -0.635949214\\
+    Valor do L-test da última geração & -0.009772415\\
+    \hline    
+  \end{tabular}
+  \end{center}
+  \caption{Tempo gasto e valor do L-test na média de 10 execuções com Blend.}
+  \label{GAParameters}
+\end{table}
 
-Pelos resultados finais do L-test, foi verificado que tanto o primeiro desafio quanto o segundo, não foram suficientes para impossibilitar o uso dos testes e que as gerações de populações resultaram em indivíduos mais aptos para a previsão de sismos. Pelos resultados mostrados o trabalho mostra que aplicar Computação Evolutiva para prever ocorrências de sismos é minimamente promissor, uma vez que há uma evolução do modelo em relação ao modelo pseudo-aleatório.\\
+Operador de {\it crossover} {\it Two Points} foi utilizado por motivos de comparação. A média do resultado de 10 execuções: \\
+%por em tabela
+\begin{table}[!h]
+  \begin{center}
+  \begin{tabular}{|l|r|}
+    \hline
+    Primeira geração (s) & 129.03775\\
+    Última geração (s) & 97.00832\\
+    Valor do L-test da primeira geração & -0.635856248\\
+    Valor do L-test da última geração & 0.042102222\\
+    \hline    
+  \end{tabular}
+  \end{center}
+  \caption{Tempo gasto e valor do L-test na média de 10 execuções com Two Points.}
+  \label{GAParameters}
+\end{table}
 
-Foi possível, portanto, vincular os testes proposto pelo RELM com algoritmos genéticos. A partir disso, agora, deve-se explorar as características da aplicação, tornar os testes implementados mais completos e estruturados, definir os operadores genéticos visando um comportamento adequado em relação aos indivíduos como para as populações evoluídas.\\
+Tanto o modelo preferido quanto o modelo comparativo foram capazes de evoluírem, obtendo valores finais médios superiores aos valores médios aleatórios iniciais.\\
 
-Posteriormente, o primeiro desafio foi minimizado, pelo uso de uma tabela em memória do fatorial. Alguns estudos deverão ser realizados para compreendermos melhor o porquê da alteração dos valores após a introdução da tabela.\\
+Surpreendemente, por \citep{janikow1991experimental}, era esperado que representações em ponto flutuante tivessem um desempenho de maior acurácia. Porém, o desempenho do operador específico para números reais, o {\it Blend}, foi menor quando comparado a um operador de uso mais geral, o {\it Two Points}, sendo mais lento e obtendo valores de L-test menores, na média.	\\
+	
+Todos os dados foram obtidos após a execução do algoritmo em um computador Apple MacBook Pro com processador 2.9 GHz Intel Core i7, memória RAM 8 GB 1600 MHz DDR3 com sistema operacional OS X 10.9.1 (13B42).\\
 
-O uso de operadores de peso adaptativos mostrou-se interessante e é provável que, sua inclusão na GA estudada traga ainda mais benefícios assim que outros problemas forem resolvidos. Problemas, tais quais, a independência dos {\it bins}, que influenciaram negativamente a performance da aplicação e serão alvos de maiores esforços.\\
+%Pelo expressivo tempo total da aplicação, durante várias análises, utilizou-se um nú- mero menor de gerações (principalmente quando o objetivo era comparar outros trechos de código que não o trecho de evolução da população).\\
+
+
+Para melhor visualização e aumentar o poder de comparação, quatro figuras podem ser analisadas a seguir. As Figuras \ref{popXmediaLtest_CXBLEND(1)} e \ref{popXmediaLtest_2POINTS(1)} mostram as médias do valores do L-test para a todas as populações enquanto que as figuras \ref{popXmediaG_CXBLEND(1)} e \ref{popXmediaG_2POINTS(1)} mostram as médias valores do tempo também para todas as populações. Figuras \ref{popXmediaLtest_CXBLEND(1)} e \ref{popXmediaG_CXBLEND(1)} são referentes a execuções com o {\it crossover Blend} e as figuras\ref{popXmediaLtest_2POINTS(1)} e \ref{popXmediaG_2POINTS(1)}, com o {\it crossover Two Points}. \\
+
+%A mutação, FlipBit foi escolhida por estar presente nos exemplos fornecidos pelo pacote e ter sido facilmente entendida e pois dentre os operadores mutação implementados não foram de agrado, e futuramente deverá ser criada uma função específica para a aplicação.\\
+
+Por observação empírica das diversas execuções realizadas o maior tempo gasto é com cálculos de L-test, sendo influenciado principalmente pela quantidade de observações e pelo tamanho escolhido para {\it bins}. Quanto menor for o tamanho escolhido para o {\it bin} maior será a resolução do terreno analisado e, conseqüentemente, mais informações sobre ele teremos e maior será o espaço de busca, aumentando o tempo total gasto.\\
+
+Há um grande aumento do valor do L-test entre a vigésima geração e a quadragésima geração. Isso significa que a função de {\it fitness} resulta em um excessivo valor de {\it overfitting}, um super ajuste a base de dados.\\
+%onde fica isso?
+% Possivelmente, alterar a função utilizada pela mutação e alterar seu valor de acordo com a população deve ser capaz de minimizar a questão.
 
 
 
-Algumas propostas de melhorias e trabalhos futuros podem ser listadas:\\
+%Em um segundo momento, baseado nas observações anteriores, algumas modificações foram realizadas.
+%%FIGURAS%%
+%1
+%\begin{figure}[!htb]
+%\centering
+%\includegraphics[scale=0.4]{popXmediaLtest_CXBLEND(1)}
+%\caption{Média dos valores de L-test de cada população( com {\it crossover Blend.})}
+%\label{popXmediaLtest_CXBLEND(1)}
+%\end{figure}
+%
+%%2
+%\begin{figure}[!htb]
+%\centering
+%\includegraphics[scale=0.4]{popXmediaLtest_2POINTS(1)}
+%\caption{Média dos valores de L-test de cada população (com {\it crossover Two Points.})}
+%\label{popXmediaLtest_2POINTS(1)}
+%\end{figure}
+%
+%%3
+%\begin{figure}[!htb]
+%\centering
+%\includegraphics[scale=0.4]{popXmediaG_CXBLEND(1)}
+%\caption{Média tempo gasto (em segundos) por cada população, com {\it crossover Blend.}}
+%\label{popXmediaG_CXBLEND(1)}
+%\end{figure}
+%
+%%4
+%\begin{figure}[!htb]
+%\centering
+%\includegraphics[scale=0.4]{popXmediaG_2POINTS(1)}
+%\caption{Média do tempo gasto (em segundos) por cada população, com {\it crossover Two Points.}}
+%\label{popXmediaG_2POINTS(1)}
+%\end{figure}
 
-• Compará-lo com um outro modelo de previsão de terremotos, como por exemplo, o {\it Relative Intensity} (RI). Para melhores efeitos de comparação, é interessante acrescentar cálculos de confiabilidade estatísca, como {\it p-value}, e criar um mapa demonstrativo da previsão relativa de cada área representada pelos {\it bins};\\%acho que tem no artigo 
+\section{Time-slice Log Likelihood Fitness Function}
 
-• Implementar o operador de mutação específico para números reais e que tenha um comportamento direcionado a aplicação, capaz de alterar seus valores no decorrer das gerações capaz de equilibrar {\it explotaition} e {\it exploration};\\
+Os resultados da aplicação GA {it Log Likelihood  Fitness Function} serão demonstrados a seguir.\\
 
-• Aplicar alguns testes sugeridos por Zechar\citep{zechartheme} afim de definir a qualidade do modelo desenvolvido;\\
+Foram feitas comparações entre os resultados dos valores de {\it fitness} dos melhores indivíduos e o desvio padrão da população a que ele pertence. Esses resultados comparados são referentes ao estudo dos grupos de operadores e a técnica de pesos adaptativos. A seguir, além dos resultados obtidos, algumas Figuras utilizadas para comparações serão mostradas.\\
 
-• Fazer analises de complexidade do algoritmo executado;\\
+As Figuras \ref{2000-media_melhores-1point} e \ref{2010-media_melhores-1point} demonstram o resultado das 50 execuções, mostrando dados referentes a execuções do conjunto de operadores {\it One Point, Worst} e {\it Shuffle Indexes} para os anos de 2000 (quando há um ganho de desempenho ao utilizar-se a tabela) e de 2010 (quando há uma perda de desempenho). As Figuras mostram o melhor indivíduo e o desvio padrão de sua população. Está claro que existe os resultados não são consistentes e que existe alguma falha na aplicação.\\
 
-• Criar múltiplas observações para cada indivíduo para que o cálculo de incertezas possa ser aplicado e, assim, aumentarmos a qualidade dos modelos;\\
+Essa falha ficou clara após a mudança do cálculo de fatorial pela tabela em memória. Até onde x = 27 (x se refere ao número da execução), os valores obtidos vieram de cálculos do fatorial, a partir disso, foi utilizada a tabela. Porém, devido a essa falha, não é possível qualificar se algum grupo gerou indivíduos mais aptos. Portanto é essencial corrigi-la para novas execuções sejam geradas e as comparações possam ser refeitas.\\
 
-• Realizar experimentos em outras áreas do Japão, além de Kanto;\\
+Foram duas as causas levantadas para essa falha. A primeira, refere-se ao valor limitante para a tabela do fatorial. Uma vez que a tabela possui valores até o fatorial de 100, quaisquer valores acima desse limitante terão seus fatoriais arredondados a 100. Há casos que essa aproximação foi vantajosa e a aplicação respondeu com modelos de melhor desempenho, mas em alguns casos, a aproximação foi desvantajosa.\\
 
-• Especializar a abordagem de algoritmo genético ({\it crossover} mais apropriado, mutação específica, ...) ou  utilizar soluções híbridas, entre algoritmo genéticos e outras técnicas de aprendizado de máquina;\\
+A segunda, refere-se a um erro no código da execução. Após uma análise superficial do código, 
+é provável que o mapeamento dos dados coletados esteja propagando algum erro. Esforços futuros serão direcionados para a correção deste erro.\\
 
-• Incrementar os cálculos estatísticos com as ferramentas adequadas, desvio padrão, variância, etc, que compõe os cálculos dos testes demonstrados;\\
 
-• A fim de evitar o {\it over fitting}, podemos inserir dados sismológicos, como sobre de magnitude e hora da ocorrência, aumentando a área de busca da aplicação;\\
+%As Figuras \ref{2000-media_melhores-1point} e \ref{2010-media_melhores-1point} exemplificam o ocorrido, mostrando dados referentes a execuções do conjunto de operadores {\it One Point, Worst} e {\it Shuffle Indexes} para os anos de 2000 (quando há um ganho de desempenho ao utilizar-se a tabela) e de 2010 (quando há uma perda de desempenho). Até onde x = 27, os valores obtidos vieram de cálculos do fatorial, a partir disso, foi utilizada a tabela.\\
 
-• Cada {\it bin} é trato e considerado individualmente. Portanto a ocorrência de sismos em um {\it bin} não influência ocorrências de sismos em seus vizinhos, o que sabemos não ser verdade;\\
+Ainda assim, a tabela em memória do valores do fatorial resultou em um avanço em termos de performance temporal. Uma vez que a segunda possível causa seja o verdadeiro erro da aplicação, acredita-se que o uso da tabela será capaz de facilitar futuras execuções.\\
 
-• Contrariando expectativas, execuções com operadores reais obtiveram desempenho pior que com operadores tradicionais pode estar relacionado ao fato de não existir influência entre os {\it bins}, uma vez que pode haver áreas de altíssima probabilidade próximas a áreas de baixa probabilidade.\\
+Os resultados obtidos pela técnica de pesos adaptativos não foram tão elevadas quanto o esperado. Para efeitos comparativos dois grupos de figuras são mostrados a seguir. As Figuras \ref{2000-media_melhores} e \ref{2000-AUTO-media_melhores} mostram os valores dos melhores indivíduos e o desvio padrão da população para o ano de 2000 e compõem o primeiro grupo, já o segundo grupo é composto pelas figuras \ref{2010-media_melhores} e \ref{2010-AUTO-media_melhores} e segue o mesmo princípio, porém para o ano de 2010. No primeiro grupo, a Figura \ref{2000-media_melhores} refere-se aos dados da técnica em questão, enquanto que a outra Figura refere-se ao mesmo conjunto de operadores utilizados ({\it crossover}, {\it Two Points} e {\it Shuffle Indexes}), mas com pesos fixos. O segundo grupo é descrito da mesma maneira.\\
+
+Não fica claro, pelos dados mostrados, quais são os benefícios que a técnica introduz para a aplicação em questão. Após os mais diversos tipos de análises, análises sobre a influência dos grupos de operadores, seja na própria aplicação GA ou mesmo nas funções da CEC'13 e análises sobre diferentes técnicas para estruturação da abordagem GA, não ficou claro qualquer tipo de variação substancial capaz de direcionar os estudos e definir uma abordagem única para os experimentos. Portanto, deve-se fazer a devida ponderação: será que as variações realmente influem pouco nos resultados da aplicação, ou a aplicação deve passar por refinamentos, que levem a resultados mais consistentes?\\
+
+Para responder essa ponderação devemos analisar as escolhas feitas para a criação de nosso modelo. Pela própria estrutura definida pelo modelo proposto, cada {\it bin} é tratado independentemente dos seus vizinhos, não considerando a influência de sismos próximos. Porém, pela características inerentes aos sismos é claro que poucos são os casos de sismos completamente independentes entre si. Podemos considerar, logo, que a influência da independência influi consideravelmente e é ela a principal causa da mínima variação pré-citada. \\
+
+Por outro lado, as funções CEC'13 são funções unicamente matemáticas e por isso a questão levantada anteriormente não é suficiente para sugerir que a resposta a nossa ponderação deva ser direcionada somente para o segundo ponto da pergunta, ``a aplicação deve passar por refinamentos''. Devemos deixar claro, entretanto, que essa independência entre os {\it bins} deve ser melhor explorada a fim de encontrar uma solução que possibilite considerar a dependência dos sismos. Nesse ponto, percebemos que a complexidade da questão é elevada. \\ 
+
+Apesar da utilização da técnica de pesos adaptativos não ter contribuído para uma performance mais significativa, fomos capazes de observar que os valores médios do melhores indivíduos durante os anos foram muito mais coesos do que quando comparados aos valores similares dos ensaios com pesos fixos. Isso nos leva a crer que utilizar a técnica indiretamente influiu positivamente em nossos resultados. Consequentemente, a idéia de abranger uma área maior de busca e posteriormente especifica-la, mostrou-se, como esperado, bastante adequada.\\
+
+Ainda em relação a técnica anterior, é possível que outras contribuições não tenham sido percebidas e que, de acordo com as devidas mudanças, sejamos capazes de percebê-las. Essas mudanças tanto podem ser algumas das já citadas como também na porcentagem de variação dos pesos dos operadores, que é de 30\% (escolhido arbitrariamente), nos valores desses pesos na situação inicial, entre outras, ou seja, variações na estrutura utilizada juntamente com a técnica.\\
+
+
+%%%FIGURAS%%%%
+%5
+%\begin{figure}[!h]
+%\centering
+%\textbf{Ano 2000}\par\medskip
+%\includegraphics[scale=0.5]{2000-media_melhores-1point.pdf}
+%%\small
+%\caption{Melhor indivíduo e desvio padrão da população(y) em cada execução(x), desempenho médio superior com a tabela do fatorial.}
+%\label{2000-media_melhores-1point}
+%\end{figure}
+%
+%%6
+%\begin{figure}[!h]
+%\centering
+%\textbf{Ano 2010}\par\medskip
+%\includegraphics[scale=0.5]{2010-media_melhores-1point.pdf}
+%\caption{Melhor indivíduo e desvio padrão da população(y) em cada execução(x), desempenho médio inferior com a tabela do fatorial.}
+%\label{2010-media_melhores-1point}
+%\end{figure}
+%
+%%7
+%\begin{figure}[!h]
+%\centering
+%\textbf{Ano 2000}\par\medskip
+%\includegraphics[scale=0.5]{2000-media_melhores.pdf}
+%\caption{Melhor indivíduo e desvio padrão da população(y) em cada execução(x), pesos fixos.}
+%\label{2000-media_melhores}
+%\end{figure}
+%
+%%8
+%\begin{figure}[!h]
+%\centering
+%\textbf{Ano 2000}\par\medskip
+%\includegraphics[scale=0.5]{2000-AUTO-media_melhores.pdf}
+%\caption{Melhor indivíduo e desvio padrão da população(y) em cada execução(x), GA com pesos adaptativos.}
+%\label{2000-AUTO-media_melhores}
+%\end{figure}
+%
+%%9
+%\begin{figure}[!h]
+%\centering
+%\textbf{Ano 2010}\par\medskip
+%\includegraphics[scale=0.5]{2010-media_melhores.pdf}
+%\caption{Melhor indivíduo e desvio padrão da população(y) em cada execução(x), pesos fixos.}
+%\label{2010-media_melhores}
+%\end{figure}
+%
+%%10
+%\begin{figure}[!h]
+%\centering
+%\textbf{Ano 2010}\par\medskip
+%\includegraphics[scale=0.5]{2010-AUTO-media_melhores.pdf}
+%\caption{Melhor indivíduo e desvio padrão da população(y) em cada execução(x), GA com pesos adaptativos.}
+%\label{2010-AUTO-media_melhores}
+%\end{figure}

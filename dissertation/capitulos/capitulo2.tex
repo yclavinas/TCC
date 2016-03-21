@@ -1,8 +1,10 @@
-\chapter{Theoretical foundation}
+\chapter{The Earthquake Forecasting Problem}~\label{chapter2}
 This chapter focus on the teoretical concepts used as base for this study. The main topics are genetic algorithm, the CSEP framework and the siesmologic methods.\\
 
 \section{What are Genetic Algorithms}
 The main goal of a Genetic Algorithm (GA) is to find approximated solutions in problems of search and optimization. Based on Koza~\cite{Koza2003} , GA are mechanism of search based on natural selection and genetic. They explore historical data to find optimum search points with some performance increment, as said by Goldberg~\cite{Goldberg:1989:GAS:534133}.\\
+
+\subsection{How does GA work}
 
 A GA uses those mechanisms to generate solutions to optimization and search problems. The first step is to create an initial population of possible solutions. Frequently, the initial population is randomly generated once it is common to ignore the main aspects that influence the algorithm performance.\\
 
@@ -19,8 +21,6 @@ It is common to have a evolutionary operator that allows the fittest individual 
 
 \section{Earthquake Likelihood Model Testing}
 
-%A fundamentação teórica foi baseada no artigo {\it Earthquake Likelihood Model Testing}\cite{schorlemmer} desenvolvido pelo grupo {\it The Regional Earthquake Likelihood Models} (RELM). O artigo define três testes para modelos de previsão de sismos. Os testes N-test e L-test, são testes de consistência do modelo com os dados observados e o último é composto pelo R-test (também descrito a seguir), é uma comparação de todos os pares de modelos em um teste de consistência relativa, ambos baseados no método {\it likelihood}.\\
-
 We started our work by studying what are the good ways to build earthquake models, how to evaluate and compare them, as suggested by the Collaboratory for the Study of Earthquake Predictability (CSEP), an international partnership to promote rigorous study of the feasibility of earthquake forecasting and predictability~\cite{ecta14}.\\
 
 For that, we created the theoretical foundation. Most of it is based on the paper {\it Earthquake Likelihood Model Testing} \cite{schorlemmer2007earthquake}. From this paper we gathered information that guided us into how to build, evaluate and compare earthquake forecast models efficiently.\\
@@ -29,10 +29,6 @@ A very difficult and yet very common problem when studying earthquake models is 
 
 All forecast models proposed in this study are based in the Collaboratory for the Study of Earthquake Predictability (CSEP) framework. In the CSEP framework, a forecast model uses a gridded rate forecast \cite{zechar2010evaluating}, one common format in the literature. For evaluate and compare these models we used the likelihood based tests.They are the L-test, the N-test and the R-test, as suggested by Regional Earthquake Likelihood Model (RELM)~\cite{schorlemmer2007earthquake}.\\
  
-
-
-
-%A fundamentação teórica utilizada no presente trabalho foi baseada no artigo {\it Earthquake Likelihood Model Testing} \cite{schorlemmer2007earthquake} desenvolvido pelo grupo {\it The Regional Earthquake Likelihood Models} (RELM). O artigo define três testes estatísticos baseados no método {\it likelihood} que auxiliam na avalição de modelos de previsão de sismos. Os testes N-test e L-test, são testes de consistência do modelo com os dados observados e o último é composto pelo R-test (também descrito a seguir), é uma comparação de todos os pares de modelos em um teste de consistência relativa, ambos baseados no método {\it likelihood}.\\
 
 
 \subsection{The Log-Likelihood Function}
@@ -99,12 +95,8 @@ The fitness function is a coded version of the equation
 individual of model for the $\lambda$ values.
 				
 \subsection{Uncertainties in Earthquake Parameters}
-It is important to say that the earthquake parameters as the location, magnitude and focal time, can be estimated without uncertainties. Therefore, each parameter uncertainty is included in the testing~\cite{schorlemmer2007earthquake}. Also, each observation must be treated as independent ones. This is not the case of the aftershocks, once they are directly related with another stronger earthquake. \\
-
-In thi context, it is important to generated as much simulations as needed when using modified 
-
-Para levar-se em conta essas incertezas, são geradas S simulações usando observações modificadas e podendo considerar incertezas de seus parâmetros, se possível. Cada parâmetro possui um valor de incerteza e um número aleatório, vinculado à esse valor, é gerado para obter um evento modificado. Esse processo é repetido para todos os sismos. Também é gerado um número qualquer aleatório para decidir se o evento será considerado independente e, caso não o seja, é descartado. Dessa forma são obtidas S simulações representando as incertezas de cada observação. Posteriormente é calculado o {\it Log-likelihood}, quantidade de observações e a razão de {\it Log-likelihood} das simulações.
-
+%TODO: add uncertainties information,may look at doc t
+It is important to say that the earthquake parameters as the location, magnitude and focal time, can be estimated without uncertainties. Therefore, each parameter uncertainty is included in the testing~\cite{schorlemmer2007earthquake}. Also, each observation must be treated as independent ones. This is not the case of the aftershocks, once they are directly dependent with another stronger earthquake. \\
 
 
 \subsection{Vetor de expectativas e suas observações}
@@ -112,6 +104,7 @@ Cada vetor de expectativas deve ter um vetor de observações simuladas relacion
 
 Após obtidos as expectativas e suas relativas observações, como referenciado acima, é possível calcular o {\it Log-likelihood} da simulação, a quantidade de observações e a razão {\it Log-likelihood} e, portanto,  partir para a aplicação dos testes já citados.
 
+%TODO: zechar files format
 \subsection{L-test - Data-consistency test}
 O L-test, também chamado de testes de consistência dos dados observados, considera o modelo de previsão como verdadeiro e mostra se o valor de {\it likelihood} calculado do modelo é consistente com o valor obtido das simulações. A medida é realizada pela fórmula, onde $\widehat{L}_k$ é o valor do {\it Log-likelihood} do modelo {\it j}, no {\it bin} {\it i} e $\widetilde{L}$ é o valor do {\it Log-likelihood} da simulação {\it j} no {\it bin} {\it q}: 
 

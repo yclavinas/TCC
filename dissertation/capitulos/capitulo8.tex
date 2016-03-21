@@ -1,0 +1,39 @@
+%TODO: add contribuitions and future works
+\chapter{Conclusão}\label{chapter8}
+Este projeto apresentou uma proposta de desenvolvimento de um modelo de previsão de probabilidades elaborado a partir de uma implementação simples de algoritmos genéticos. Foi possível perceber uma evolução do modelo em relação ao modelo completamente aleatório, caracterizado pela população inicial.\\
+
+Foram muitos os desafios enfrentados ao utilizar os testes propostos pelo RELM como função de {\it fitness} pelo algoritmo genético. O primeiro está relacionada ao tempo de execução e o uso desses a cada geração como função de {\it fitness}. Por se tratar de testes com uma grande quantidade de cálculos em grande quantidades de observações, o tempo gasto para analisar as informações poderia ser demasiado grande para ser viável continuar a utilizar os testes junto ao algoritmo. O segundo problema estava vinculado ao comportamento desses testes em uma aplicação de algoritmos genéticos, pois não havia conhecimento anterior sobre a aplicabilidade desses com Computação Evolutiva e se aplicável, se o resultado seria promissor.\\
+
+Pelos resultados finais do L-test, foi verificado que tanto o primeiro desafio quanto o segundo, não foram suficientes para impossibilitar o uso dos testes e que as gerações de populações resultaram em indivíduos mais aptos para a previsão de sismos. Pelos resultados mostrados o trabalho mostra que aplicar Computação Evolutiva para prever ocorrências de sismos é minimamente promissor, uma vez que há uma evolução do modelo em relação ao modelo pseudo-aleatório.\\
+
+Foi possível, portanto, vincular os testes proposto pelo RELM com algoritmos genéticos. A partir disso, agora, deve-se explorar as características da aplicação, tornar os testes implementados mais completos e estruturados, definir os operadores genéticos visando um comportamento adequado em relação aos indivíduos como para as populações evoluídas.\\
+
+Posteriormente, o primeiro desafio foi minimizado, pelo uso de uma tabela em memória do fatorial. Alguns estudos deverão ser realizados para compreendermos melhor o porquê da alteração dos valores após a introdução da tabela.\\
+
+O uso de operadores de peso adaptativos mostrou-se interessante e é provável que, sua inclusão na GA estudada traga ainda mais benefícios assim que outros problemas forem resolvidos. Problemas, tais quais, a independência dos {\it bins}, que influenciaram negativamente a performance da aplicação e serão alvos de maiores esforços.\\
+
+
+
+Algumas propostas de melhorias e trabalhos futuros podem ser listadas:\\
+
+• Compará-lo com um outro modelo de previsão de terremotos, como por exemplo, o {\it Relative Intensity} (RI). Para melhores efeitos de comparação, é interessante acrescentar cálculos de confiabilidade estatísca, como {\it p-value}, e criar um mapa demonstrativo da previsão relativa de cada área representada pelos {\it bins};\\%acho que tem no artigo 
+
+• Implementar o operador de mutação específico para números reais e que tenha um comportamento direcionado a aplicação, capaz de alterar seus valores no decorrer das gerações capaz de equilibrar {\it explotaition} e {\it exploration};\\
+
+• Aplicar alguns testes sugeridos por Zechar\citep{zechartheme} afim de definir a qualidade do modelo desenvolvido;\\
+
+• Fazer analises de complexidade do algoritmo executado;\\
+
+• Criar múltiplas observações para cada indivíduo para que o cálculo de incertezas possa ser aplicado e, assim, aumentarmos a qualidade dos modelos;\\
+
+• Realizar experimentos em outras áreas do Japão, além de Kanto;\\
+
+• Especializar a abordagem de algoritmo genético ({\it crossover} mais apropriado, mutação específica, ...) ou  utilizar soluções híbridas, entre algoritmo genéticos e outras técnicas de aprendizado de máquina;\\
+
+• Incrementar os cálculos estatísticos com as ferramentas adequadas, desvio padrão, variância, etc, que compõe os cálculos dos testes demonstrados;\\
+
+• A fim de evitar o {\it over fitting}, podemos inserir dados sismológicos, como sobre de magnitude e hora da ocorrência, aumentando a área de busca da aplicação;\\
+
+• Cada {\it bin} é trato e considerado individualmente. Portanto a ocorrência de sismos em um {\it bin} não influência ocorrências de sismos em seus vizinhos, o que sabemos não ser verdade;\\
+
+• Contrariando expectativas, execuções com operadores reais obtiveram desempenho pior que com operadores tradicionais pode estar relacionado ao fato de não existir influência entre os {\it bins}, uma vez que pode haver áreas de altíssima probabilidade próximas a áreas de baixa probabilidade.\\
