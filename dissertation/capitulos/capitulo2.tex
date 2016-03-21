@@ -19,25 +19,30 @@ Another important operator is called the mutation operator. It is a operator wit
 It is common to have a evolutionary operator that allows the fittest individual from the current generation to take part in the next generation. This operator is called Elitism and it is used to assure that the next generation best solution is at least as good as in the current generation.\\
 
 
-\section{Earthquake Likelihood Model Testing}
+\section{Earthquake Likelihood Model Testing}~\label{testing}
 
-We started our work by studying what are the good ways to build earthquake models, how to evaluate and compare them, as suggested by the Collaboratory for the Study of Earthquake Predictability (CSEP), an international partnership to promote rigorous study of the feasibility of earthquake forecasting and predictability~\cite{ecta14}.\\
+We started studies of the earthquake forecasting problem by determining and selecting ways to build earthquake forecast models, to evaluate and to compare them, as suggested by the Collaboratory for the Study of Earthquake Predictability (CSEP). It is an international partnership to promote rigorous study of the feasibility of earthquake forecasting and predictability~\cite{ecta14}.\\
 
-For that, we created the theoretical foundation. Most of it is based on the paper {\it Earthquake Likelihood Model Testing} \cite{schorlemmer2007earthquake}. From this paper we gathered information that guided us into how to build, evaluate and compare earthquake forecast models efficiently.\\
+For that, we gathered some important information about earthquake predicting needed for this study. Most of it is based on the paper {\it Earthquake Likelihood Model Testing} \cite{schorlemmer2007earthquake}. From this paper we gathered information that guided us into how to build, evaluate and compare earthquake forecast models efficiently.\\
 
 A very difficult and yet very common problem when studying earthquake models is how to compare different kinds of models, that are based on different tests protocols. The CSEP proposes a methodology for rigorous scientific testing of these many different models. This group proposed an framework called The CSEP framework. It provides a method to compare earthquakes risk models in an objectively and consistently way~\cite{ecta14}.\\
 
-All forecast models proposed in this study are based in the Collaboratory for the Study of Earthquake Predictability (CSEP) framework. In the CSEP framework, a forecast model uses a gridded rate forecast \cite{zechar2010evaluating}, one common format in the literature. For evaluate and compare these models we used the likelihood based tests.They are the L-test, the N-test and the R-test, as suggested by Regional Earthquake Likelihood Model (RELM)~\cite{schorlemmer2007earthquake}.\\
- 
+All forecast models proposed in this study are based in the Collaboratory for the Study of Earthquake Predictability (CSEP) framework. In the CSEP framework, a forecast model uses a gridded rate forecast \cite{zechar2010evaluating}, one common format in the literature. For evaluate and compare these models we used the likelihood based tests. They are the L-test, the N-test and the R-test, as suggested by Regional Earthquake Likelihood Model (RELM)~\cite{schorlemmer2007earthquake}.\\
 
+%TODO: rewrite this
+The principle behind each consistency test is the same. One calculates a goodness-of-fit statistic for the forecast and the observed data. One then estimates the distribution of
+this statistic assuming that the forecast is the data-generating model (by simulating catalogues that are consistent with the forecast). One then compares the calculated statistic with the estimated distribution; if the calculated statistic falls in lower tail of the estimated distribution, this implies that the observation is inconsistent with the forecast, or that the forecast should be “rejected”. For the CSEP consistency tests used here, the likelihood is the fundamental metric, but this approach would be similar for different statistical measurements~\cite{eberhard2014multiscale}.\\
+
+\subsection{Vector of expectations}~\label{vector}
+As stated in section~\ref{testing}, The CSEP framework uses a gridded rate forecast. This gridded forecast may be structured by a vector of earthquake expectations, occurrences probabilities, that are directly related to a vector of real earthquake observations.\\
+
+Based on this structure, it is possible to calculate the Log-likelihood value of a model with the real data observed. It is also possible to use comparison tests based on the calcultation of the Log-likelihood.\\
 
 \subsection{The Log-Likelihood Function}
-All the methods use the log-likelihood value, for the fitness
-function. The fittest individual among all the others, is preserved in
-the next generation, to make the solution of one generation as good as
-the its last generation.  The bins, a gene of the genome
-representation, $b_n$, define the set $\beta$ and $n$ is the size of
-the set $\beta$:
+%All the methods use the log-likelihood value for the fitness function. The fittest individual among all the others, is preserved in the next generation, to make the solution of one generation as good as the its last generation.a gene of the genome representation 
+To calculate the Log-likelihood value we need both vectors cited above, in section~\ref{vector}. One of them is the vector of earthquake expectations and the other is the vector of real earthquake observations. On them, each element is considered a bin. \\
+
+Each bin, $b_n$, define the set $\beta$ and $n$ is the size of the set $\beta$:
 \begin{equation} 
 \beta := {b_1,b_2,...,b_n},n = |\beta|.
 \end{equation}
@@ -92,51 +97,99 @@ $L(\omega_i|\lambda_i^j)$ every bin $b_i$:
 
 The fitness function is a coded version of the equation
 ~\ref{log-like}. It uses the probabilities of the bins of each
-individual of model for the $\lambda$ values.
+individual of model for the $\lambda$ values.\\
 				
 \subsection{Uncertainties in Earthquake Parameters}
-%TODO: add uncertainties information,may look at doc t
-It is important to say that the earthquake parameters as the location, magnitude and focal time, can be estimated without uncertainties. Therefore, each parameter uncertainty is included in the testing~\cite{schorlemmer2007earthquake}. Also, each observation must be treated as independent ones. This is not the case of the aftershocks, once they are directly dependent with another stronger earthquake. \\
+It is important to say that the earthquake parameters, as the location, magnitude and focal time, cannot be estimated without uncertainties. Therefore, each parameter uncertainty has to be included in the testing~\cite{schorlemmer2007earthquake}. Moreover, by estimating it, it is possible to judge the reliability and robustness of the forecast testing~\cite{eberhard2014multiscale}. Also, each observation must be treated as independent ones. This is not the case of the aftershocks, once they are directly dependent with another stronger earthquake. \\
 
+\section{Tests for evaluating Models}\label{Tests}
+In the paper {\it Earthquake Likelihood Model Testing}~\cite{schorlemmer2007earthquake}, it is proposed some statistical tests that are used in this study, developed by the The
+Regional Earthquake Likelihood Models (RELM). They were used to compare
+and evaluate the every forecast models. These tests are based on the
+log-likelihood score that compares the probability of the model with
+the observed events.\\
 
-\subsection{Vetor de expectativas e suas observações}
-Cada vetor de expectativas deve ter um vetor de observações simuladas relacionado, para que o modelo proposto possa ser analisado e comparado com outros modelos corretamente. Os valores para o vetor de observações são obtidos de acordo com as probabilidades de cada {\it bin} do vetor de expectativas. Dessa forma, os registros de sismos gerados serão consistentes com o modelo.\\
+To evalute the data-consistency of the forecast models we used the
+N-Test, the Number Test, and the L-Test, or Likelihood Test. These
+tests fall are significance tests. Therfore, assuming a given forecast
+model as the null hypothesys, the distribuition of an observable test
+is simulated. If the observed test statistic falls into the upper or
+lower tail of this distribuition, the forecast is
+rejected~\cite{schorlemmer2010first}.\\
 
-Após obtidos as expectativas e suas relativas observações, como referenciado acima, é possível calcular o {\it Log-likelihood} da simulação, a quantidade de observações e a razão {\it Log-likelihood} e, portanto,  partir para a aplicação dos testes já citados.
-
+To be able to compare the model that passed the N-Test and the L-test,
+the R-Test, the hypotheses Comparison Test, is used. It calculates the
+relative performance of a model, by comparing the Log-likelihood
+values between two forecast models.\\
 %TODO: zechar files format
 \subsection{L-test - Data-consistency test}
-O L-test, também chamado de testes de consistência dos dados observados, considera o modelo de previsão como verdadeiro e mostra se o valor de {\it likelihood} calculado do modelo é consistente com o valor obtido das simulações. A medida é realizada pela fórmula, onde $\widehat{L}_k$ é o valor do {\it Log-likelihood} do modelo {\it j}, no {\it bin} {\it i} e $\widetilde{L}$ é o valor do {\it Log-likelihood} da simulação {\it j} no {\it bin} {\it q}: 
+The L(ikelihood)-Test considers that the likelihood value of the model
+is consistent with the value obtain with the simulations. The value is
+calculated by fowlling the formula, where $\widehat{L}_k$ is the value of the
+Log-likelihood of the model {\it j}, in the {\it bin} {\it i} and
+$\widetilde{L}$ is the value of the Log-likelihood of the simulation
+{\it j} in the {\it bin} {\it q}:
 
 
 \begin{equation}
 \gamma^{j}_{q} = \frac{\left| \left\{ \widehat{L}^j_k | \widehat{L}^j_k \leq \widetilde{L}^j_q, \widehat{L}^j_k \in \widehat{L}^j, \widetilde{L}^j_q \in \widetilde{L}^j  \right\} \right|}  {|\widehat{L}^j|}
 \end{equation}
 
+The analysis of the results can be splited into 3 categories, as follows:
 
-Caso o {\it Log-likelihood} observado seja menor que o {\it Log-likelihood} das observações simuladas e não é consistente com o modelo de previsão. Caso seja observado próximo ao valor referido das observações simuladas o modelo é consistente com os dados.\\
-
-Surge um problema quando o resultado é elevado. Este resultado significa que o {\it likelihood} das observações reais é maior que os valores de {\it likelihood} das simulações baseadas no modelo. Um dos motivos é uma classificação com total de expectativas baixo, no qual a maioria das vezes ocorre zero eventos. Outro motivo pode ser que a soma total exceda 1 e, dessa forma, alguns eventos ocorrerão. Nesse caso, os {\it bins} com nenhum evento terão um {\it likelihood} com valor maior que a média calculada porque as simulações refletirão o número total de sismos esperados, distribuídos pelos {\it bins}. Por fim, uma previsão com expectativas que correspondam exatamente as observações terá um {\it likelihood} de valor maior quando comparado com os {\it likelihood} das simulações. Isso acontece porque cada simulação, geralmente, adiciona ruídos poissoniano para as expectativas gerando observações que não correspondem as expectativas. O resultado será {\it likelihoods} com valor baixo para as simulações.\\
-
-Portanto, um modelo não deve ser rejeitado baseado somente no L-test, por se tratar de um teste unidirecional. Este teste rejeita modelos com baixos valores de {\it likelihood} quando comparado com as simulações. Entretanto, modelos com altos valores de {\it likelihood} também podem ser inconsistentes e para determinar se é o caso, deve-se aplicar o N-test.\\
-\subsection{N-test - Number test}
-O N-test também testa a consistência do modelo com a observação, porém compara o total de observações com o número de eventos calculados na simulação das incertezas.\\ %O número total de eventos do modelo é simplesmente a soma de todas as expectativas do modelo, enquanto que o número total de observações das simulações das incertezas.\\
-
-A medida é calculada pela fração do número total de cada observação gerada aleatoriamente do modelo menores que o número por {\it bin} de observações das simulações das incertezas pelo módulo do número total das observações do modelo.\\
-
-%Assim como no L-test, deseja-se que os números de eventos esteja no meio da distribuição da quantidade total de observações simuladas para o modelo ser consistente com as observações. O N-test é necessário para suprir o problema de {\it underpredicting} que pode passar despercebido pelo L-test. Um modelo prevê uma quantidade inferior de total de eventos, pode não ser rejeitados pelo L-test, mas será pelo N-test. 
-
-O N-test, portanto, busca testar a consistência do modelo gerado focando na quantidade de observações do modelo analisado. O teste analisa se o modelo não está deixando de prever uma quantidade adequada de eventos e, caso não esteja, será devidamente rejeitado.
-\subsection{R-test - Hypotheses Comparison}
-Para comparar o {\it Log-likelihood} conjunto de dois modelos, deve-se computar o R-test, também chamado {\it Log-likelihood\_ratio}, definido como:
-
-\begin{equation}
-	R = L(\Omega|\Lambda^0) - L(\Omega|\Lambda^1) = L^0 - L^1
-\end{equation}
+\begin{enumerate}
+\item Case 1: $\gamma^{j}$ is a low value, or in other words, the
+  Log-likelihood of the model is lower then most of the Log-likelihood
+  of the simulations. In this case, the model is rejected.
+\item Case 2: $\gamma^{j}$ falls near the half of the values obtained
+  from the simluations and is consistent with the data.
+\item Case 3: $\gamma^{j}$ is high. This means that the Log-likelihood
+  of the data da is higher that the Log-likelihood of the model and no
+  conclusion can be made what so ever.
+\end{enumerate}
 
 
-Onde $\Lambda^0$ é o vetor de expectativas do modelo H$^0$, $\Lambda^1$ é o vetor de expectativas do modelo H$^1$. L$^0$ e L$^1$ são os {\it likelihoods} conjuntos dos modelos H$^0$ e H$^1$, respectivamente. se o {\it Log-likelihood\_ratio} R é menor que 0, o modelo H$^1$ oferece a melhor previsão, caso contrário, H$^0$ tem melhor performance.\\
+It is important to highlight that no model should be reject in case 3,
+if based only on the L-Test. In this case the consistency can or
+cannot be real, therefore these model should be tested by the N-Test
+so that further conclusions can be done.\\
 
-O R-test compara dois modelos ao analisar qual desses prevê melhor possíveis ocorrências de sismos e mede a performance relativas dos modelos.\\ %Não é interessante utilizá-lo como função de {\it fitness}, pois o que se busca não é o melhor modelo entre alguns propostos, mas sim o modelo mais apto referente aos dados reais.
+\subsection{Number test or N-Test}
+The N(umber)-Test also analises the consistency of the model, but it
+compares the number os observations with the number of events of the
+simulations. This test is necessary to supply the underpredicting
+problem, which may pass unnoticed by the L-Test.\\
 
-Neste trabalho, inicialmente o L-test foi utilizado para calcular a função de {\it fitness} do modelo e posteriormente substituído pelo cálculo do {\it Log-likelihood}. O N-test, que analisa a consistência do modelo ao comparar a quantidade de ocorrências do modelo com os dados reais, não foi utilizado porque a aplicação não calcula novos valores para ocorrências de sismos, logo os dados necessários para os devidos cálculos não estão disponíveis assim como R-test não foi utilizado por comparar dois modelos gerados e não o modelo gerado com os dados reais, como objetiva a aplicação. Nas próximas seções estão explicitados os detalhes sobre esses conceitos.
+This mesure is estimated by the fraction of the total number of
+observations by the total number of observations of the model.\\
+
+As the L-test, if the number of events falls near the half of the
+values of the distruition, then the model is consistent with the
+observation, nor estimating too much events nor too few of them.\\
+
+\subsection{Hypotheses Comparison Test or R-Test}
+
+The Hypotheses Comparison, or the R(atio)-Test, compares two forecast
+models against themselves. The log-likelihood is calculted for both
+models and then the difference between them is calculated, named the
+observed likelihood ratio. This value indicates which one of the model
+better fits the observations.\\
+
+The likelihood ratio is calculated for each simulated catalog. If the
+fraction of simulated likelihood ratios less than the observed
+likelihood ratio is very small, the model is reject.  To make this
+test impartial, not given an advantage to any model, this procedure is
+applied symmetrically~\cite{schorlemmer2010first}.\\
+
+
+\subsection{Evaluation}\label{eval}
+This section may need to be placed elsewhere.
+
+The evaluation process is made as follow: First, the data-consitency
+is tested by the L-Test and the R-test. If the model passes these
+tests, meaning that it was not rejected by them, they ares compared
+with other forecast models, which were also not reject, with the
+R-Test. The model that best fits the R-Test is then chose as the best
+model~\cite{schorlemmer2007earthquake}.\\
+
+%Neste trabalho, inicialmente o L-test foi utilizado para calcular a função de {\it fitness} do modelo e posteriormente substituído pelo cálculo do {\it Log-likelihood}. O N-test, que analisa a consistência do modelo ao comparar a quantidade de ocorrências do modelo com os dados reais, não foi utilizado porque a aplicação não calcula novos valores para ocorrências de sismos, logo os dados necessários para os devidos cálculos não estão disponíveis assim como R-test não foi utilizado por comparar dois modelos gerados e não o modelo gerado com os dados reais, como objetiva a aplicação. Nas próximas seções estão explicitados os detalhes sobre esses conceitos.\\

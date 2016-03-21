@@ -138,6 +138,11 @@ John~R. Koza, Martin~A. Keane, and Matthew~J. Streeter.
   results.
 \newblock {\em IEEE Intelligent Systems}, 18(3):25--31, 2003.
 
+\bibitem{michalewicz1996heuristic}
+Zbigniew Michalewicz.
+\newblock Heuristic methods for evolutionary computation techniques.
+\newblock {\em Journal of Heuristics}, 1(2):177--206, 1996.
+
 \bibitem{Michie94machinelearning}
 D.~Michie, D.~J. Spiegelhalter, and C.C. Taylor.
 \newblock Machine learning, neural and statistical classification, 1994.

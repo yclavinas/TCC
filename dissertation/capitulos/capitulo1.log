@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  21 MAR 2016 13:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  21 MAR 2016 15:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -421,7 +421,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.9 T
+l.8 T
      here are many examples that show how devastating one large earthquake c...
 
 You're in trouble here.  Try typing  <return>  to proceed.
@@ -566,9 +566,9 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no f in font nullfont!
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 9.
+(Font)              <7> on input line 8.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 9.
+(Font)              <5> on input line 8.
 Missing character: There is no 7 in font nullfont!
 Missing character: There is no . in font nullfont!
 Missing character: There is no 8 in font nullfont!
@@ -722,7 +722,7 @@ Missing character: There is no [ in font nullfont!
 ! Undefined control sequence.
 <write> ...: Citation `\@citeb ' on page \thepage 
                                                   \space undefined\on@line .
-l.10 ...he mountain areas~\cite{wilkinson20152015}
+l.9 ...the mountain areas~\cite{wilkinson20152015}
                                                   . Many other aftershock oc...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -731,8 +731,8 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Citation `wilkinson20152015' on page  undefined on input line 10
-.
+LaTeX Warning: Citation `wilkinson20152015' on page  undefined on input line 9.
+
 
 Missing character: There is no ] in font nullfont!
 Missing character: There is no . in font nullfont!
@@ -800,7 +800,7 @@ Missing character: There is no [ in font nullfont!
 ! Undefined control sequence.
 <write> ...: Citation `\@citeb ' on page \thepage 
                                                   \space undefined\on@line .
-l.10 ...ndent earthquakes~\cite{van2012seismicity}
+l.9 ...endent earthquakes~\cite{van2012seismicity}
                                                   , happened after it, inclu...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -809,8 +809,8 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Citation `van2012seismicity' on page  undefined on input line 10
-.
+LaTeX Warning: Citation `van2012seismicity' on page  undefined on input line 9.
+
 
 Missing character: There is no ] in font nullfont!
 Missing character: There is no , in font nullfont!
@@ -930,7 +930,7 @@ Missing character: There is no [ in font nullfont!
 ! Undefined control sequence.
 <write> ...: Citation `\@citeb ' on page \thepage 
                                                   \space undefined\on@line .
-l.10 ... very destructive~\cite{wilkinson20152015}
+l.9 ...o very destructive~\cite{wilkinson20152015}
                                                   .\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -939,43 +939,43 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Citation `wilkinson20152015' on page  undefined on input line 10
-.
+LaTeX Warning: Citation `wilkinson20152015' on page  undefined on input line 9.
+
 
 Missing character: There is no ] in font nullfont!
 Missing character: There is no . in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 9--11
+Overfull \hbox (20.0pt too wide) in paragraph at lines 8--10
 []
  []
 
 
-Overfull \hbox (16.1748pt too wide) in paragraph at lines 9--11
+Overfull \hbox (16.1748pt too wide) in paragraph at lines 8--10
 \OML/cmm/m/it/10 M[]$
  []
 
 
-Overfull \hbox (5.43053pt too wide) in paragraph at lines 9--11
+Overfull \hbox (5.43053pt too wide) in paragraph at lines 8--10
 []
  []
 
 
-Overfull \hbox (5.43053pt too wide) in paragraph at lines 9--11
+Overfull \hbox (5.43053pt too wide) in paragraph at lines 8--10
 []
  []
 
 
-Overfull \hbox (10.79166pt too wide) in paragraph at lines 9--11
+Overfull \hbox (10.79166pt too wide) in paragraph at lines 8--10
 \OML/cmm/m/it/10 M$
  []
 
 
-Overfull \hbox (10.79166pt too wide) in paragraph at lines 9--11
+Overfull \hbox (10.79166pt too wide) in paragraph at lines 8--10
 \OML/cmm/m/it/10 M$
  []
 
 
-Overfull \hbox (5.43053pt too wide) in paragraph at lines 9--11
+Overfull \hbox (5.43053pt too wide) in paragraph at lines 8--10
 [] 
  []
 
@@ -986,7 +986,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.12 A
+l.11 A
       nother example happened in March 2011, Japan. It was a 9.0 $M_w$ earth...
 
 You're in trouble here.  Try typing  <return>  to proceed.
@@ -1056,7 +1056,7 @@ Missing character: There is no [ in font nullfont!
 ! Undefined control sequence.
 <write> ...: Citation `\@citeb ' on page \thepage 
                                                   \space undefined\on@line .
-l.12 ...9.0 $M_w$ earthquake~\cite{simons20112011}
+l.11 ...9.0 $M_w$ earthquake~\cite{simons20112011}
                                                   , and it is considered the...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1065,7 +1065,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Citation `simons20112011' on page  undefined on input line 12.
+LaTeX Warning: Citation `simons20112011' on page  undefined on input line 11.
 
 Missing character: There is no ] in font nullfont!
 Missing character: There is no , in font nullfont!
@@ -1439,7 +1439,7 @@ Missing character: There is no [ in font nullfont!
 ! Undefined control sequence.
 <write> ...: Citation `\@citeb ' on page \thepage 
                                                   \space undefined\on@line .
-l.12 ...wed the main event~\cite{mimura2011damage}
+l.11 ...wed the main event~\cite{mimura2011damage}
                                                   . Also in 2011 a magnitude...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1448,7 +1448,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Citation `mimura2011damage' on page  undefined on input line 12.
+LaTeX Warning: Citation `mimura2011damage' on page  undefined on input line 11.
 
 
 Missing character: There is no ] in font nullfont!
@@ -1630,7 +1630,7 @@ Missing character: There is no [ in font nullfont!
 ! Undefined control sequence.
 <write> ...: Citation `\@citeb ' on page \thepage 
                                                   \space undefined\on@line .
-l.12 ... earthquakes can be~\cite{irmak2012source}
+l.11 ... earthquakes can be~\cite{irmak2012source}
                                                   .\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1639,37 +1639,37 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Citation `irmak2012source' on page  undefined on input line 12.
+LaTeX Warning: Citation `irmak2012source' on page  undefined on input line 11.
 
 Missing character: There is no ] in font nullfont!
 Missing character: There is no . in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 12--13
+Overfull \hbox (20.0pt too wide) in paragraph at lines 11--12
 []
  []
 
 
-Overfull \hbox (16.1748pt too wide) in paragraph at lines 12--13
+Overfull \hbox (16.1748pt too wide) in paragraph at lines 11--12
 \OML/cmm/m/it/10 M[]$
  []
 
 
-Overfull \hbox (5.43053pt too wide) in paragraph at lines 12--13
+Overfull \hbox (5.43053pt too wide) in paragraph at lines 11--12
 []
  []
 
 
-Overfull \hbox (5.43053pt too wide) in paragraph at lines 12--13
+Overfull \hbox (5.43053pt too wide) in paragraph at lines 11--12
 []
  []
 
 
-Overfull \hbox (16.1748pt too wide) in paragraph at lines 12--13
+Overfull \hbox (16.1748pt too wide) in paragraph at lines 11--12
 \OML/cmm/m/it/10 M[]$
  []
 
 
-Overfull \hbox (5.43053pt too wide) in paragraph at lines 12--13
+Overfull \hbox (5.43053pt too wide) in paragraph at lines 11--12
 [] 
  []
 
@@ -1680,7 +1680,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.14 T
+l.13 T
       hose earthquakes, and many others that hazard the human society, have ...
 
 You're in trouble here.  Try typing  <return>  to proceed.
@@ -2137,7 +2137,7 @@ Missing character: There is no c in font nullfont!
 Missing character: There is no h in font nullfont!
 Missing character: There is no . in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 14--15
+Overfull \hbox (20.0pt too wide) in paragraph at lines 13--14
 []
  []
 
@@ -2148,7 +2148,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.16 T
+l.15 T
       o be able to prevent as many casualty as possible, we need the pattern...
 
 You're in trouble here.  Try typing  <return>  to proceed.
@@ -2548,7 +2548,7 @@ Missing character: There is no m in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no . in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 16--17
+Overfull \hbox (20.0pt too wide) in paragraph at lines 15--16
 []
  []
 
@@ -2559,7 +2559,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.18 U
+l.17 U
       ntil by now, it has been difficult to clearly understand the many diff...
 
 You're in trouble here.  Try typing  <return>  to proceed.
@@ -2889,12 +2889,12 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no x in font nullfont!
 Missing character: There is no . in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 18--19
+Overfull \hbox (20.0pt too wide) in paragraph at lines 17--18
 []
  []
 
 ! Undefined control sequence.
-l.20 \section
+l.19 \section
              {Earthquake Prediction}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2909,7 +2909,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.20 \section{E
+l.19 \section{E
                arthquake Prediction}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -2935,7 +2935,7 @@ Missing character: There is no i in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no n in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 20--21
+Overfull \hbox (20.0pt too wide) in paragraph at lines 19--20
 []
  []
 
@@ -2946,7 +2946,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.22 E
+l.21 E
       arthquake prediction is a polemic subject. No research has even come c...
 
 You're in trouble here.  Try typing  <return>  to proceed.
@@ -3082,7 +3082,7 @@ Missing character: There is no [ in font nullfont!
 ! Undefined control sequence.
 <write> ...: Citation `\@citeb ' on page \thepage 
                                                   \space undefined\on@line .
-l.22 ...earthquakes can be predicted~\cite{ecta14}
+l.21 ...earthquakes can be predicted~\cite{ecta14}
                                                    and many scientists think...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3091,7 +3091,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Citation `ecta14' on page  undefined on input line 22.
+LaTeX Warning: Citation `ecta14' on page  undefined on input line 21.
 
 Missing character: There is no ] in font nullfont!
 Missing character: There is no a in font nullfont!
@@ -3226,7 +3226,7 @@ Missing character: There is no [ in font nullfont!
 ! Undefined control sequence.
 <write> ...: Citation `\@citeb ' on page \thepage 
                                                   \space undefined\on@line .
-l.22 ...out of reach~\cite{eberhard2014multiscale}
+l.21 ...out of reach~\cite{eberhard2014multiscale}
                                                   .\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3236,22 +3236,22 @@ and I'll forget about whatever was undefined.
 
 
 LaTeX Warning: Citation `eberhard2014multiscale' on page  undefined on input li
-ne 22.
+ne 21.
 
 Missing character: There is no ] in font nullfont!
 Missing character: There is no . in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 22--23
+Overfull \hbox (20.0pt too wide) in paragraph at lines 21--22
 []
  []
 
 
-Overfull \hbox (5.43053pt too wide) in paragraph at lines 22--23
+Overfull \hbox (5.43053pt too wide) in paragraph at lines 21--22
 []
  []
 
 
-Overfull \hbox (5.43053pt too wide) in paragraph at lines 22--23
+Overfull \hbox (5.43053pt too wide) in paragraph at lines 21--22
 [] 
  []
 
@@ -3262,7 +3262,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.25 I
+l.24 I
       n the context of this study, we do not aim to predict any individual e...
 
 You're in trouble here.  Try typing  <return>  to proceed.
@@ -3598,7 +3598,7 @@ Missing character: There is no [ in font nullfont!
 ! Undefined control sequence.
 <write> ...: Citation `\@citeb ' on page \thepage 
                                                   \space undefined\on@line .
-l.25 ...odels of earthquake risk~\cite{Nature1999}
+l.24 ...odels of earthquake risk~\cite{Nature1999}
                                                   .\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3607,17 +3607,17 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Citation `Nature1999' on page  undefined on input line 25.
+LaTeX Warning: Citation `Nature1999' on page  undefined on input line 24.
 
 Missing character: There is no ] in font nullfont!
 Missing character: There is no . in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 25--26
+Overfull \hbox (20.0pt too wide) in paragraph at lines 24--25
 []
  []
 
 
-Overfull \hbox (5.43053pt too wide) in paragraph at lines 25--26
+Overfull \hbox (5.43053pt too wide) in paragraph at lines 24--25
 [] 
  []
 
@@ -3628,7 +3628,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.27 I
+l.26 I
       n~\cite{Koza2003}, Koza says that Evolutionary Computation (EC) may fi...
 
 You're in trouble here.  Try typing  <return>  to proceed.
@@ -3641,7 +3641,7 @@ Missing character: There is no [ in font nullfont!
 ! Undefined control sequence.
 <write> ...: Citation `\@citeb ' on page \thepage 
                                                   \space undefined\on@line .
-l.27 In~\cite{Koza2003}
+l.26 In~\cite{Koza2003}
                        , Koza says that Evolutionary Computation (EC) may fi...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3650,7 +3650,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Citation `Koza2003' on page  undefined on input line 27.
+LaTeX Warning: Citation `Koza2003' on page  undefined on input line 26.
 
 Missing character: There is no ] in font nullfont!
 Missing character: There is no , in font nullfont!
@@ -4047,8 +4047,8 @@ Missing character: There is no [ in font nullfont!
 ! Undefined control sequence.
 <write> ...: Citation `\@citeb ' on page \thepage 
                                                   \space undefined\on@line .
-l.27 ...l and error~\cite{Michie94machinelearning}
-                                                  .\
+l.26 ...l and error~\cite{Michie94machinelearning}
+                                                  .\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -4057,17 +4057,17 @@ and I'll forget about whatever was undefined.
 
 
 LaTeX Warning: Citation `Michie94machinelearning' on page  undefined on input l
-ine 27.
+ine 26.
 
 Missing character: There is no ] in font nullfont!
 Missing character: There is no . in font nullfont!
 
-Overfull \hbox (25.43053pt too wide) in paragraph at lines 27--28
+Overfull \hbox (25.43053pt too wide) in paragraph at lines 26--27
 [] []
  []
 
 
-Overfull \hbox (5.43053pt too wide) in paragraph at lines 27--28
+Overfull \hbox (5.43053pt too wide) in paragraph at lines 26--27
 [] 
  []
 
@@ -4078,29 +4078,45 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.30 E
-      C are based on methaheuristic or stochastic optimization, and are most...
+l.28 E
+      C techniques constitute a category of heuristic search, they are stoch...
 
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 Missing character: There is no E in font nullfont!
 Missing character: There is no C in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no r in font nullfont!
+Missing character: There is no t in font nullfont!
 Missing character: There is no e in font nullfont!
-Missing character: There is no b in font nullfont!
-Missing character: There is no a in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no q in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no e in font nullfont!
 Missing character: There is no s in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no d in font nullfont!
+Missing character: There is no c in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no n in font nullfont!
-Missing character: There is no m in font nullfont!
-Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
 Missing character: There is no t in font nullfont!
-Missing character: There is no h in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
 Missing character: There is no a in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no f in font nullfont!
 Missing character: There is no h in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no u in font nullfont!
@@ -4110,8 +4126,20 @@ Missing character: There is no s in font nullfont!
 Missing character: There is no t in font nullfont!
 Missing character: There is no i in font nullfont!
 Missing character: There is no c in font nullfont!
-Missing character: There is no o in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no a in font nullfont!
 Missing character: There is no r in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no t in font nullfont!
 Missing character: There is no o in font nullfont!
@@ -4122,57 +4150,104 @@ Missing character: There is no s in font nullfont!
 Missing character: There is no t in font nullfont!
 Missing character: There is no i in font nullfont!
 Missing character: There is no c in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no g in font nullfont!
 Missing character: There is no o in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no m in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no z in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no , in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no a in font nullfont!
 Missing character: There is no r in font nullfont!
-Missing character: There is no e in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
 Missing character: There is no m in font nullfont!
-Missing character: There is no o in font nullfont!
 Missing character: There is no s in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no y in font nullfont!
 Missing character: There is no a in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
 Missing character: There is no d in font nullfont!
-Missing character: There is no f in font nullfont!
-Missing character: There is no o in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no i in font nullfont!
 Missing character: There is no r in font nullfont!
-Missing character: There is no b in font nullfont!
-Missing character: There is no l in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no e in font nullfont!
 Missing character: There is no a in font nullfont!
+Missing character: There is no r in font nullfont!
 Missing character: There is no c in font nullfont!
-Missing character: There is no k in font nullfont!
-Missing character: There is no b in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no x in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no b in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no e in font nullfont!
+Missing character: There is no h in font nullfont!
 Missing character: There is no m in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no a in font nullfont!
 Missing character: There is no s in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no v in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no [ in font nullfont!
+\citation{michalewicz1996heuristic}
+! Undefined control sequence.
+<write> ...: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.28 ...he fittest~\cite{michalewicz1996heuristic}
+                                                  . They are interesting to ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `michalewicz1996heuristic' on page  undefined on input 
+line 28.
+
+Missing character: There is no ] in font nullfont!
 Missing character: There is no . in font nullfont!
 Missing character: There is no T in font nullfont!
 Missing character: There is no h in font nullfont!
@@ -4296,7 +4371,12 @@ Missing character: There is no l in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no . in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 30--31
+Overfull \hbox (20.0pt too wide) in paragraph at lines 28--29
+[]
+ []
+
+
+Overfull \hbox (5.43053pt too wide) in paragraph at lines 28--29
 []
  []
 
@@ -4307,7 +4387,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.32 B
+l.30 B
       ased on these information and on the difficulty to understand how eart...
 
 You're in trouble here.  Try typing  <return>  to proceed.
@@ -4702,7 +4782,7 @@ Missing character: There is no l in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no . in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 32--33
+Overfull \hbox (20.0pt too wide) in paragraph at lines 30--31
 []
  []
 
@@ -4713,7 +4793,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.34 N
+l.32 N
       ext, we will study ways to improve the generated methods using both EC...
 
 You're in trouble here.  Try typing  <return>  to proceed.
@@ -4981,12 +5061,12 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no d in font nullfont!
 Missing character: There is no . in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 34--35
+Overfull \hbox (20.0pt too wide) in paragraph at lines 32--33
 []
  []
 
 ! Undefined control sequence.
-l.36 \section
+l.34 \section
              {Document Organization}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5001,7 +5081,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.36 \section{D
+l.34 \section{D
                ocument Organization}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5027,7 +5107,7 @@ Missing character: There is no i in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no n in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 36--37
+Overfull \hbox (20.0pt too wide) in paragraph at lines 34--35
 []
  []
 
@@ -5038,7 +5118,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.38 T
+l.36 T
       his document is organized into 7 more chapters. The next, is about teo...
 
 You're in trouble here.  Try typing  <return>  to proceed.
@@ -5193,7 +5273,7 @@ Missing character: There is no r in font nullfont!
 ! Undefined control sequence.
 <write> ... Reference `chapter3' on page \thepage 
                                                   \space undefined\on@line .
-l.38 ...study. Then, in the chapter~\ref{chapter3}
+l.36 ...study. Then, in the chapter~\ref{chapter3}
                                                   , we will discuss the curr...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5202,7 +5282,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Reference `chapter3' on page  undefined on input line 38.
+LaTeX Warning: Reference `chapter3' on page  undefined on input line 36.
 
 Missing character: There is no , in font nullfont!
 Missing character: There is no w in font nullfont!
@@ -5299,12 +5379,12 @@ Missing character: There is no l in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no . in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 38--39
+Overfull \hbox (20.0pt too wide) in paragraph at lines 36--37
 []
  []
 
 
-Overfull \hbox (10.86105pt too wide) in paragraph at lines 38--39
+Overfull \hbox (10.86105pt too wide) in paragraph at lines 36--37
 []
  []
 
@@ -5315,7 +5395,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.40 T
+l.38 T
       he chapter~\ref{chapter4} is about the methods proposed in the context...
 
 You're in trouble here.  Try typing  <return>  to proceed.
@@ -5334,7 +5414,7 @@ Missing character: There is no r in font nullfont!
 ! Undefined control sequence.
 <write> ... Reference `chapter4' on page \thepage 
                                                   \space undefined\on@line .
-l.40 The chapter~\ref{chapter4}
+l.38 The chapter~\ref{chapter4}
                                 is about the methods proposed in the context...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5343,7 +5423,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Reference `chapter4' on page  undefined on input line 40.
+LaTeX Warning: Reference `chapter4' on page  undefined on input line 38.
 
 Missing character: There is no i in font nullfont!
 Missing character: There is no s in font nullfont!
@@ -5438,12 +5518,12 @@ Missing character: There is no c in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no . in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 40--41
+Overfull \hbox (20.0pt too wide) in paragraph at lines 38--39
 []
  []
 
 
-Overfull \hbox (10.86105pt too wide) in paragraph at lines 40--41
+Overfull \hbox (10.86105pt too wide) in paragraph at lines 38--39
 []
  []
 
@@ -5454,7 +5534,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.42 T
+l.40 T
       he next chapter~\ref{chapter5} is about the earthquake data used, also...
 
 You're in trouble here.  Try typing  <return>  to proceed.
@@ -5477,7 +5557,7 @@ Missing character: There is no r in font nullfont!
 ! Undefined control sequence.
 <write> ... Reference `chapter5' on page \thepage 
                                                   \space undefined\on@line .
-l.42 The next chapter~\ref{chapter5}
+l.40 The next chapter~\ref{chapter5}
                                      is about the earthquake data used, also...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5486,7 +5566,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Reference `chapter5' on page  undefined on input line 42.
+LaTeX Warning: Reference `chapter5' on page  undefined on input line 40.
 
 Missing character: There is no i in font nullfont!
 Missing character: There is no s in font nullfont!
@@ -5630,12 +5710,12 @@ Missing character: There is no l in font nullfont!
 Missing character: There is no f in font nullfont!
 Missing character: There is no . in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 42--43
+Overfull \hbox (20.0pt too wide) in paragraph at lines 40--41
 []
  []
 
 
-Overfull \hbox (10.86105pt too wide) in paragraph at lines 42--43
+Overfull \hbox (10.86105pt too wide) in paragraph at lines 40--41
 []
  []
 
@@ -5646,7 +5726,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.44 T
+l.42 T
       he chapter~\ref{chapter6} is all about the experiments. The following ...
 
 You're in trouble here.  Try typing  <return>  to proceed.
@@ -5665,7 +5745,7 @@ Missing character: There is no r in font nullfont!
 ! Undefined control sequence.
 <write> ... Reference `chapter6' on page \thepage 
                                                   \space undefined\on@line .
-l.44 The chapter~\ref{chapter6}
+l.42 The chapter~\ref{chapter6}
                                 is all about the experiments. The following ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5674,7 +5754,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Reference `chapter6' on page  undefined on input line 44.
+LaTeX Warning: Reference `chapter6' on page  undefined on input line 42.
 
 Missing character: There is no i in font nullfont!
 Missing character: There is no s in font nullfont!
@@ -5723,7 +5803,7 @@ Missing character: There is no r in font nullfont!
 ! Undefined control sequence.
 <write> ... Reference `chapter7' on page \thepage 
                                                   \space undefined\on@line .
-l.44 ...ents. The following chapter~\ref{chapter7}
+l.42 ...ents. The following chapter~\ref{chapter7}
                                                    is about the analysis of ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5732,7 +5812,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Reference `chapter7' on page  undefined on input line 44.
+LaTeX Warning: Reference `chapter7' on page  undefined on input line 42.
 
 Missing character: There is no i in font nullfont!
 Missing character: There is no s in font nullfont!
@@ -5797,17 +5877,17 @@ Missing character: There is no i in font nullfont!
 Missing character: There is no t in font nullfont!
 Missing character: There is no . in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 44--45
+Overfull \hbox (20.0pt too wide) in paragraph at lines 42--43
 []
  []
 
 
-Overfull \hbox (10.86105pt too wide) in paragraph at lines 44--45
+Overfull \hbox (10.86105pt too wide) in paragraph at lines 42--43
 []
  []
 
 
-Overfull \hbox (10.86105pt too wide) in paragraph at lines 44--45
+Overfull \hbox (10.86105pt too wide) in paragraph at lines 42--43
 []
  []
 
@@ -5818,7 +5898,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.46 I
+l.44 I
        the last chapter~\ref{chapter8} brings the conclusing of the study as...
 
 You're in trouble here.  Try typing  <return>  to proceed.
@@ -5842,7 +5922,7 @@ Missing character: There is no r in font nullfont!
 ! Undefined control sequence.
 <write> ... Reference `chapter8' on page \thepage 
                                                   \space undefined\on@line .
-l.46 I the last chapter~\ref{chapter8}
+l.44 I the last chapter~\ref{chapter8}
                                        brings the conclusing of the study as...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5851,7 +5931,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Reference `chapter8' on page  undefined on input line 46.
+LaTeX Warning: Reference `chapter8' on page  undefined on input line 44.
 
 Missing character: There is no b in font nullfont!
 Missing character: There is no r in font nullfont!
@@ -5952,12 +6032,12 @@ Missing character: There is no k in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no . in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 46--47
+Overfull \hbox (20.0pt too wide) in paragraph at lines 44--45
 []
  []
 
 
-Overfull \hbox (10.86105pt too wide) in paragraph at lines 46--47
+Overfull \hbox (10.86105pt too wide) in paragraph at lines 44--45
 []
  []
 
@@ -5969,10 +6049,10 @@ Overfull \hbox (10.86105pt too wide) in paragraph at lines 46--47
 
  
 Here is how much of TeX's memory you used:
- 26 strings out of 493089
- 416 string characters out of 6134842
+ 27 strings out of 493089
+ 442 string characters out of 6134842
  55199 words of memory out of 5000000
- 3610 multiletter control sequences out of 15000+600000
+ 3611 multiletter control sequences out of 15000+600000
  3948 words of font info for 15 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  18i,2n,21p,837b,94s stack positions out of 5000i,500n,10000p,200000b,80000s

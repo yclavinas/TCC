@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  21 MAR 2016 13:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  21 MAR 2016 15:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -681,7 +681,7 @@ LaTeX Font Warning: Font shape `T1/cmr/m/n' in size <20> not available
 LaTeX Font Warning: Font shape `T1/ua1/bx/n' in size <20> not available
 (Font)              size <20.74> substituted on input line 75.
 
-<positivo_cor.pdf, id=148, 119.44624pt x 60.225pt>
+<positivo_cor.pdf, id=156, 119.44624pt x 60.225pt>
 File: positivo_cor.pdf Graphic file (type pdf)
  <use positivo_cor.pdf>
 Package pdftex.def Info: positivo_cor.pdf used on input line 75.
@@ -777,17 +777,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 5--6
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 9--11
+Underfull \hbox (badness 10000) in paragraph at lines 8--10
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 12--13
+Underfull \hbox (badness 10000) in paragraph at lines 11--12
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 14--15
+Underfull \hbox (badness 10000) in paragraph at lines 13--14
 
  []
 
@@ -795,22 +795,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 14--15
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 16--17
+Underfull \hbox (badness 10000) in paragraph at lines 15--16
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 18--19
+Underfull \hbox (badness 10000) in paragraph at lines 17--18
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 22--23
+Underfull \hbox (badness 10000) in paragraph at lines 21--22
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 25--26
+Underfull \hbox (badness 10000) in paragraph at lines 24--25
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 26--27
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 28--29
 
  []
 
@@ -819,13 +829,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 30--31
 
  []
 
-
+[2]
 Underfull \hbox (badness 10000) in paragraph at lines 32--33
 
  []
 
-[2]
-Underfull \hbox (badness 10000) in paragraph at lines 34--35
+
+Underfull \hbox (badness 10000) in paragraph at lines 36--37
 
  []
 
@@ -846,11 +856,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 42--43
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 44--45
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 46--47
 
  []
 
@@ -918,8 +923,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 30--31
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 33--35
+
+ []
+
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 99--100
+Underfull \hbox (badness 10000) in paragraph at lines 36--38
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 39--40
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 43--44
+
+ []
+
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 98--101
 
  []
 
@@ -928,44 +953,65 @@ Underfull \hbox (badness 10000) in paragraph at lines 103--104
 
  []
 
-[6]
-Underfull \hbox (badness 10000) in paragraph at lines 117--118
+
+Underfull \hbox (badness 10000) in paragraph at lines 106--111
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 119--120
+Underfull \hbox (badness 10000) in paragraph at lines 112--119
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 121--122
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 123--124
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 125--126
+Underfull \hbox (badness 10000) in paragraph at lines 120--125
 
  []
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 138--139
+Underfull \hbox (badness 10000) in paragraph at lines 152--156
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 140--141
+Underfull \hbox (badness 10000) in paragraph at lines 158--162
 
  []
 
-) (./capitulos/capitulo3.tex [8]
+
+Underfull \hbox (badness 10000) in paragraph at lines 163--165
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 166--169
+
+ []
+
+
+Overfull \hbox (3.44658pt too wide) in paragraph at lines 172--177
+[]\T1/cmr/m/n/12 The Hy-pothe-ses Com-par-i-son, or the R(atio)-Test, com-pares
+ two fore-cast mod-els against
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 172--177
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 178--183
+
+ []
+
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 188--194
+
+ []
+
+) (./capitulos/capitulo3.tex [9]
 Chapter 3.
-) (./capitulos/capitulo4.tex [9
+) (./capitulos/capitulo4.tex [10
 
 ]
 Chapter 4.
@@ -989,7 +1035,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 14--15
 
  []
 
-) (./capitulos/capitulo5.tex [10
+) (./capitulos/capitulo5.tex [11
 
 ]
 Chapter 5.
@@ -1017,7 +1063,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 12--13
  []
 
 
-LaTeX Warning: Reference `ocorrenciasAno' on page 11 undefined on input line 14
+LaTeX Warning: Reference `ocorrenciasAno' on page 12 undefined on input line 14
 .
 
 
@@ -1030,11 +1076,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 17--18
 
  []
 
-[11
+[12
 
 ]
 
-Package natbib Warning: Citation `hawkins2004problem' on page 12 undefined on i
+Package natbib Warning: Citation `hawkins2004problem' on page 13 undefined on i
 nput line 19.
 
 
@@ -1043,7 +1089,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 19--20
  []
 
 
-LaTeX Warning: Reference `alljapan' on page 12 undefined on input line 21.
+LaTeX Warning: Reference `alljapan' on page 13 undefined on input line 21.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 21--22
@@ -1070,7 +1116,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 29--30
 
  []
 
-) (./capitulos/capitulo6.tex [12]
+) (./capitulos/capitulo6.tex [13]
 Chapter 6.
 
 Underfull \hbox (badness 10000) in paragraph at lines 3--4
@@ -1092,7 +1138,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 27--28
 
  []
 
-[13
+[14
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 29--30
@@ -1119,7 +1165,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 60--61
 
  []
 
-[14]
+[15]
 Underfull \hbox (badness 10000) in paragraph at lines 62--63
 
  []
@@ -1144,7 +1190,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 97--98
 
  []
 
-[15]
+[16]
 Underfull \hbox (badness 10000) in paragraph at lines 100--101
 
  []
@@ -1177,7 +1223,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 138--139
 
  []
 
-[16]
+[17]
 Underfull \hbox (badness 10000) in paragraph at lines 155--156
 
  []
@@ -1192,7 +1238,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 191--192
 
  []
 
-[17]
+[18]
 Underfull \hbox (badness 10000) in paragraph at lines 209--210
 
  []
@@ -1217,7 +1263,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 251--252
 
  []
 
-[18]
+[19]
 Underfull \hbox (badness 10000) in paragraph at lines 269--270
 
  []
@@ -1245,9 +1291,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 326--327
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[19] [20]
+[20] [21]
 
-Package natbib Warning: Citation `liang2013problem' on page 21 undefined on inp
+Package natbib Warning: Citation `liang2013problem' on page 22 undefined on inp
 ut line 346.
 
 
@@ -1280,7 +1326,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 359--360
 
  []
 
-[21
+[22
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 365--366
@@ -1297,7 +1343,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 371--372
 
  []
 
-) (./capitulos/capitulo7.tex [22]
+) (./capitulos/capitulo7.tex [23]
 Chapter 7.
 
 Underfull \hbox (badness 10000) in paragraph at lines 3--6
@@ -1320,7 +1366,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 41--42
 
  []
 
-[23
+[24
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 43--44
@@ -1328,35 +1374,35 @@ Underfull \hbox (badness 10000) in paragraph at lines 43--44
  []
 
 
-LaTeX Warning: Reference `popXmediaLtest_CXBLEND(1)' on page 24 undefined on in
+LaTeX Warning: Reference `popXmediaLtest_CXBLEND(1)' on page 25 undefined on in
 put line 48.
 
 
-LaTeX Warning: Reference `popXmediaLtest_2POINTS(1)' on page 24 undefined on in
+LaTeX Warning: Reference `popXmediaLtest_2POINTS(1)' on page 25 undefined on in
 put line 48.
 
 
-LaTeX Warning: Reference `popXmediaG_CXBLEND(1)' on page 24 undefined on input 
+LaTeX Warning: Reference `popXmediaG_CXBLEND(1)' on page 25 undefined on input 
 line 48.
 
 
-LaTeX Warning: Reference `popXmediaG_2POINTS(1)' on page 24 undefined on input 
+LaTeX Warning: Reference `popXmediaG_2POINTS(1)' on page 25 undefined on input 
 line 48.
 
 
-LaTeX Warning: Reference `popXmediaLtest_CXBLEND(1)' on page 24 undefined on in
+LaTeX Warning: Reference `popXmediaLtest_CXBLEND(1)' on page 25 undefined on in
 put line 48.
 
 
-LaTeX Warning: Reference `popXmediaG_CXBLEND(1)' on page 24 undefined on input 
+LaTeX Warning: Reference `popXmediaG_CXBLEND(1)' on page 25 undefined on input 
 line 48.
 
 
-LaTeX Warning: Reference `popXmediaLtest_2POINTS(1)' on page 24 undefined on in
+LaTeX Warning: Reference `popXmediaLtest_2POINTS(1)' on page 25 undefined on in
 put line 48.
 
 
-LaTeX Warning: Reference `popXmediaG_2POINTS(1)' on page 24 undefined on input 
+LaTeX Warning: Reference `popXmediaG_2POINTS(1)' on page 25 undefined on input 
 line 48.
 
 
@@ -1385,11 +1431,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 98--99
  []
 
 
-LaTeX Warning: Reference `2000-media_melhores-1point' on page 24 undefined on i
+LaTeX Warning: Reference `2000-media_melhores-1point' on page 25 undefined on i
 nput line 100.
 
 
-LaTeX Warning: Reference `2010-media_melhores-1point' on page 24 undefined on i
+LaTeX Warning: Reference `2010-media_melhores-1point' on page 25 undefined on i
 nput line 100.
 
 
@@ -1402,7 +1448,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 102--103
 
  []
 
-[24]
+[25]
 Underfull \hbox (badness 10000) in paragraph at lines 104--105
 
  []
@@ -1418,23 +1464,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 112--113
  []
 
 
-LaTeX Warning: Reference `2000-media_melhores' on page 25 undefined on input li
+LaTeX Warning: Reference `2000-media_melhores' on page 26 undefined on input li
 ne 114.
 
 
-LaTeX Warning: Reference `2000-AUTO-media_melhores' on page 25 undefined on inp
+LaTeX Warning: Reference `2000-AUTO-media_melhores' on page 26 undefined on inp
 ut line 114.
 
 
-LaTeX Warning: Reference `2010-media_melhores' on page 25 undefined on input li
+LaTeX Warning: Reference `2010-media_melhores' on page 26 undefined on input li
 ne 114.
 
 
-LaTeX Warning: Reference `2010-AUTO-media_melhores' on page 25 undefined on inp
+LaTeX Warning: Reference `2010-AUTO-media_melhores' on page 26 undefined on inp
 ut line 114.
 
 
-LaTeX Warning: Reference `2000-media_melhores' on page 25 undefined on input li
+LaTeX Warning: Reference `2000-media_melhores' on page 26 undefined on input li
 ne 114.
 
 
@@ -1457,7 +1503,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 120--121
 
  []
 
-[25]
+[26]
 Underfull \hbox (badness 10000) in paragraph at lines 122--123
 
  []
@@ -1467,7 +1513,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 124--125
 
  []
 
-) (./capitulos/capitulo8.tex [26]
+) (./capitulos/capitulo8.tex [27]
 Chapter 8.
 
 Underfull \hbox (badness 10000) in paragraph at lines 3--4
@@ -1499,7 +1545,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 13--14
 
  []
 
-[27
+[28
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 17--18
@@ -1523,7 +1569,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 21--22
  []
 
 
-Package natbib Warning: Citation `zechartheme' on page 28 undefined on input li
+Package natbib Warning: Citation `zechartheme' on page 29 undefined on input li
 ne 23.
 
 
@@ -1571,33 +1617,33 @@ Underfull \hbox (badness 10000) in paragraph at lines 39--106
 
  []
 
-[28] (./TCC.bbl (./TCC.brf)
+[29] (./TCC.bbl (./TCC.brf)
 \tf@brf=\write7
 \openout7 = `TCC.brf'.
 
- [29
+ [30
 
 
-]
-Underfull \hbox (badness 2547) in paragraph at lines 151--151
+] [31]
+Underfull \hbox (badness 2547) in paragraph at lines 156--156
 []\T1/cmr/m/n/12 Nobuo Mimura, Kazuya Ya-suhara, Seiki Kawa-goe, Hi-ro-mune Yok
 oki, and
  []
 
-[30] [31] [32])
+[32] [33])
 
 Package natbib Warning: There were undefined citations.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 112.
-[33]
+[34]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 112.
  (./TCC.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 112.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 112.
 Package rerunfilecheck Info: File `TCC.out' has not changed.
-(rerunfilecheck)             Checksum: 013695A7946A64207CA51BFC971109A9;2604.
+(rerunfilecheck)             Checksum: 45D18DAD8C5EA183B8FA63091B925575;2725.
 Package rerunfilecheck Info: File `TCC.brf' has not changed.
-(rerunfilecheck)             Checksum: EEC16813A393AE52D785AD70FBDB1180;2179.
+(rerunfilecheck)             Checksum: DD1ADA000BF4232F86F358D28AE539AA;2610.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -1616,13 +1662,13 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 112.
  )
 (\end occurred when \iffalse on line 462 was incomplete) 
 Here is how much of TeX's memory you used:
- 9233 strings out of 493089
- 132224 string characters out of 6134842
- 238002 words of memory out of 5000000
- 12339 multiletter control sequences out of 15000+600000
+ 9251 strings out of 493089
+ 132532 string characters out of 6134842
+ 238238 words of memory out of 5000000
+ 12351 multiletter control sequences out of 15000+600000
  20147 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 43i,15n,69p,1254b,645s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 43i,15n,69p,1254b,647s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): 
 name{Hfootnote.4} has been referenced but does not exist, replaced by a fixed o
 ne
@@ -1657,10 +1703,10 @@ dist/fonts/type1/public/cm-super/sfrm2074.pfb></usr/local/texlive/2015/texmf-di
 st/fonts/type1/public/cm-super/sfti1200.pfb></usr/local/texlive/2015/texmf-dist
 /fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2015/texmf-dist/f
 onts/type1/public/cm-super/sftt1200.pfb>
-Output written on TCC.pdf (43 pages, 442628 bytes).
+Output written on TCC.pdf (44 pages, 443376 bytes).
 PDF statistics:
- 719 PDF objects out of 1000 (max. 8388607)
- 646 compressed objects within 7 object streams
- 191 named destinations out of 1000 (max. 500000)
- 294 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 752 PDF objects out of 1000 (max. 8388607)
+ 678 compressed objects within 7 object streams
+ 197 named destinations out of 1000 (max. 500000)
+ 310 words of extra memory for PDF output out of 10000 (max. 10000000)
 
