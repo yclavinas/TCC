@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  21 MAR 2016 15:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  31 MAR 2016 16:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -549,46 +549,71 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 \mathdisplay@stack=\toks23
 LaTeX Info: Redefining \[ on input line 2665.
 LaTeX Info: Redefining \] on input line 2666.
-) (./cores.tex)
-Package hyperref Info: Option `colorlinks' set `true' on input line 44.
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/algorithms/algorithm.sty
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
+nment
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count120
+\float@exts=\toks24
+\float@box=\box30
+\@float@everytoks=\toks25
+\@floatcapt=\box31
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\@float@every@algorithm=\toks26
+\c@algorithm=\count121
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/algorithms/algorithmic.sty
+Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
+\c@ALC@unique=\count122
+\c@ALC@line=\count123
+\c@ALC@rem=\count124
+\c@ALC@depth=\count125
+\ALC@tlm=\skip49
+\algorithmicindent=\skip50
+)
+(./cores.tex)
+Package hyperref Info: Option `colorlinks' set `true' on input line 45.
  (./TCC.aux
 
-LaTeX Warning: Label `GAParameters' multiply defined.
-
-
-LaTeX Warning: Label `GAParameters' multiply defined.
+LaTeX Warning: Label `Tests' multiply defined.
 
 )
 \openout1 = `TCC.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-\AtBeginShipoutBox=\box30
-Package backref Info: ** backref set up for natbib ** on input line 74.
-Package hyperref Info: Link coloring ON on input line 74.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+\AtBeginShipoutBox=\box32
+Package backref Info: ** backref set up for natbib ** on input line 75.
+Package hyperref Info: Link coloring ON on input line 75.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
 (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count120
+\c@section@level=\count126
 )
-LaTeX Info: Redefining \ref on input line 74.
-LaTeX Info: Redefining \pageref on input line 74.
-LaTeX Info: Redefining \nameref on input line 74.
+LaTeX Info: Redefining \ref on input line 75.
+LaTeX Info: Redefining \pageref on input line 75.
+LaTeX Info: Redefining \nameref on input line 75.
 
 (./TCC.out) (./TCC.out)
 \@outlinefile=\write3
@@ -597,17 +622,17 @@ LaTeX Info: Redefining \nameref on input line 74.
 
 (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count121
+\scratchcounter=\count127
 \scratchdimen=\dimen127
-\scratchbox=\box31
-\nofMPsegments=\count122
-\nofMParguments=\count123
-\everyMPshowfont=\toks24
-\MPscratchCnt=\count124
+\scratchbox=\box33
+\nofMPsegments=\count128
+\nofMParguments=\count129
+\everyMPshowfont=\toks27
+\MPscratchCnt=\count130
 \MPscratchDim=\dimen128
-\MPnumerator=\count125
-\makeMPintoPDFobject=\count126
-\everyMPtoPDFconversion=\toks25
+\MPnumerator=\count131
+\makeMPintoPDFobject=\count132
+\everyMPtoPDFconversion=\toks28
 ) (/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
@@ -663,31 +688,31 @@ Package: hypernat 2001/07/09 v1.0b hyperref and natbib compatibility (jb)
 (/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/hypcap.sty
 Package: hypcap 2011/02/16 v1.11 Adjusting the anchors of captions (HO)
 )
-\len@brasiliaw=\skip49
-\len@uadesch=\skip50
-\len@uacaph=\skip51
-LaTeX Font Info:    Try loading font information for T1+ua1 on input line 75.
-LaTeX Font Info:    No file T1ua1.fd. on input line 75.
+\len@brasiliaw=\skip51
+\len@uadesch=\skip52
+\len@uacaph=\skip53
+LaTeX Font Info:    Try loading font information for T1+ua1 on input line 76.
+LaTeX Font Info:    No file T1ua1.fd. on input line 76.
 
 
 LaTeX Font Warning: Font shape `T1/ua1/bx/n' undefined
-(Font)              using `T1/cmr/m/n' instead on input line 75.
+(Font)              using `T1/cmr/m/n' instead on input line 76.
 
 
 LaTeX Font Warning: Font shape `T1/cmr/m/n' in size <20> not available
-(Font)              size <20.74> substituted on input line 75.
+(Font)              size <20.74> substituted on input line 76.
 
 
 LaTeX Font Warning: Font shape `T1/ua1/bx/n' in size <20> not available
-(Font)              size <20.74> substituted on input line 75.
+(Font)              size <20.74> substituted on input line 76.
 
-<positivo_cor.pdf, id=156, 119.44624pt x 60.225pt>
+<positivo_cor.pdf, id=213, 119.44624pt x 60.225pt>
 File: positivo_cor.pdf Graphic file (type pdf)
  <use positivo_cor.pdf>
-Package pdftex.def Info: positivo_cor.pdf used on input line 75.
+Package pdftex.def Info: positivo_cor.pdf used on input line 76.
 (pdftex.def)             Requested size: 61.76747pt x 31.14256pt.
-\len@lskipoffset=\skip52
-\len@lskipoffset=\skip53
+\len@lskipoffset=\skip54
+\len@lskipoffset=\skip55
 
 [1
 
@@ -695,25 +720,25 @@ Package pdftex.def Info: positivo_cor.pdf used on input line 75.
 
 {/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./posit
 ivo_cor.pdf>]
-Overfull \hbox (63.99297pt too wide) in paragraph at lines 75--75
+Overfull \hbox (63.99297pt too wide) in paragraph at lines 76--76
 [][] 
  []
 
-\@tempa=\count127
+\@tempa=\count133
 [2
 
 ]
-\len@brasiliaw=\skip54
-\len@uadesch=\skip55
-\len@uacaph=\skip56
+\len@brasiliaw=\skip56
+\len@uadesch=\skip57
+\len@uacaph=\skip58
 File: positivo_cor.pdf Graphic file (type pdf)
  <use positivo_cor.pdf>
-Package pdftex.def Info: positivo_cor.pdf used on input line 75.
+Package pdftex.def Info: positivo_cor.pdf used on input line 76.
 (pdftex.def)             Requested size: 61.76747pt x 31.14256pt.
-\len@lskipoffset=\skip57
-\len@lskipoffset=\skip58
+\len@lskipoffset=\skip59
+\len@lskipoffset=\skip60
 
-Overfull \hbox (46.20996pt too wide) in paragraph at lines 75--75
+Overfull \hbox (46.20996pt too wide) in paragraph at lines 76--76
  [][] 
  []
 
@@ -723,7 +748,7 @@ Overfull \hbox (46.20996pt too wide) in paragraph at lines 75--75
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.82   \begin{resumo}
+l.83   \begin{resumo}
                       [1
 
 
@@ -732,7 +757,7 @@ l.82   \begin{resumo}
 s been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.87   \begin{abstract}
+l.88   \begin{abstract}
                         [2
 
 
@@ -740,14 +765,14 @@ l.87   \begin{abstract}
 
 Package babel Warning: You haven't loaded the language english yet
 (babel)                I'll proceed, but expect unexpected results.
-(babel)                Reported on input line 87.
+(babel)                Reported on input line 88.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.iii}) ha
 s been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.92   \tableofcontents
-                        [3
+l.119   \tableofcontents
+                         [3
 
 
 ] (./TCC.toc [4
@@ -1011,9 +1036,224 @@ Underfull \hbox (badness 10000) in paragraph at lines 188--194
 
 ) (./capitulos/capitulo3.tex [9]
 Chapter 3.
-) (./capitulos/capitulo4.tex [10
+
+Underfull \hbox (badness 10000) in paragraph at lines 2--4
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5--6
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--9
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 10--12
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 14--15
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 17--18
+
+ []
+
+[10
 
 ]
+Underfull \hbox (badness 10000) in paragraph at lines 19--20
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 22--23
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 26--27
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 32--36
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 37--38
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 40--41
+
+ []
+
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
+put line 43.
+
+Underfull \hbox (badness 10000) in paragraph at lines 56--57
+
+ []
+
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 59--60
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 62--63
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--65
+
+ []
+
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 94--95
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 97--98
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 99--100
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--102
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 103--104
+
+ []
+
+[13pdfTeX warning (ext4): destination with the same identifier (name{table.3.1}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.104 
+      ]
+Underfull \hbox (badness 10000) in paragraph at lines 106--107
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 109--110
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 111--112
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 113--114
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 115--116
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 117--118
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 119--120
+
+ []
+
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 142--143
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--148
+
+ []
+
+
+LaTeX Warning: Reference `intro' on page 15 undefined on input line 152.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 164--165
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 166--167
+
+ []
+
+
+Overfull \hbox (22.85881pt too wide) in paragraph at lines 168--170
+[]\T1/cmr/m/n/12 The Omori law, $\OML/cmm/m/it/12 g\OT1/cmr/m/n/12 (\OML/cmm/m/
+it/12 t\OT1/cmr/m/n/12 )$\T1/cmr/m/n/12 , which is con-sid-ered one em-pir-i-ca
+l for-mula of great suc-cess [[]] [[]] [[]],
+ []
+
+[15pdfTeX warning (ext4): destination with the same identifier (name{table.3.2}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.170 
+      ]
+Underfull \hbox (badness 10000) in paragraph at lines 175--180
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 181--187
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 206--213
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 214--218
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 222--223
+
+ []
+
+[16]) (./capitulos/capitulo4.tex [17pdfTeX warning (ext4): destination with the
+ same identifier (name{table.3.3}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1 \chapter
+            {Computação Evolutiva e Previsão de Sismos}~\label{chapter4}]
 Chapter 4.
 
 Underfull \hbox (badness 10000) in paragraph at lines 8--9
@@ -1035,7 +1275,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 14--15
 
  []
 
-) (./capitulos/capitulo5.tex [11
+) (./capitulos/capitulo5.tex [18
 
 ]
 Chapter 5.
@@ -1063,7 +1303,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 12--13
  []
 
 
-LaTeX Warning: Reference `ocorrenciasAno' on page 12 undefined on input line 14
+LaTeX Warning: Reference `ocorrenciasAno' on page 19 undefined on input line 14
 .
 
 
@@ -1076,11 +1316,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 17--18
 
  []
 
-[12
+[19
 
 ]
 
-Package natbib Warning: Citation `hawkins2004problem' on page 13 undefined on i
+Package natbib Warning: Citation `hawkins2004problem' on page 20 undefined on i
 nput line 19.
 
 
@@ -1089,7 +1329,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 19--20
  []
 
 
-LaTeX Warning: Reference `alljapan' on page 13 undefined on input line 21.
+LaTeX Warning: Reference `alljapan' on page 20 undefined on input line 21.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 21--22
@@ -1116,7 +1356,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 29--30
 
  []
 
-) (./capitulos/capitulo6.tex [13]
+) (./capitulos/capitulo6.tex [20]
 Chapter 6.
 
 Underfull \hbox (badness 10000) in paragraph at lines 3--4
@@ -1138,7 +1378,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 27--28
 
  []
 
-[14
+[21
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 29--30
@@ -1165,7 +1405,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 60--61
 
  []
 
-[15]
+[22]
 Underfull \hbox (badness 10000) in paragraph at lines 62--63
 
  []
@@ -1190,7 +1430,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 97--98
 
  []
 
-[16]
+[23pdfTeX warning (ext4): destination with the same identifier (name{table.6.1}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.98 
+     ]
 Underfull \hbox (badness 10000) in paragraph at lines 100--101
 
  []
@@ -1223,7 +1469,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 138--139
 
  []
 
-[17]
+[24]
 Underfull \hbox (badness 10000) in paragraph at lines 155--156
 
  []
@@ -1238,7 +1484,31 @@ Underfull \hbox (badness 10000) in paragraph at lines 191--192
 
  []
 
-[18]
+[25pdfTeX warning (ext4): destination with the same identifier (name{table.6.2}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.206 \end{table}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{table.6.3}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.206 \end{table}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{table.6.4}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.206 \end{table}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{table.6.5}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.206 \end{table}
+                 ]
 Underfull \hbox (badness 10000) in paragraph at lines 209--210
 
  []
@@ -1263,7 +1533,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 251--252
 
  []
 
-[19]
+[26pdfTeX warning (ext4): destination with the same identifier (name{table.6.6}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.252 
+      pdfTeX warning (ext4): destination with the same identifier (name{table.6
+.7}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.252 
+      pdfTeX warning (ext4): destination with the same identifier (name{table.6
+.8}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.252 
+      ]
 Underfull \hbox (badness 10000) in paragraph at lines 269--270
 
  []
@@ -1291,9 +1579,39 @@ Underfull \hbox (badness 10000) in paragraph at lines 326--327
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[20] [21]
+[27pdfTeX warning (ext4): destination with the same identifier (name{table.6.9}
+) has been already used, duplicate ignored
 
-Package natbib Warning: Citation `liang2013problem' on page 22 undefined on inp
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.343 \clearpage
+                pdfTeX warning (ext4): destination with the same identifier (na
+me{table.6.10}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.343 \clearpage
+                pdfTeX warning (ext4): destination with the same identifier (na
+me{table.6.11}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.343 \clearpage
+                pdfTeX warning (ext4): destination with the same identifier (na
+me{table.6.12}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.343 \clearpage
+                ] [28pdfTeX warning (ext4): destination with the same identifie
+r (name{table.6.13}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.343 \clearpage
+                ]
+
+Package natbib Warning: Citation `liang2013problem' on page 29 undefined on inp
 ut line 346.
 
 
@@ -1326,7 +1644,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 359--360
 
  []
 
-[22
+[29
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 365--366
@@ -1343,7 +1661,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 371--372
 
  []
 
-) (./capitulos/capitulo7.tex [23]
+) (./capitulos/capitulo7.tex [30]
 Chapter 7.
 
 Underfull \hbox (badness 10000) in paragraph at lines 3--6
@@ -1366,43 +1684,55 @@ Underfull \hbox (badness 10000) in paragraph at lines 41--42
 
  []
 
-[24
+[31
 
-]
+pdfTeX warning (ext4): destination with the same identifier (name{table.7.1}) h
+as been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.42 
+     pdfTeX warning (ext4): destination with the same identifier (name{table.7.
+2}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.42 
+     ]
 Underfull \hbox (badness 10000) in paragraph at lines 43--44
 
  []
 
 
-LaTeX Warning: Reference `popXmediaLtest_CXBLEND(1)' on page 25 undefined on in
+LaTeX Warning: Reference `popXmediaLtest_CXBLEND(1)' on page 32 undefined on in
 put line 48.
 
 
-LaTeX Warning: Reference `popXmediaLtest_2POINTS(1)' on page 25 undefined on in
+LaTeX Warning: Reference `popXmediaLtest_2POINTS(1)' on page 32 undefined on in
 put line 48.
 
 
-LaTeX Warning: Reference `popXmediaG_CXBLEND(1)' on page 25 undefined on input 
+LaTeX Warning: Reference `popXmediaG_CXBLEND(1)' on page 32 undefined on input 
 line 48.
 
 
-LaTeX Warning: Reference `popXmediaG_2POINTS(1)' on page 25 undefined on input 
+LaTeX Warning: Reference `popXmediaG_2POINTS(1)' on page 32 undefined on input 
 line 48.
 
 
-LaTeX Warning: Reference `popXmediaLtest_CXBLEND(1)' on page 25 undefined on in
+LaTeX Warning: Reference `popXmediaLtest_CXBLEND(1)' on page 32 undefined on in
 put line 48.
 
 
-LaTeX Warning: Reference `popXmediaG_CXBLEND(1)' on page 25 undefined on input 
+LaTeX Warning: Reference `popXmediaG_CXBLEND(1)' on page 32 undefined on input 
 line 48.
 
 
-LaTeX Warning: Reference `popXmediaLtest_2POINTS(1)' on page 25 undefined on in
+LaTeX Warning: Reference `popXmediaLtest_2POINTS(1)' on page 32 undefined on in
 put line 48.
 
 
-LaTeX Warning: Reference `popXmediaG_2POINTS(1)' on page 25 undefined on input 
+LaTeX Warning: Reference `popXmediaG_2POINTS(1)' on page 32 undefined on input 
 line 48.
 
 
@@ -1431,11 +1761,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 98--99
  []
 
 
-LaTeX Warning: Reference `2000-media_melhores-1point' on page 25 undefined on i
+LaTeX Warning: Reference `2000-media_melhores-1point' on page 32 undefined on i
 nput line 100.
 
 
-LaTeX Warning: Reference `2010-media_melhores-1point' on page 25 undefined on i
+LaTeX Warning: Reference `2010-media_melhores-1point' on page 32 undefined on i
 nput line 100.
 
 
@@ -1448,7 +1778,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 102--103
 
  []
 
-[25]
+[32]
 Underfull \hbox (badness 10000) in paragraph at lines 104--105
 
  []
@@ -1464,23 +1794,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 112--113
  []
 
 
-LaTeX Warning: Reference `2000-media_melhores' on page 26 undefined on input li
+LaTeX Warning: Reference `2000-media_melhores' on page 33 undefined on input li
 ne 114.
 
 
-LaTeX Warning: Reference `2000-AUTO-media_melhores' on page 26 undefined on inp
+LaTeX Warning: Reference `2000-AUTO-media_melhores' on page 33 undefined on inp
 ut line 114.
 
 
-LaTeX Warning: Reference `2010-media_melhores' on page 26 undefined on input li
+LaTeX Warning: Reference `2010-media_melhores' on page 33 undefined on input li
 ne 114.
 
 
-LaTeX Warning: Reference `2010-AUTO-media_melhores' on page 26 undefined on inp
+LaTeX Warning: Reference `2010-AUTO-media_melhores' on page 33 undefined on inp
 ut line 114.
 
 
-LaTeX Warning: Reference `2000-media_melhores' on page 26 undefined on input li
+LaTeX Warning: Reference `2000-media_melhores' on page 33 undefined on input li
 ne 114.
 
 
@@ -1503,7 +1833,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 120--121
 
  []
 
-[26]
+[33]
 Underfull \hbox (badness 10000) in paragraph at lines 122--123
 
  []
@@ -1513,7 +1843,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 124--125
 
  []
 
-) (./capitulos/capitulo8.tex [27]
+) (./capitulos/capitulo8.tex [34]
 Chapter 8.
 
 Underfull \hbox (badness 10000) in paragraph at lines 3--4
@@ -1545,7 +1875,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 13--14
 
  []
 
-[28
+[35
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 17--18
@@ -1569,7 +1899,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 21--22
  []
 
 
-Package natbib Warning: Citation `zechartheme' on page 29 undefined on input li
+Package natbib Warning: Citation `zechartheme' on page 36 undefined on input li
 ne 23.
 
 
@@ -1613,37 +1943,37 @@ Underfull \hbox (badness 10000) in paragraph at lines 37--38
  []
 
 )
-Underfull \hbox (badness 10000) in paragraph at lines 39--106
+Underfull \hbox (badness 10000) in paragraph at lines 39--133
 
  []
 
-[29] (./TCC.bbl (./TCC.brf)
+[36] (./TCC.bbl (./TCC.brf)
 \tf@brf=\write7
 \openout7 = `TCC.brf'.
 
- [30
+ [37
 
 
-] [31]
+] [38]
 Underfull \hbox (badness 2547) in paragraph at lines 156--156
 []\T1/cmr/m/n/12 Nobuo Mimura, Kazuya Ya-suhara, Seiki Kawa-goe, Hi-ro-mune Yok
 oki, and
  []
 
-[32] [33])
+[39] [40])
 
 Package natbib Warning: There were undefined citations.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 112.
-[34]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 112.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 139.
+[41]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 139.
  (./TCC.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 112.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 112.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 139.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 139.
 Package rerunfilecheck Info: File `TCC.out' has not changed.
-(rerunfilecheck)             Checksum: 45D18DAD8C5EA183B8FA63091B925575;2725.
+(rerunfilecheck)             Checksum: 9717C94A3175BC186942D4B69587B32C;3706.
 Package rerunfilecheck Info: File `TCC.brf' has not changed.
-(rerunfilecheck)             Checksum: DD1ADA000BF4232F86F358D28AE539AA;2610.
+(rerunfilecheck)             Checksum: 5CB01D1057B890BF3861FCE7EE66D7E3;3730.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -1658,15 +1988,15 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 112.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 139.
  )
 (\end occurred when \iffalse on line 462 was incomplete) 
 Here is how much of TeX's memory you used:
- 9251 strings out of 493089
- 132532 string characters out of 6134842
- 238238 words of memory out of 5000000
- 12351 multiletter control sequences out of 15000+600000
- 20147 words of font info for 49 fonts, out of 8000000 for 9000
+ 9617 strings out of 493089
+ 137124 string characters out of 6134842
+ 245086 words of memory out of 5000000
+ 12655 multiletter control sequences out of 15000+600000
+ 20913 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  43i,15n,69p,1254b,647s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): 
@@ -1685,28 +2015,30 @@ pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</
 usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></u
 sr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></us
-r/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/
-local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/lo
-cal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local
-/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/
-texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/t
-exlive/2015/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/tex
-live/2015/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texli
-ve/2015/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive
-/2015/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2
-015/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/201
-5/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2015/
-texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2015/te
-xmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2015/texm
-f-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2015/texmf-
-dist/fonts/type1/public/cm-super/sfrm2074.pfb></usr/local/texlive/2015/texmf-di
-st/fonts/type1/public/cm-super/sfti1200.pfb></usr/local/texlive/2015/texmf-dist
-/fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2015/texmf-dist/f
-onts/type1/public/cm-super/sftt1200.pfb>
-Output written on TCC.pdf (44 pages, 443376 bytes).
+r/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/
+local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/lo
+cal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/loca
+l/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/t
+exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/te
+xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texl
+ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texli
+ve/2015/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive
+/2015/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2
+015/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/201
+5/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2015/
+texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/2015/te
+xmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2015/texm
+f-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2015/texmf-
+dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2015/texmf-di
+st/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2015/texmf-dist
+/fonts/type1/public/cm-super/sfrm2074.pfb></usr/local/texlive/2015/texmf-dist/f
+onts/type1/public/cm-super/sfti1200.pfb></usr/local/texlive/2015/texmf-dist/fon
+ts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2015/texmf-dist/fonts
+/type1/public/cm-super/sftt1200.pfb>
+Output written on TCC.pdf (51 pages, 489374 bytes).
 PDF statistics:
- 752 PDF objects out of 1000 (max. 8388607)
- 678 compressed objects within 7 object streams
- 197 named destinations out of 1000 (max. 500000)
- 310 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 951 PDF objects out of 1000 (max. 8388607)
+ 866 compressed objects within 9 object streams
+ 244 named destinations out of 1000 (max. 500000)
+ 422 words of extra memory for PDF output out of 10000 (max. 10000000)
 
