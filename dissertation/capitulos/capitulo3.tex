@@ -145,6 +145,7 @@ As in the GAModel, see~\ref{gaOperators}, the chance of applying both mutation o
 %TODO: add the var right values and "faixa"
 The mainshock+aftershock methods are a two-step methods. The first step is as defined for the mainshocks methods, therefore, we first use GA techniques to obtain a sintetic mainshock data. The second step is to use seismological empirical equations to obtain the aftershocks from the mainshocks.\\
 
+
 Hence earthquakes cluster in space and inspired by the space-time epidemic-type aftershock sequence (ETAS), we proposed two methods, called Emp-GAModel and Emp-ReducedGAModel. They represent the ideia of associating the GA with seismological empirical equations. They are described as:
 
 \begin{equation}\label{reducedgamodel}
@@ -158,72 +159,65 @@ That can be expanded to:
 \end{equation}
 %TODO: explicar o Upsilon
 
-The mainshock+afterchock methods use $\mu(x,y)$ as defined for mainshock methods~\ref{mainshocksMethods}. It is calculated as an expected number of earthquakes for every bin in the target region, given that $\Upsilon_t$ is the earthquake observation data up to time $t$.\\\\
+The mainshock+afterchock methods use $\mu(x,y)$ as defined for mainshock methods~\ref{mainshocksMethods}. It is calculated as an expected number of earthquakes for every bin in the target region, given that $\Upsilon_t$ is the earthquake observation data up to time $t$.\\
 
-The Omori law, $g(t)$, which is considered one empirical formula of great success~\cite{zhuang2004analyzing}\cite{utsu1995centenary}\cite{omori1895after}, is a power law that relates the earthquake occurance and its magnitude
-with the decay of aftershocks activity with time. For this approach we used the probabilty density function (pdf) form of the modifed Omori law~\cite{zhuang2004analyzing}:
+\subsubsection{Empirical Equations}
+
+The Omori law, $g(t)$, which is considered one empirical formula of great success~\cite{zhuang2004analyzing}\cite{utsu1995centenary}\cite{omori1895after}, is a power law that relates the earthquake occurance and its magnitude with the decay of aftershocks activity with time. For this approach we used the probabilty density function (pdf) form of the modifed Omori law~\cite{zhuang2004analyzing}:
 
 \begin{equation}\label{omori}
 	g(t)= \dfrac{(p-1)}{c(1+ \dfrac{t}{c})^(-p)}
 \end{equation}
 
-In the paper~\cite{utsu1995centenary}, Utsu says that most p and c
-values, for various earthquake data sets fall in the range between 0.9
-and 1.4, and between 0.003 and 0.3 days, respectively. These values
-were based on the Davidon-Fletcher-Powell optimization procedure and
-used in ETAS~\cite{utsu1995centenary}.\\
+The variable $p$ is a index of this equation and the variable $c$ is a constant, given in days. In the paper~\cite{utsu1995centenary}, Utsu summarize most of the studies in Japan and described the range for these variables. For $p$ the range is between 0.9 and 1.4 and for $c$, 0.003 and 0.3 days. These values were based on the Davidon-Fletcher-Powell optimization procedure and used in ETAS~\cite{utsu1995centenary}. Also there is the variable $t$ that is the time limit to when a mainshock may influence the cause a aftershock.\\
 
-Based on paper~\cite{yamanaka1990scaling}, we set the values of $1.3$
-for $p$ and $0.003$ for $c$ for our the experiments. Following the
-statement make in this report, we set the time interval $t$ between a
-mainshock and its aftershocks at one month. The statement says that if
-the $t$ value is too short, the number of aftershocks is too small,
-but if it is too big, we may also consider background activity.\\
+TODO: should i move this to exp??
+Based on paper~\cite{yamanaka1990scaling}, we set the values of $1.3$ for $p$ and $0.003$ for $c$ for our experiments. We set the time interval $t$ between a mainshock and its aftershocks at one month. In the paper, it says that if the $t$ value is too short, the number of aftershocks is too small, but if it is too big, we may also consider background activity and suggest the use of a 30 days period.\\
 
-For $K(M_i)$, the total amount of triggered events, we count
-aftershocks within a given area, $A$, using the following formula,
-where $M_c$ is the magnitude threshold:
+For $K(M_i)$, the total amount of triggered events, we count aftershocks within a given area, $A$, using the following formula, where $M_c$ is the magnitude threshold:
 
 \begin{equation}\label{triggered}
- K(M_i) = A\ exp([\alpha(M-M_c)])
+ K(M_i) = A\ exp([\alpha(M_i-M_c)])
 \end{equation}
 
-In the paper~\cite{ogata2006space}, it states that $\alpha$ should be
-equal to the inverse of the magnitude of an event, or
-$magnitide^{-1}$. To obtain $A$, the following equation
-from~\cite{yamanaka1990scaling}, was used:
+In the paper~\cite{ogata2006space}, it states that $\alpha$ should be equal to the inverse of the magnitude of an event, or $magnitide^{-1}$. To obtain $A$, the following equation from~\cite{yamanaka1990scaling}, was used:
 
 \begin{equation}
 A = e^{(1.02M -4)}
 \end{equation}
 
-%A partir de K(Mi) e g(t) calculo a quantidade total de aftershocks desencadeados. Faço o somatório do produto das equações, variando t em 0<= t <=30.
+With the $K(Mi)$ and $g(t)$, the PDF Omori, equations it is possible to calculate the total number of earthquakes. For that we must sum the product of the equations, varying $t$:
 
 \begin{equation}
 \displaystyle\sum_{t_i \in t} K(M_i)g(t-t_i)
 \end{equation}
-% partir do resultado obtido da equação anterior, aplico a distribuição de terremotos pelos bins baseado no RI, a P(x,y).
-%P(x,y) pode ser dividido em 4 equações:
+
+This result will lead to a number of aftershocks realte to a single mainshock. Then, we can use the $P(x,y)$ equation to distribute the aftershock to the bins near the mainshock's position.  $P(x,y)$ calculates the position of the aftershocks with base on the origin of the mainshock. It is a simple space distribuition function, that alocates the aftershocks in one of the following positions: upper, lower, left or right. It runs for a number of steps, getting futter from the origin at each step or as when there are no more events to be alocated.$P(x,y)$ can be splited into 4 equations, one for each position:\\
+
+\begin{subequations}
+\begin{gather*}
+        model[x+y] = (aftershocks-[model[x]-2*x])/4;\\
+        model[x-y] = (aftershocks-[model[x]-2*x])/4;\\
+        model[x-y*row] = (aftershocks-[model[x]-2*x])/4;\\
+        model[x+y*row] = (aftershocks-[model[x]-2*x])/4
+\end{gather*}
+\end{subequations}
+
 
 and lastly, the $J(M)$ is a simulation of the event magnitude by
 Gutenberg-Richter's Law, using Add SAPP\\
+%α1: mede a eficiência de um abalo sísmico com uma certa
+%magnitude em causar aftershocks. [1] Valor utilizado: 2.34 [3];
+%Faixa de valores: 0.2 <= α1 <= 3.0 [1]
+%o K:quantidadedeterremotos,dependentedosdados[4]
+%o μ -> é uma taxa de mainshocks constante no tempo. Valor utilizado: 0.01548, dependente dos dados – se depende dos dados deveria usar outro valor, ainda não achei informação
+%sobre o range de μ. [1]
 % $1$ as the value of $\beta$ ~\cite{helmstetter2003predictability}:
 %
 %\begin{equation}\label{gut-ritcher}
 %J(M) = \beta e^{-\beta(M-M_c)}, M \geq M_c
 %\end{equation}
 
-P(x,y) calculates the position of the aftershocks with base on the origin of the mainshock. It is a simple space distribuition function, that alocates the aftershocks in one of the following posotions: upper, lower, left or right. It runs for a number of steps, getting futter from the origin at each step or as when there are no more events to be alocated.\\
-%P(x,y) distribui a quantidade de aftershocks obtidos pelo somatório anterior em bins do modelo. Os bins nos quais os afterschoks serão distribuídos são os bins superiores, inferiores e laterais. As variáveis i e j, posições na matriz, são equivalentes a x e y. A variável aftershock é a quantidade de aftershocks relativo a um bin e o decaimento é linear. Row é o comprimento da linha da matriz.\\
-
-\begin{subequations}
-\begin{align}
-        model[i+j] = (aftershocks-[model[i]-2*i])/4,\\
-        model[i-j] = (aftershocks-[model[i]-2*i])/4,\\
-        model[i-j*row] = (aftershocks-[model[i]-2*i])/4,\\
-        model[i+j*row] = (aftershocks-[model[i]-2*i])/4,
-\end{align}
-\end{subequations}
 
 \subsection{Emp-GAModel}
 The Emp-GAModel is a specialization of the GAmodel. This is achieved by the use of empirical equations after the forecast is provided. This means that the its genome representation are the same as the GAModel.\\
@@ -247,53 +241,53 @@ The fitness function is the same afor all methods,~\ref{fitGA}. Here is also imp
 \subsubsection{Evolutionary Operators}
 The Emp-ReducedGAModel use the same combination of operators that the ReducedGAModel. For more explanation, please see~\ref{gaOperators} and table~\ref{ReducedOperators}.\\
 
-\section{Tests for evaluating Models}\label{Tests}
-
-In the paper {\it Earthquake Likelihood Model Testing}~\cite{schorlemmer2007earthquake}, it is proposed some statistical tests that are used in this study, developed by the The Regional Earthquake Likelihood Models (RELM). They were used to compare and evaluate the forecast models. These tests are based on the log-likelihood score that compares the data of a model with the observed data.\\
-
-To evalute the data-consistency of the forecast models we used the N-Test, the Number Test, and the L-Test, or Likelihood Test. These tests fall are significance tests. Therefore, assuming a given forecast model as the null hypothesys, the distribuition of an observable test is simulated. If the observed test statistic falls into the upper or lower tail of this distribuition, the forecast is
-rejected~\cite{schorlemmer2010first}.\\
-
-To be able to compare the model that passed the N-Test and the L-test, the R-Test, the hypotheses Comparison Test, is used. It calculates the relative performance of two models, by comparing the Log-likelihood values obtained from them.\\
-
-\subsection{Likelihood Test or L-Test}
- 
-The L(ikelihood) Test considers that the likelihood value of the model is consistent with the value obtain with the simulations. The value is calculated by the formula, where $\widehat{L}_k$ is the value of the Log-likelihood of the model {\it j}, in the {\it bin} {\it i} and $\widetilde{L}$ is the value of the Log-likelihood of the simulation {\it j} in the {\it bin} {\it q}:
-
-
-\begin{equation}
-\gamma^{j}_{q} = \frac{\left| \left\{ \widehat{L}^j_k | \widehat{L}^j_k \leq \widetilde{L}^j_q, \widehat{L}^j_k \in \widehat{L}^j, \widetilde{L}^j_q \in \widetilde{L}^j  \right\} \right|}  {|\widehat{L}^j|}
-\end{equation}
-
-The analisys of the results can be splited into 3 categories, as follows:
-
-\begin{enumerate}
-\item Case 1: $\gamma^{j}$ is a low value, or in other words, the
-  Log-likelihood of the model is lower then most of the Log-likelihood
-  of the simulations. In this case, the model is rejected.
-\item Case 2: $\gamma^{j}$ falls near the half of the values obtained
-  from the simluations and is consistent with the data.
-\item Case 3: $\gamma^{j}$ is high. This means that the Log-likelihood
-  of the data da is higher that the Log-likelihood of the model and no
-  conclusion can be made what so ever.
-\end{enumerate}
-
-
-It is important to highlight that no model should be reject in case 3, if based only on the L-Test. In this case the consistency can or cannot be real, therefore these model should be tested by the N-Test so that further conclusions can be done.\\
-
-\subsection{Number test or N-Test}
-The N(umber)-Test also analises the consistency of the model, but it compares the number os observations with the number of events of the simulations. This test is necessary to supply the underpredicting problem, indicating whether a forecast has predicted too few earthquakes, which may pass unnoticed by the L-Test.\\
-
-This mesure is estimated by the fraction of the total number of observations by the total number of observations of the model.\\
-
-As the L-test, if the number of events falls near the half of the values of the distruition, then the model is consistent with the observation, nor estimating too much events nor too few of them.\\
-
-\subsection{Hypotheses Comparison Test or R-Test}
-
-The Hypotheses Comparison, or the R(atio)-Test, compares two forecast models against themselves. The log-likelihood is calculted for both models and then the difference between them is calculated, named the observed likelihood ratio. This value indicates which one of the model better fits the observations.\\
-
-The likelihood ratio is calculated for each simulated catalog. If the fraction of simulated likelihood ratios less than the observed likelihood ratio is very small, the model is reject.  To make this test impartial, not given an advantage to any model, this procedure is applied symmetrically~\cite{schorlemmer2010first}.\\
-
-
-\subsection{Evaluation}\label{eval}
-The evaluation process is made as follow: First, the data-consitency is tested by the L-Test and the R-test. If the model passes these tests, meaning that it was not rejected by them, they ares compared with other forecast models, which were also not reject, with the R-Test. The model that best fits the R-Test is then chose as the best model~\cite{schorlemmer2007earthquake}.\\
+%\section{Tests for evaluating Models}\label{Tests}
+%
+%In the paper {\it Earthquake Likelihood Model Testing}~\cite{schorlemmer2007earthquake}, it is proposed some statistical tests that are used in this study, developed by the The Regional Earthquake Likelihood Models (RELM). They were used to compare and evaluate the forecast models. These tests are based on the log-likelihood score that compares the data of a model with the observed data.\\
+%
+%To evalute the data-consistency of the forecast models we used the N-Test, the Number Test, and the L-Test, or Likelihood Test. These tests fall are significance tests. Therefore, assuming a given forecast model as the null hypothesys, the distribuition of an observable test is simulated. If the observed test statistic falls into the upper or lower tail of this distribuition, the forecast is
+%rejected~\cite{schorlemmer2010first}.\\
+%
+%To be able to compare the model that passed the N-Test and the L-test, the R-Test, the hypotheses Comparison Test, is used. It calculates the relative performance of two models, by comparing the Log-likelihood values obtained from them.\\
+%
+%\subsection{Likelihood Test or L-Test}
+% 
+%The L(ikelihood) Test considers that the likelihood value of the model is consistent with the value obtain with the simulations. The value is calculated by the formula, where $\widehat{L}_k$ is the value of the Log-likelihood of the model {\it j}, in the {\it bin} {\it i} and $\widetilde{L}$ is the value of the Log-likelihood of the simulation {\it j} in the {\it bin} {\it q}:
+%
+%
+%\begin{equation}
+%\gamma^{j}_{q} = \frac{\left| \left\{ \widehat{L}^j_k | \widehat{L}^j_k \leq \widetilde{L}^j_q, \widehat{L}^j_k \in \widehat{L}^j, \widetilde{L}^j_q \in \widetilde{L}^j  \right\} \right|}  {|\widehat{L}^j|}
+%\end{equation}
+%
+%The analisys of the results can be splited into 3 categories, as follows:
+%
+%\begin{enumerate}
+%\item Case 1: $\gamma^{j}$ is a low value, or in other words, the
+%  Log-likelihood of the model is lower then most of the Log-likelihood
+%  of the simulations. In this case, the model is rejected.
+%\item Case 2: $\gamma^{j}$ falls near the half of the values obtained
+%  from the simluations and is consistent with the data.
+%\item Case 3: $\gamma^{j}$ is high. This means that the Log-likelihood
+%  of the data da is higher that the Log-likelihood of the model and no
+%  conclusion can be made what so ever.
+%\end{enumerate}
+%
+%
+%It is important to highlight that no model should be reject in case 3, if based only on the L-Test. In this case the consistency can or cannot be real, therefore these model should be tested by the N-Test so that further conclusions can be done.\\
+%
+%\subsection{Number test or N-Test}
+%The N(umber)-Test also analises the consistency of the model, but it compares the number os observations with the number of events of the simulations. This test is necessary to supply the underpredicting problem, indicating whether a forecast has predicted too few earthquakes, which may pass unnoticed by the L-Test.\\
+%
+%This mesure is estimated by the fraction of the total number of observations by the total number of observations of the model.\\
+%
+%As the L-test, if the number of events falls near the half of the values of the distruition, then the model is consistent with the observation, nor estimating too much events nor too few of them.\\
+%
+%\subsection{Hypotheses Comparison Test or R-Test}
+%
+%The Hypotheses Comparison, or the R(atio)-Test, compares two forecast models against themselves. The log-likelihood is calculted for both models and then the difference between them is calculated, named the observed likelihood ratio. This value indicates which one of the model better fits the observations.\\
+%
+%The likelihood ratio is calculated for each simulated catalog. If the fraction of simulated likelihood ratios less than the observed likelihood ratio is very small, the model is reject.  To make this test impartial, not given an advantage to any model, this procedure is applied symmetrically~\cite{schorlemmer2010first}.\\
+%
+%
+%\subsection{Evaluation}\label{eval}
+%The evaluation process is made as follow: First, the data-consitency is tested by the L-Test and the R-test. If the model passes these tests, meaning that it was not rejected by them, they ares compared with other forecast models, which were also not reject, with the R-Test. The model that best fits the R-Test is then chose as the best model~\cite{schorlemmer2007earthquake}.\\
