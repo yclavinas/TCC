@@ -18,7 +18,7 @@
 \contentsline {subsection}{\numberline {2.3.2}Number test or N-Test}{8}{subsection.2.3.2}
 \contentsline {subsection}{\numberline {2.3.3}Hypotheses Comparison Test or R-Test}{8}{subsection.2.3.3}
 \contentsline {subsection}{\numberline {2.3.4}Evaluation}{9}{subsection.2.3.4}
-\contentsline {chapter}{\numberline {3}Computa\IeC {\c c}\IeC {\~a}o Evolutiva e Previs\IeC {\~a}o de Sismos}{10}{chapter.3}
+\contentsline {chapter}{\numberline {3}Evolutionary Computation and Earthquake Risk Prevision}{10}{chapter.3}
 \contentsline {chapter}{\numberline {4}Models}{11}{chapter.4}
 \contentsline {section}{\numberline {4.1}1-year Forecast Models}{11}{section.4.1}
 \contentsline {section}{\numberline {4.2}Mainshock Methods}{12}{section.4.2}
