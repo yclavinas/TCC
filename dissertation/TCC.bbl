@@ -337,12 +337,6 @@ Qiuen Zhang and Cheng Wang.
 \newblock In {\em Second International Conference on Genetic and Evolutionary
   Computing}, pages 128--131. IEEE, 2012.
 
-\bibitem{zhou2014earthquake}
-Feiyan Zhou and Xiaofeng Zhu.
-\newblock Earthquake prediction based on lm-bp neural network.
-\newblock In {\em Proceedings of the 9th International Symposium on Linear
-  Drives for Industry Applications, Volume 1}, pages 13--20. Springer, 2014.
-
 \bibitem{Feiyan2014}
 Feiyan Zhou and Xiaofeng Zhu.
 \newblock Earthquake prediction based on lm-bp neural network.
@@ -350,6 +344,12 @@ Feiyan Zhou and Xiaofeng Zhu.
   International Symposium on Linear Drives for Industry Applications, Volume
   1}, volume 270 of {\em Lecture Notes in Electrical Engineering}, pages
   13--20. Springer Berlin Heidelberg, 2014.
+
+\bibitem{zhou2014earthquake}
+Feiyan Zhou and Xiaofeng Zhu.
+\newblock Earthquake prediction based on lm-bp neural network.
+\newblock In {\em Proceedings of the 9th International Symposium on Linear
+  Drives for Industry Applications, Volume 1}, pages 13--20. Springer, 2014.
 
 \bibitem{Zhou2002}
 Qing Zhou and Hong Ye.
