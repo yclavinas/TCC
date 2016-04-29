@@ -1,0 +1,53 @@
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: monografia.aux
+The style file: unb-cic.bst
+Database file #1: bibliografia.bib
+Warning--I didn't find a database entry for "hawkins2004problem"
+Warning--I didn't find a database entry for "liang2013problem"
+Warning--I didn't find a database entry for "zechartheme"
+Warning--empty journal in eberhard2014multiscale
+Warning--empty journal in omori1895after
+Warning--empty journal in wilkinson20152015
+You've used 38 entries,
+            2118 wiz_defined-function locations,
+            755 strings with 12374 characters,
+and the built_in function-call counts, 13915 in all, are:
+= -- 1384
+> -- 701
+< -- 13
++ -- 280
+- -- 236
+* -- 1016
+:= -- 2294
+add.period$ -- 119
+call.type$ -- 38
+change.case$ -- 230
+chr.to.int$ -- 0
+cite$ -- 41
+duplicate$ -- 508
+empty$ -- 1027
+format.name$ -- 236
+if$ -- 2904
+int.to.chr$ -- 0
+int.to.str$ -- 38
+missing$ -- 37
+newline$ -- 192
+num.names$ -- 78
+pop$ -- 225
+preamble$ -- 1
+purify$ -- 192
+quote$ -- 0
+skip$ -- 382
+stack$ -- 0
+substring$ -- 854
+swap$ -- 122
+text.length$ -- 13
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 150
+warning$ -- 3
+while$ -- 140
+width$ -- 40
+write$ -- 421
+(There were 6 warnings)

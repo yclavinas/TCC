@@ -1,0 +1,241 @@
+\begin{thebibliography}{10}
+
+\bibitem{ecta14}
+Claus Aranha, Yuri~Cossich Lavinas, Marcelo Ladeira, e Bogdan Enescu.
+\newblock Is it possible to generate good earthquake risk models using genetic
+  algorithms?
+\newblock In {\em Proceedings of the International Conference on Evolutionary
+  Computation Theory and Applications}, pages 49--58, 2014.
+
+\bibitem{Cabalar2009}
+Ali~Firat Cabalar e Abdulkadir Cevik.
+\newblock Genetic programming-based attenuation relationship: An application of
+  recent earthquakes in turkey.
+\newblock {\em Computers and Geosciences}, 35:1884--1896, October 2009.
+
+\bibitem{DeRainville:2012:DPF:2330784.2330799}
+Fran\c{c}ois-Michel De~Rainville, F{\'e}lix-Antoine Fortin, Marc-Andr{\'e}
+  Gardner, Marc Parizeau, e Christian Gagn{\'e}.
+\newblock Deap: A python framework for evolutionary algorithms.
+\newblock In {\em Proceedings of the Fourteenth International Conference on
+  Genetic and Evolutionary Computation Conference Companion}, GECCO Companion
+  '12, pages 85--92, New York, NY, USA, 2012. ACM.
+
+\bibitem{eberhard2014multiscale}
+David Eberhard.
+\newblock Multiscale seismicity analysis and forecasting: Examples from the
+  western pacific and iceland.
+\newblock 2014.
+
+\bibitem{Goldberg:1989:GAS:534133}
+David~E. Goldberg.
+\newblock {\em Genetic Algorithms in Search, Optimization and Machine
+  Learning}.
+\newblock Addison-Wesley Longman Publishing Co., Inc., Boston, MA, USA, 1st
+  edition, 1989.
+
+\bibitem{herrera1998tackling}
+Francisco Herrera, Manuel Lozano, e Jose~L. Verdegay.
+\newblock Tackling real-coded genetic algorithms: Operators and tools for
+  behavioural analysis.
+\newblock {\em Artificial intelligence review}, 12(4):265--319, 1998.
+
+\bibitem{ijse5762}
+A.~M. Huda e Bagus Santosa.
+\newblock Subsurface structure in japan based on p and s waves travel time
+  analysis using genetic algorithm in japan seismological network.
+\newblock {\em International Journal of Science and Engineering}, 6(1), 2014.
+
+\bibitem{irmak2012source}
+T~Serkan Irmak, B{\"u}lent Do{\u{g}}an, e Ahmet Karaka{\c{s}}.
+\newblock Source mechanism of the 23 october, 2011, van (turkey) earthquake (m
+  w= 7.1) and aftershocks with its tectonic implications.
+\newblock {\em Earth, Planets and Space}, 64(11):991--1003, 2012.
+
+\bibitem{janikow1991experimental}
+Cezary~Z Janikow e Zbigniew Michalewicz.
+\newblock An experimental comparison of binary and floating point
+  representations in genetic algorithms.
+\newblock In {\em ICGA}, pages 31--36, 1991.
+
+\bibitem{Kennett1992}
+B.~L.~N. Kennet e M.~S. Sambridge.
+\newblock Earthquake location — genetic algorithms for teleseisms.
+\newblock {\em Physics of the Earth and Planetary Interiors},
+  75(1--3):103--110, December 1992.
+
+\bibitem{Kerh2010}
+Tienfuan Kerh, David Gunaratnam, e Yaling Chan.
+\newblock Neural computing with genetic algorithm in evaluating potentially
+  hazardous metropolitan areas result from earthquake.
+\newblock {\em Neural Comput. Appl.}, 19(4):521--529, June 2010.
+
+\bibitem{Kerh2015}
+Tienfuan Kerh, Yu-Hsiang Su, e Ayman Mosallam.
+\newblock Incorporating global search capability of a genetic algorithm into
+  neural computing to model seismic records and soil test data.
+\newblock {\em Neural Computing and Applications}, pages 1--12, 2015.
+
+\bibitem{Kermani2009}
+E.~Kermani, Y.~Jafarian, e M.~H. Baziar.
+\newblock New predictive models for the $v_{max}/a_{max}$ ratio of strong
+  ground motions using genetic programming.
+\newblock {\em International Journal of Civil Engineering}, 7(4):236--247,
+  December 2009.
+
+\bibitem{koza2003genetic}
+John~R Koza, Martin~A Keane, e Matthew~J Streeter.
+\newblock Genetic programming's human-competitive results.
+\newblock {\em IEEE Intelligent Systems}, pages 25--31, 2003.
+
+\bibitem{Koza2003}
+John~R. Koza, Martin~A. Keane, e Matthew~J. Streeter.
+\newblock What's ai done for me lately? genetic programming's human-competitive
+  results.
+\newblock {\em IEEE Intelligent Systems}, 18(3):25--31, 2003.
+
+\bibitem{michalewicz1996heuristic}
+Zbigniew Michalewicz.
+\newblock Heuristic methods for evolutionary computation techniques.
+\newblock {\em Journal of Heuristics}, 1(2):177--206, 1996.
+
+\bibitem{Michie94machinelearning}
+D.~Michie, D.~J. Spiegelhalter, e C.C. Taylor.
+\newblock Machine learning, neural and statistical classification, 1994.
+
+\bibitem{mimura2011damage}
+Nobuo Mimura, Kazuya Yasuhara, Seiki Kawagoe, Hiromune Yokoki, e So~Kazama.
+\newblock Damage from the great east japan earthquake and tsunami-a quick
+  report.
+\newblock {\em Mitigation and Adaptation Strategies for Global Change},
+  16(7):803--818, 2011.
+
+\bibitem{Nicknam2010}
+Ahmad Nicknam, Reza Abbasnia, Yasser Eslamian, Mohsen Bozorgnasab, e
+  Ehsan~Adeli Mosabbeb.
+\newblock Source parameters estimation of 2003 bam earthquake mw 6.5 using
+  empirical green's function method, based on an evolutionary approach.
+\newblock {\em J. Earth Syst. Sci.}, 119(3):383--396, June 2010.
+
+\bibitem{ogata2006space}
+Yosihiko Ogata e Jiancang Zhuang.
+\newblock Space--time etas models and an improved extension.
+\newblock {\em Tectonophysics}, 413(1):13--23, 2006.
+
+\bibitem{omori1895after}
+Fusakichi Omori.
+\newblock On the after-shocks of earthquakes.
+\newblock 1895.
+
+\bibitem{Ramos2011}
+Josafath I.~Espinosa Ramos e Roberto~A. V\'azques.
+\newblock Locating seismic-sense stations through genetic algorithms.
+\newblock In {\em Proceedings of the GECCO'11}, pages 941--948, Dublin,
+  Ireland, July 2011. ACM.
+
+\bibitem{sadat2015application}
+Negar Sadat, Soleimani Zakeri, e Saeid Pashazadeh.
+\newblock Application of neural network based on genetic algorithm in
+  predicting magnitude of earthquake in north tabriz fault (nw iran).
+\newblock {\em Current Science (00113891)}, 109(9), 2015.
+
+\bibitem{Nature1999}
+A.~Saegusa.
+\newblock Japan tries to understand quakes, not predict them.
+\newblock Nature 397, 284, 1999.
+
+\bibitem{saeidian2016evaluation}
+Bahram Saeidian, Mohammad~Saadi Mesgari, e Mostafa Ghodousi.
+\newblock Evaluation and comparison of genetic algorithm and bees algorithm for
+  location-allocation of earthquake relief centers.
+\newblock {\em International Journal of Disaster Risk Reduction}, 2016.
+
+\bibitem{schaffer1989study}
+J~David Schaffer, Richard~A Caruana, Larry~J Eshelman, e Rajarshi Das.
+\newblock A study of control parameters affecting online performance of genetic
+  algorithms for function optimization.
+\newblock In {\em Proceedings of the third international conference on Genetic
+  algorithms}, pages 51--60. Morgan Kaufmann Publishers Inc., 1989.
+
+\bibitem{schorlemmer2007earthquake}
+D.~Schorlemmer, M.~Gerstenberger, S.~Wiemer, D.~Jackson, e D.~A. Rhoades.
+\newblock Earthquake likelihood model testing.
+\newblock {\em Seismological Research Letters}, 78(1):17--29, 2007.
+
+\bibitem{schorlemmer2010first}
+Danijel Schorlemmer, J~Douglas Zechar, Maximilian~J Werner, Edward~H Field,
+  David~D Jackson, Thomas~H Jordan, e RELM~Working Group.
+\newblock First results of the regional earthquake likelihood models
+  experiment.
+\newblock {\em Pure and Applied Geophysics}, 167(8-9):859--876, 2010.
+
+\bibitem{simons20112011}
+Mark Simons, Sarah~E Minson, Anthony Sladen, Francisco Ortega, Junle Jiang,
+  Susan~E Owen, Lingsen Meng, Jean-Paul Ampuero, Shengji Wei, Risheng Chu,
+  et~al.
+\newblock The 2011 magnitude 9.0 tohoku-oki earthquake: Mosaicking the
+  megathrust from seconds to centuries.
+\newblock {\em science}, 332(6036):1421--1425, 2011.
+
+\bibitem{takahashi2001crossover}
+Masato Takahashi e Hajime Kita.
+\newblock A crossover operator using independent component analysis for
+  real-coded genetic algorithms.
+\newblock In {\em Evolutionary Computation, 2001. Proceedings of the 2001
+  Congress on}, volume~1, pages 643--649. IEEE, 2001.
+
+\bibitem{utsu1995centenary}
+Tokuji Utsu e Yosihiko Ogata.
+\newblock The centenary of the omori formula for a decay law of aftershock
+  activity.
+\newblock {\em Journal of Physics of the Earth}, 43(1):1--33, 1995.
+
+\bibitem{van2012seismicity}
+Thomas van Stiphout, Jiancang Zhuang, e David Marsan.
+\newblock Seismicity declustering.
+\newblock {\em Community Online Resource for Statistical Seismicity Analysis},
+  10, 2012.
+
+\bibitem{wilkinson20152015}
+S~Wilkinson, G~Chiaro, Rama~Mohan Pokhrel, T~Kiyota, Toshihiko Katagiri, Keshab
+  Sharma, e K~Goda.
+\newblock The 2015 gorkha nepal earthquake: Insights from earthquake damage
+  survey.
+\newblock 2015.
+
+\bibitem{yamanaka1990scaling}
+Yoshiko Yamanaka e Kunihiko Shimazaki.
+\newblock Scaling relationship between the number of aftershocks and the size
+  of the main shock.
+\newblock {\em Journal of Physics of the Earth}, 38(4):305--324, 1990.
+
+\bibitem{zechar2010evaluating}
+J~Douglas Zechar.
+\newblock Evaluating earthquake predictions and earthquake forecasts: A guide
+  for students and new researchers.
+\newblock {\em Community Online Resource for Statistical Seismicity Analysis},
+  pages 1--26, 2010.
+
+\bibitem{Zhang2012}
+Qiuen Zhang e Cheng Wang.
+\newblock Using genetic algorithms to optimize artificial neural network: a
+  case study on earthquake prediction.
+\newblock In {\em Second International Conference on Genetic and Evolutionary
+  Computing}, pages 128--131. IEEE, 2012.
+
+\bibitem{Feiyan2014}
+Feiyan Zhou e Xiaofeng Zhu.
+\newblock Earthquake prediction based on lm-bp neural network.
+\newblock In Xiaozhu Liu e Yunyue Ye, editors, {\em Proceedings of the 9th
+  International Symposium on Linear Drives for Industry Applications, Volume
+  1}, volume 270 of {\em Lecture Notes in Electrical Engineering}, pages
+  13--20. Springer Berlin Heidelberg, 2014.
+
+\bibitem{zhuang2004analyzing}
+Jiancang Zhuang, Yosihiko Ogata, e David Vere-Jones.
+\newblock Analyzing earthquake clustering features by using stochastic
+  reconstruction.
+\newblock {\em Journal of Geophysical Research: Solid Earth (1978--2012)},
+  109(B5), 2004.
+
+\end{thebibliography}

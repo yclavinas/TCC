@@ -1,0 +1,177 @@
+%\chapter{The Earthquake Forecasting Problem}~\label{chapter2}
+This chapter focus on the teoretical concepts used as base for this study. The main topics are the CSEP framework and its tests.\\
+
+\section{Earthquake Likelihood Model Testing}~\label{testing}
+
+We started studies of the earthquake forecasting problem by determining and selecting ways to build earthquake forecast models, to evaluate and to compare them, as suggested by the Collaboratory for the Study of Earthquake Predictability (CSEP). It is an international partnership to promote rigorous study of the feasibility of earthquake forecasting and predictability~\cite{ecta14}.\\
+
+For that, we gathered some important information about earthquake predicting needed for this study. Most of it is based on the paper {\it Earthquake Likelihood Model Testing} \cite{schorlemmer2007earthquake}. From this paper we gathered information that guided us into how to build, evaluate and compare earthquake forecast models efficiently.\\
+
+A very difficult and yet very common problem when studying earthquake models is how to compare different kinds of models, that are based on different tests protocols. The CSEP proposes a methodology for rigorous scientific testing of these many different models. This group proposed an framework called The CSEP framework. It provides a method to compare earthquakes risk models in an objectively and consistently way~\cite{ecta14}.\\
+
+All forecast models proposed in this study are based in the Collaboratory for the Study of Earthquake Predictability (CSEP) framework. In the CSEP framework, a forecast model uses a gridded rate forecast \cite{zechar2010evaluating}, one common format in the literature. For evaluate and compare these models we used the likelihood based tests. They are the L-test, the N-test and the R-test, as suggested by Regional Earthquake Likelihood Model (RELM)~\cite{schorlemmer2007earthquake}.\\
+
+%TODO: rewrite this
+The principle behind each consistency test is the same. One calculates a goodness-of-fit statistic for the forecast and the observed data. One then estimates the distribution of
+this statistic assuming that the forecast is the data-generating model (by simulating catalogues that are consistent with the forecast). One then compares the calculated statistic with the estimated distribution; if the calculated statistic falls in lower tail of the estimated distribution, this implies that the observation is inconsistent with the forecast, or that the forecast should be “rejected”. For the CSEP consistency tests used here, the likelihood is the fundamental metric, but this approach would be similar for different statistical measurements~\cite{eberhard2014multiscale}.\\
+
+\subsection{Vector of expectations}~\label{vector}
+As stated in section~\ref{testing}, The CSEP framework uses a gridded rate forecast. This gridded forecast may be structured by a vector of earthquake expectations, occurrences probabilities, that are directly related to a vector of real earthquake observations.\\
+
+Based on this structure, it is possible to calculate the Log-likelihood value of a model with the real data observed. It is also possible to use comparison tests based on the calcultation of the Log-likelihood.\\
+
+\subsection{The Log-Likelihood Function}\label{log-fuction}
+%All the methods use the log-likelihood value for the fitness function. The fittest individual among all the others, is preserved in the next generation, to make the solution of one generation as good as the its last generation.a gene of the genome representation 
+To calculate the Log-likelihood value we need both vectors cited above, in section~\ref{vector}. One of them is the vector of earthquake expectations and the other is the vector of real earthquake observations. On them, each element is considered a bin. \\
+
+Each bin, $b_n$, define the set $\beta$ and $n$ is the size of the set $\beta$:
+\begin{equation} 
+\beta := {b_1,b_2,...,b_n},n = |\beta|.
+\end{equation}
+The probability values of the model $j$, expressed by the symbol
+$\Lambda$, is made of expectations $\lambda_i^j$ by bin $b_i$. The
+vector is define as:
+				
+\begin{equation}
+	\Lambda^j = 
+\begin{pmatrix}
+    \lambda_1^j, 
+    \lambda_2^j, 
+    \hdots,
+    \lambda_i^j
+  \end{pmatrix}
+  ;\lambda_i^j := \lambda_i^j(b_i),b_i \in \beta
+\end{equation}
+		
+The vector of earthquake quantity expectations is defined as:
+earthquake by time. The $\Omega$ vector is composed by observations
+$\omega_i$ per bin $b_i$, as the $\Lambda$ vector:
+
+\begin{equation}
+\Omega = 
+\begin{pmatrix}
+    \omega_1,
+    \omega_2,
+    \hdots,
+    \omega_i
+  \end{pmatrix}
+  ;\omega_i =\omega_i(b_i),b_i \in \beta
+\end{equation}
+
+The calculation of the log-likelihood value for the $\omega_i$
+observation with a given expectation $\lambda$ is defined as:
+
+
+\begin{equation}
+	L(\omega_i|\lambda_i^j) = -\lambda_i^j + \omega_i\log\lambda_i^j - \log\omega_i!
+\end{equation}
+
+The joint probability is the product of the likelihood of each bin, so
+the logarithm $L(\Omega|\Lambda^j)$ is the sum of for
+$L(\omega_i|\lambda_i^j)$ every bin $b_i$:
+
+\begin{equation}\label{log-like}
+\begin{split}
+	L^j = L(\Omega|\Lambda^j) = \sum_{i=1}^{n}L(\omega_i|\lambda_i^j)  \\
+	= \sum_{i=1}^{n} -\lambda_i^j + \omega_i\log\lambda_i^j - \log\omega_i!  
+\end{split}
+\end{equation}
+
+The fitness function is a coded version of the equation
+~\ref{log-like}. It uses the probabilities of the bins of each
+individual of model for the $\lambda$ values.\\
+				
+\subsection{Uncertainties in Earthquake Parameters}
+It is important to say that the earthquake parameters, as the location, magnitude and focal time, cannot be estimated without uncertainties. Therefore, each parameter uncertainty has to be included in the testing~\cite{schorlemmer2007earthquake}. Moreover, by estimating it, it is possible to judge the reliability and robustness of the forecast testing~\cite{eberhard2014multiscale}. Also, each observation must be treated as independent ones. This is not the case of the aftershocks, once they are directly dependent with another stronger earthquake. \\
+
+\section{Tests for evaluating Models}\label{Tests}
+In the paper {\it Earthquake Likelihood Model Testing}~\cite{schorlemmer2007earthquake}, it is proposed some statistical tests that are used in this study, developed by the The
+Regional Earthquake Likelihood Models (RELM). They were used to compare
+and evaluate the every forecast models. These tests are based on the
+log-likelihood score that compares the probability of the model with
+the observed events.\\
+
+To evalute the data-consistency of the forecast models we used the
+N-Test, the Number Test, and the L-Test, or Likelihood Test. These
+tests fall are significance tests. Therfore, assuming a given forecast
+model as the null hypothesys, the distribuition of an observable test
+is simulated. If the observed test statistic falls into the upper or
+lower tail of this distribuition, the forecast is
+rejected~\cite{schorlemmer2010first}.\\
+
+To be able to compare the model that passed the N-Test and the L-test,
+the R-Test, the hypotheses Comparison Test, is used. It calculates the
+relative performance of a model, by comparing the Log-likelihood
+values between two forecast models.\\
+%TODO: zechar files format
+\subsection{L-test - Data-consistency test}
+The L(ikelihood)-Test considers that the likelihood value of the model
+is consistent with the value obtain with the simulations. The value is
+calculated by fowlling the formula, where $\widehat{L}_k$ is the value of the
+Log-likelihood of the model {\it j}, in the {\it bin} {\it i} and
+$\widetilde{L}$ is the value of the Log-likelihood of the simulation
+{\it j} in the {\it bin} {\it q}:
+
+
+\begin{equation}
+\gamma^{j}_{q} = \frac{\left| \left\{ \widehat{L}^j_k | \widehat{L}^j_k \leq \widetilde{L}^j_q, \widehat{L}^j_k \in \widehat{L}^j, \widetilde{L}^j_q \in \widetilde{L}^j  \right\} \right|}  {|\widehat{L}^j|}
+\end{equation}
+
+The analysis of the results can be splited into 3 categories, as follows:
+
+\begin{enumerate}
+\item Case 1: $\gamma^{j}$ is a low value, or in other words, the
+  Log-likelihood of the model is lower then most of the Log-likelihood
+  of the simulations. In this case, the model is rejected.
+\item Case 2: $\gamma^{j}$ falls near the half of the values obtained
+  from the simluations and is consistent with the data.
+\item Case 3: $\gamma^{j}$ is high. This means that the Log-likelihood
+  of the data da is higher that the Log-likelihood of the model and no
+  conclusion can be made what so ever.
+\end{enumerate}
+
+
+It is important to highlight that no model should be reject in case 3,
+if based only on the L-Test. In this case the consistency can or
+cannot be real, therefore these model should be tested by the N-Test
+so that further conclusions can be done.\\
+
+\subsection{Number test or N-Test}
+The N(umber)-Test also analises the consistency of the model, but it
+compares the number os observations with the number of events of the
+simulations. This test is necessary to supply the underpredicting
+problem, which may pass unnoticed by the L-Test.\\
+
+This mesure is estimated by the fraction of the total number of
+observations by the total number of observations of the model.\\
+
+As the L-test, if the number of events falls near the half of the
+values of the distruition, then the model is consistent with the
+observation, nor estimating too much events nor too few of them.\\
+
+\subsection{Hypotheses Comparison Test or R-Test}
+
+The Hypotheses Comparison, or the R(atio)-Test, compares two forecast
+models against themselves. The log-likelihood is calculted for both
+models and then the difference between them is calculated, named the
+observed likelihood ratio. This value indicates which one of the model
+better fits the observations.\\
+
+The likelihood ratio is calculated for each simulated catalog. If the
+fraction of simulated likelihood ratios less than the observed
+likelihood ratio is very small, the model is reject.  To make this
+test impartial, not given an advantage to any model, this procedure is
+applied symmetrically~\cite{schorlemmer2010first}.\\
+
+
+\subsection{Evaluation}\label{eval}
+This section may need to be placed elsewhere.
+
+The evaluation process is made as follow: First, the data-consitency
+is tested by the L-Test and the R-test. If the model passes these
+tests, meaning that it was not rejected by them, they ares compared
+with other forecast models, which were also not reject, with the
+R-Test. The model that best fits the R-Test is then chose as the best
+model~\cite{schorlemmer2007earthquake}.\\
+
+%Neste trabalho, inicialmente o L-test foi utilizado para calcular a função de {\it fitness} do modelo e posteriormente substituído pelo cálculo do {\it Log-likelihood}. O N-test, que analisa a consistência do modelo ao comparar a quantidade de ocorrências do modelo com os dados reais, não foi utilizado porque a aplicação não calcula novos valores para ocorrências de sismos, logo os dados necessários para os devidos cálculos não estão disponíveis assim como R-test não foi utilizado por comparar dois modelos gerados e não o modelo gerado com os dados reais, como objetiva a aplicação. Nas próximas seções estão explicitados os detalhes sobre esses conceitos.\\
