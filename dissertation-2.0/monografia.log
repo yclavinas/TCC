@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  29 APR 2016 12:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  9 MAY 2016 10:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -846,24 +846,28 @@ Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
 \ALC@tlm=\skip63
 \algorithmicindent=\skip64
 )
-(./monografia.aux)
+(./monografia.aux
+
+LaTeX Warning: Label `chapter2' multiply defined.
+
+)
 \openout1 = `monografia.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 49.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 50.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -882,7 +886,7 @@ File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 \everyMPtoPDFconversion=\toks38
 )
 \AtBeginShipoutBox=\box40
-Package hyperref Info: Link coloring OFF on input line 49.
+Package hyperref Info: Link coloring OFF on input line 50.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
@@ -891,9 +895,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count166
 )
-LaTeX Info: Redefining \ref on input line 49.
-LaTeX Info: Redefining \pageref on input line 49.
-LaTeX Info: Redefining \nameref on input line 49.
+LaTeX Info: Redefining \ref on input line 50.
+LaTeX Info: Redefining \pageref on input line 50.
+LaTeX Info: Redefining \nameref on input line 50.
 
 (./monografia.out) (./monografia.out)
 \@outlinefile=\write6
@@ -956,26 +960,26 @@ Package: hypcap 2011/02/16 v1.11 Adjusting the anchors of captions (HO)
 \len@brasiliaw=\skip65
 \len@uadesch=\skip66
 \len@uacaph=\skip67
-LaTeX Font Info:    Try loading font information for T1+ua1 on input line 49.
-LaTeX Font Info:    No file T1ua1.fd. on input line 49.
+LaTeX Font Info:    Try loading font information for T1+ua1 on input line 50.
+LaTeX Font Info:    No file T1ua1.fd. on input line 50.
 
 
 LaTeX Font Warning: Font shape `T1/ua1/bx/n' undefined
-(Font)              using `T1/cmr/m/n' instead on input line 49.
+(Font)              using `T1/cmr/m/n' instead on input line 50.
 
 
 LaTeX Font Warning: Font shape `T1/cmr/m/n' in size <20> not available
-(Font)              size <20.74> substituted on input line 49.
+(Font)              size <20.74> substituted on input line 50.
 
 
 LaTeX Font Warning: Font shape `T1/ua1/bx/n' in size <20> not available
-(Font)              size <20.74> substituted on input line 49.
+(Font)              size <20.74> substituted on input line 50.
 
-<img/positivo_cor.pdf, id=192, 119.44624pt x 60.225pt>
+<img/positivo_cor.pdf, id=196, 119.44624pt x 60.225pt>
 File: img/positivo_cor.pdf Graphic file (type pdf)
 
 <use img/positivo_cor.pdf>
-Package pdftex.def Info: img/positivo_cor.pdf used on input line 49.
+Package pdftex.def Info: img/positivo_cor.pdf used on input line 50.
 (pdftex.def)             Requested size: 61.76747pt x 31.14256pt.
 \len@lskipoffset=\skip68
 \len@lskipoffset=\skip69
@@ -992,38 +996,38 @@ ositivo_cor.pdf>]
 \len@uacaph=\skip72
 File: img/positivo_cor.pdf Graphic file (type pdf)
  <use img/positivo_cor.pdf>
-Package pdftex.def Info: img/positivo_cor.pdf used on input line 49.
+Package pdftex.def Info: img/positivo_cor.pdf used on input line 50.
 (pdftex.def)             Requested size: 61.76747pt x 31.14256pt.
 \len@lskipoffset=\skip73
 \len@lskipoffset=\skip74
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 49.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 50.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 49.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 50.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 49.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 50.
 
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 49.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 50.
 
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 49.
+(Font)              <12> on input line 50.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 49.
+(Font)              <8> on input line 50.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 49.
+(Font)              <6> on input line 50.
  [2
 
 ]
@@ -1041,21 +1045,21 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 Package babel Warning: You haven't loaded the language english yet
 (babel)                I'll proceed, but expect unexpected results.
-(babel)                Reported on input line 49.
+(babel)                Reported on input line 50.
 
 (./tex/abstract.tex) [7
 
 
 ]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 49.
+(babel)             in language  on input line 50.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 49.
+(babel)             in language  on input line 50.
  [8] (./monografia.toc
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 43.
+(babel)             in language  on input line 44.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 43.
+(babel)             in language  on input line 44.
  [9
 
 ])
@@ -1063,9 +1067,9 @@ Package babel Info: Redefining portuges shorthand "|
 \openout7 = `monografia.toc'.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 49.
+(babel)             in language  on input line 50.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 49.
+(babel)             in language  on input line 50.
  [10] (./monografia.lot)
 \tf@lot=\write8
 \openout8 = `monografia.lot'.
@@ -1078,15 +1082,15 @@ Package babel Info: Redefining portuges shorthand "|
 )
 No file monografia.acr.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 49.
+(babel)             in language  on input line 50.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 49.
+(babel)             in language  on input line 50.
 [11
 
 ]
 Cap\'{\i }tulo 1.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 50.
+(babel)             in language  on input line 52.
 (./tex/capitulo1.tex
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 4.
@@ -1196,15 +1200,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 43--44
 
 )
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 51.
+(babel)             in language  on input line 53.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 51.
+(babel)             in language  on input line 53.
  [4]
 Cap\'{\i }tulo 2.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 51.
+(babel)             in language  on input line 53.
 (./tex/capitulo2.tex
-Underfull \hbox (badness 10000) in paragraph at lines 2--3
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 1.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 1.
+ [5
+
+]
+Cap\'{\i }tulo 3.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 1.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1--3
 
  []
 
@@ -1234,7 +1249,7 @@ Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 13.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 13.
-[5
+[6
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 15--17
@@ -1264,7 +1279,7 @@ Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 35.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 35.
-[6]
+[7]
 Underfull \hbox (badness 10000) in paragraph at lines 80--83
 
  []
@@ -1287,7 +1302,7 @@ Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 93.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 93.
-[7]
+[8]
 Underfull \hbox (badness 10000) in paragraph at lines 94--101
 
  []
@@ -1308,7 +1323,7 @@ Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 138.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 138.
-[8]
+[9]
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 139.
 
@@ -1353,18 +1368,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 170--176
 
 )
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 51.
+(babel)             in language  on input line 53.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 51.
- [9]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 52.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 52.
+(babel)             in language  on input line 53.
  [10]
-Cap\'{\i }tulo 3.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 52.
+(babel)             in language  on input line 54.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 54.
+ [11]
+Cap\'{\i }tulo 4.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 54.
 (./tex/capitulo3.tex
 Underfull \hbox (badness 10000) in paragraph at lines 2--3
 
@@ -1398,7 +1413,7 @@ Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 14.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 14.
-[11
+[12
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 15--16
@@ -1423,42 +1438,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 23--24
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 25--26
+Underfull \hbox (badness 10000) in paragraph at lines 33--34
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 27--28
+Underfull \hbox (badness 10000) in paragraph at lines 35--36
 
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 28.
+(babel)             in language  on input line 36.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 28.
-[12]
-Underfull \hbox (badness 10000) in paragraph at lines 29--30
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 32--33
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 34--35
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 36--37
-
- []
-
-
+(babel)             in language  on input line 36.
+[13]
 Underfull \hbox (badness 10000) in paragraph at lines 39--40
 
+ []
+
+
+Overfull \hbox (0.80064pt too wide) in paragraph at lines 41--42
+[]\T1/lmr/m/n/12 In this pa-per, they work with more than 30 seis-mo-lo-gi-cal 
+mo-del pa-ra-me-ters. Allthough,
  []
 
 
@@ -1466,44 +1467,54 @@ Underfull \hbox (badness 10000) in paragraph at lines 41--42
 
  []
 
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 42.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 42.
-[13]
+
 Underfull \hbox (badness 10000) in paragraph at lines 43--44
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 45--46
+Underfull \hbox (badness 10000) in paragraph at lines 46--47
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 47--48
+Underfull \hbox (badness 10000) in paragraph at lines 48--49
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 49--50
+Underfull \hbox (badness 10000) in paragraph at lines 50--51
+
+ []
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 51.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 51.
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 52--53
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 54--55
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 56--57
 
  []
 
 )
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 53.
+(babel)             in language  on input line 55.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 53.
- [14]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 53.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 53.
+(babel)             in language  on input line 55.
  [15]
-Cap\'{\i }tulo 4.
+Cap\'{\i }tulo 5.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 53.
+(babel)             in language  on input line 55.
 (./tex/capitulo4.tex
 Underfull \hbox (badness 10000) in paragraph at lines 3--4
 
@@ -1622,7 +1633,7 @@ Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 98.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 98.
-[19pdfTeX warning (ext4): destination with the same identifier (name{table.4.1}
+[19pdfTeX warning (ext4): destination with the same identifier (name{table.5.1}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -1714,7 +1725,7 @@ Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 167.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 167.
-[22pdfTeX warning (ext4): destination with the same identifier (name{table.4.2}
+[22pdfTeX warning (ext4): destination with the same identifier (name{table.5.2}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -1795,13 +1806,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 242--243
 
 )
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 54.
+(babel)             in language  on input line 56.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 54.
+(babel)             in language  on input line 56.
  [25]
-Cap\'{\i }tulo 5.
+Cap\'{\i }tulo 6.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 54.
+(babel)             in language  on input line 56.
 (./tex/capitulo5.tex
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 4.
@@ -1897,13 +1908,13 @@ Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 30.
 [27])
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 55.
+(babel)             in language  on input line 57.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 55.
+(babel)             in language  on input line 57.
  [28]
-Cap\'{\i }tulo 6.
+Cap\'{\i }tulo 7.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 55.
+(babel)             in language  on input line 57.
 (./tex/capitulo6.tex
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 2.
@@ -2016,7 +2027,7 @@ Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 101.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 101.
-[32pdfTeX warning (ext4): destination with the same identifier (name{table.6.1}
+[32pdfTeX warning (ext4): destination with the same identifier (name{table.7.1}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -2049,7 +2060,7 @@ Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 137.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 137.
-[33pdfTeX warning (ext4): destination with the same identifier (name{table.6.2}
+[33pdfTeX warning (ext4): destination with the same identifier (name{table.7.2}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -2079,20 +2090,20 @@ Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 206.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 206.
-[34pdfTeX warning (ext4): destination with the same identifier (name{table.6.3}
+[34pdfTeX warning (ext4): destination with the same identifier (name{table.7.3}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.206 \end{table}
                  pdfTeX warning (ext4): destination with the same identifier (n
-ame{table.6.4}) has been already used, duplicate ignored
+ame{table.7.4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.206 \end{table}
                  pdfTeX warning (ext4): destination with the same identifier (n
-ame{table.6.5}) has been already used, duplicate ignored
+ame{table.7.5}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
@@ -2129,14 +2140,14 @@ Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 266.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 266.
-[35pdfTeX warning (ext4): destination with the same identifier (name{table.6.6}
+[35pdfTeX warning (ext4): destination with the same identifier (name{table.7.6}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.266 \end{table}
                  pdfTeX warning (ext4): destination with the same identifier (n
-ame{table.6.7}) has been already used, duplicate ignored
+ame{table.7.7}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
@@ -2173,26 +2184,26 @@ Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 341.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 341.
-[36pdfTeX warning (ext4): destination with the same identifier (name{table.6.8}
+[36pdfTeX warning (ext4): destination with the same identifier (name{table.7.8}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.341 \end{table}
                  pdfTeX warning (ext4): destination with the same identifier (n
-ame{table.6.9}) has been already used, duplicate ignored
+ame{table.7.9}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.341 \end{table}
                  pdfTeX warning (ext4): destination with the same identifier (n
-ame{table.6.10}) has been already used, duplicate ignored
+ame{table.7.10}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.341 \end{table}
                  pdfTeX warning (ext4): destination with the same identifier (n
-ame{table.6.11}) has been already used, duplicate ignored
+ame{table.7.11}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
@@ -2202,14 +2213,14 @@ Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 343.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 343.
- [37pdfTeX warning (ext4): destination with the same identifier (name{table.6.1
+ [37pdfTeX warning (ext4): destination with the same identifier (name{table.7.1
 2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.343 \clearpage
                 pdfTeX warning (ext4): destination with the same identifier (na
-me{table.6.13}) has been already used, duplicate ignored
+me{table.7.13}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
@@ -2277,13 +2288,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 371--372
 
 )
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 56.
+(babel)             in language  on input line 58.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 56.
+(babel)             in language  on input line 58.
  [39]
-Cap\'{\i }tulo 7.
+Cap\'{\i }tulo 8.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 56.
+(babel)             in language  on input line 58.
 (./tex/capitulo7.tex
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 2.
@@ -2303,14 +2314,14 @@ Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 41.
 [40
 
-pdfTeX warning (ext4): destination with the same identifier (name{table.7.1}) h
+pdfTeX warning (ext4): destination with the same identifier (name{table.8.1}) h
 as been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.41 S
       urpreendemente, por \cite{janikow1991experimental}, era esperado que r...
-pdfTeX warning (ext4): destination with the same identifier (name{table.7.2}) h
+pdfTeX warning (ext4): destination with the same identifier (name{table.8.2}) h
 as been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -2484,13 +2495,13 @@ Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 125.
 [43])
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 57.
+(babel)             in language  on input line 59.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 57.
+(babel)             in language  on input line 59.
  [44]
-Cap\'{\i }tulo 8.
+Cap\'{\i }tulo 9.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 57.
+(babel)             in language  on input line 59.
 (./tex/capitulo8.tex
 Underfull \hbox (badness 10000) in paragraph at lines 3--4
 
@@ -2597,12 +2608,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 37--38
 
 )
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 61.
+(babel)             in language  on input line 63.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 61.
+(babel)             in language  on input line 63.
  [47]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 61.
+(babel)             in language  on input line 63.
  (./monografia.bbl (./monografia.brf)
 \tf@brf=\write10
 \openout10 = `monografia.brf'.
@@ -2625,21 +2636,21 @@ Package babel Info: Redefining portuges shorthand "|
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 233.
  [50])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 61.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 63.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 61.
+(babel)             in language  on input line 63.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 61.
+(babel)             in language  on input line 63.
  [51]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 61.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 63.
 
 (./monografia.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 61.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 61.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 63.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 63.
 Package rerunfilecheck Info: File `monografia.out' has not changed.
-(rerunfilecheck)             Checksum: 2668608F35C45320EAB9250F5A9DDCF7;3315.
+(rerunfilecheck)             Checksum: 7A3012CA3267ABA772AABB9142BDEBCC;3385.
 Package rerunfilecheck Info: File `monografia.brf' has not changed.
-(rerunfilecheck)             Checksum: 65AA4D630832761E8845E91F1193D2E4;3900.
+(rerunfilecheck)             Checksum: 2C43BA9DFEBD376B323247774E6AE828;3901.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -2651,14 +2662,17 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 61.
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 63.
  )
 (\end occurred when \iffalse on line 120 was incomplete) 
 Here is how much of TeX's memory you used:
- 14203 strings out of 493089
- 210842 string characters out of 6134842
- 383064 words of memory out of 5000000
- 17056 multiletter control sequences out of 15000+600000
+ 14189 strings out of 493089
+ 210644 string characters out of 6134842
+ 382077 words of memory out of 5000000
+ 17043 multiletter control sequences out of 15000+600000
  93933 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  53i,15n,69p,1815b,532s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2693,10 +2707,10 @@ al/texlive/2015/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/
 2015/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2015/texmf
 -dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2015/texmf-d
 ist/fonts/type1/public/cm-super/sfrm2074.pfb>
-Output written on monografia.pdf (62 pages, 345156 bytes).
+Output written on monografia.pdf (62 pages, 344757 bytes).
 PDF statistics:
- 948 PDF objects out of 1000 (max. 8388607)
- 860 compressed objects within 9 object streams
- 240 named destinations out of 1000 (max. 500000)
- 382 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 954 PDF objects out of 1000 (max. 8388607)
+ 866 compressed objects within 9 object streams
+ 241 named destinations out of 1000 (max. 500000)
+ 390 words of extra memory for PDF output out of 10000 (max. 10000000)
 
