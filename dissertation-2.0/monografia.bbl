@@ -27,7 +27,7 @@ David Eberhard.
   western pacific and iceland.
 \newblock 2014.
 
-\bibitem{Goldberg:1989:GAS:534133}
+\bibitem{Goldberg:1989:GASac:534133}
 David~E. Goldberg.
 \newblock {\em Genetic Algorithms in Search, Optimization and Machine
   Learning}.
@@ -94,6 +94,14 @@ John~R. Koza, Martin~A. Keane, e Matthew~J. Streeter.
   results.
 \newblock {\em IEEE Intelligent Systems}, 18(3):25--31, 2003.
 
+\bibitem{liang2013problem}
+JJ~Liang, BY~Qu, PN~Suganthan, e Alfredo~G Hern{\'a}ndez-D{\'\i}az.
+\newblock Problem definitions and evaluation criteria for the cec 2013 special
+  session on real-parameter optimization.
+\newblock {\em Computational Intelligence Laboratory, Zhengzhou University,
+  Zhengzhou, China and Nanyang Technological University, Singapore, Technical
+  Report}, 201212, 2013.
+
 \bibitem{michalewicz1996heuristic}
 Zbigniew Michalewicz.
 \newblock Heuristic methods for evolutionary computation techniques.
@@ -109,6 +117,12 @@ Nobuo Mimura, Kazuya Yasuhara, Seiki Kawagoe, Hiromune Yokoki, e So~Kazama.
   report.
 \newblock {\em Mitigation and Adaptation Strategies for Global Change},
   16(7):803--818, 2011.
+
+\bibitem{Nanjo2011}
+K.~Z. Nanjo.
+\newblock Earthquake forecasts for the csep japan experiment based on the ri
+  algorithm.
+\newblock {\em Earth Planets Space}, 63:261--274, 2011.
 
 \bibitem{Nicknam2010}
 Ahmad Nicknam, Reza Abbasnia, Yasser Eslamian, Mohsen Bozorgnasab, e
@@ -126,6 +140,20 @@ Yosihiko Ogata e Jiancang Zhuang.
 Fusakichi Omori.
 \newblock On the after-shocks of earthquakes.
 \newblock 1895.
+
+\bibitem{NumericalRecipes}
+William~H. Press, Saul~A. Teukolsky, Willian~T. Vetterling, e Brian~P.
+  Flannery.
+\newblock {\em Numerical Recipes, The Art of Scientific Computing}.
+\newblock Cambridge University Press, third edition, 2007.
+
+\bibitem{webDeap}
+Deap Project.
+\newblock Evolutionary tool.
+\newblock
+  \url{http://deap.gel.ulaval.ca/doc/default/api/tools.html\#deap.tools.mutPolynomialBounded},
+  July 2015.
+\newblock [Online; acessado: 08-07-2015].
 
 \bibitem{Ramos2011}
 Josafath I.~Espinosa Ramos e Roberto~A. V\'azques.
@@ -149,13 +177,6 @@ Bahram Saeidian, Mohammad~Saadi Mesgari, e Mostafa Ghodousi.
 \newblock Evaluation and comparison of genetic algorithm and bees algorithm for
   location-allocation of earthquake relief centers.
 \newblock {\em International Journal of Disaster Risk Reduction}, 2016.
-
-\bibitem{schaffer1989study}
-J~David Schaffer, Richard~A Caruana, Larry~J Eshelman, e Rajarshi Das.
-\newblock A study of control parameters affecting online performance of genetic
-  algorithms for function optimization.
-\newblock In {\em Proceedings of the third international conference on Genetic
-  algorithms}, pages 51--60. Morgan Kaufmann Publishers Inc., 1989.
 
 \bibitem{schorlemmer2007earthquake}
 D.~Schorlemmer, M.~Gerstenberger, S.~Wiemer, D.~Jackson, e D.~A. Rhoades.

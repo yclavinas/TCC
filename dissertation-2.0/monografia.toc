@@ -6,75 +6,87 @@
 \contentsline {section}{\numberline {1.2}Earthquake Prediction}{2}{section.1.2}
 \contentsline {section}{\numberline {1.3}Document Organization}{3}{section.1.3}
 \contentsline {chapter}{\numberline {2}The Earthquake Forecasting Problem}{5}{chapter.2}
-\contentsline {chapter}{\numberline {3}The Earthquake Forecasting Problem}{6}{chapter.3}
-\contentsline {section}{\numberline {3.1}Earthquake Likelihood Model Testing}{6}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Vector of expectations}{7}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}The Log-Likelihood Function}{7}{subsection.3.1.2}
-\contentsline {subsection}{\numberline {3.1.3}Uncertainties in Earthquake Parameters}{8}{subsection.3.1.3}
-\contentsline {section}{\numberline {3.2}Tests for evaluating Models}{9}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}L-test - Data-consistency test}{9}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Number test or N-Test}{10}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Hypotheses Comparison Test or R-Test}{10}{subsection.3.2.3}
-\contentsline {subsection}{\numberline {3.2.4}Evaluation}{10}{subsection.3.2.4}
-\contentsline {chapter}{\numberline {4}State of Art}{12}{chapter.4}
-\contentsline {section}{\numberline {4.1}What are Genetic Algorithms}{12}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}How does GA work}{12}{subsection.4.1.1}
-\contentsline {section}{\numberline {4.2}Evolutionary Computation and Earthquake Risk Prevision}{13}{section.4.2}
-\contentsline {chapter}{\numberline {5}Models}{16}{chapter.5}
-\contentsline {section}{\numberline {5.1}1-year Forecast Models}{17}{section.5.1}
-\contentsline {section}{\numberline {5.2}Mainshock Methods}{17}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}GAModel}{17}{subsection.5.2.1}
-\contentsline {subsubsection}{Genome Representation}{18}{section*.7}
-\contentsline {subsubsection}{Fitness Function}{18}{section*.8}
-\contentsline {subsubsection}{Evolutionary Operators}{19}{section*.9}
-\contentsline {subsection}{\numberline {5.2.2}ReducedGAModel}{20}{subsection.5.2.2}
-\contentsline {subsubsection}{Genome Representation}{20}{section*.10}
-\contentsline {subsubsection}{Fitness Function}{21}{section*.11}
-\contentsline {subsubsection}{Evolutionary Operators}{21}{section*.12}
-\contentsline {section}{\numberline {5.3}Mainshock+Aftershock Methods}{22}{section.5.3}
-\contentsline {subsubsection}{Empirical Equations}{23}{section*.13}
-\contentsline {subsection}{\numberline {5.3.1}Emp-GAModel}{24}{subsection.5.3.1}
-\contentsline {subsubsection}{Genome Representation}{24}{section*.14}
-\contentsline {subsubsection}{Fitness Function}{24}{section*.15}
-\contentsline {subsubsection}{Evolutionary Operators}{25}{section*.16}
-\contentsline {subsection}{\numberline {5.3.2}Emp-ReducedGAModel}{25}{subsection.5.3.2}
-\contentsline {subsubsection}{Genome Representation}{25}{section*.17}
-\contentsline {subsubsection}{Fitness Function}{25}{section*.18}
-\contentsline {subsubsection}{Evolutionary Operators}{25}{section*.19}
-\contentsline {chapter}{\numberline {6}An\IeC {\'a}lise dos Dados}{26}{chapter.6}
-\contentsline {section}{\numberline {6.1}Dados de sismos}{26}{section.6.1}
-\contentsline {paragraph}{Kanto}{27}{section*.20}
-\contentsline {paragraph}{Kansai}{27}{section*.21}
-\contentsline {paragraph}{Touhoku}{27}{section*.22}
-\contentsline {paragraph}{Leste do Jap\IeC {\~a}o}{28}{section*.23}
-\contentsline {chapter}{\numberline {7}Metodologia Proposta}{29}{chapter.7}
-\contentsline {section}{\numberline {7.1}Estrutura da solu\IeC {\c c}\IeC {\~a}o}{29}{section.7.1}
-\contentsline {section}{\numberline {7.2}Defini\IeC {\c c}\IeC {\~a}o do Algoritmo Gen\IeC {\'e}tico - Simple L-test Fitness Function}{30}{section.7.2}
-\contentsline {subsection}{\numberline {7.2.1}Crossover}{31}{subsection.7.2.1}
-\contentsline {subsection}{\numberline {7.2.2}Muta\IeC {\c c}\IeC {\~a}o}{32}{subsection.7.2.2}
-\contentsline {subsection}{\numberline {7.2.3}Sele\IeC {\c c}\IeC {\~a}o}{32}{subsection.7.2.3}
-\contentsline {section}{\numberline {7.3}Defini\IeC {\c c}\IeC {\~a}o do Algoritmo Gen\IeC {\'e}tico - Time-slice Log-Likelihood Fitness Function}{32}{section.7.3}
-\contentsline {subsection}{\numberline {7.3.1}Operadores Estudados}{33}{subsection.7.3.1}
-\contentsline {subsubsection}{Descri\IeC {\c c}\IeC {\~a}o dos Operadores do pacote DEAP}{33}{section*.24}
-\contentsline {paragraph}{Crossover}{34}{section*.25}
-\contentsline {subparagraph}{One Point}{34}{section*.26}
-\contentsline {subparagraph}{Uniform}{34}{section*.27}
-\contentsline {subparagraph}{Partially Matched}{34}{section*.28}
-\contentsline {subparagraph}{Uniform and Partially Matched}{35}{section*.29}
-\contentsline {subparagraph}{Ordered}{35}{section*.30}
-\contentsline {subparagraph}{Simulated Binary}{35}{section*.31}
-\contentsline {paragraph}{Muta\IeC {\c c}\IeC {\~a}o}{35}{section*.32}
-\contentsline {subparagraph}{Shuffle Indexes}{35}{section*.33}
-\contentsline {subparagraph}{Uniform Integer}{36}{section*.34}
-\contentsline {paragraph}{Sele\IeC {\c c}\IeC {\~a}o}{36}{section*.35}
-\contentsline {subparagraph}{Roulette}{36}{section*.36}
-\contentsline {subparagraph}{Random}{36}{section*.37}
-\contentsline {subparagraph}{Best}{36}{section*.38}
-\contentsline {subparagraph}{Worst}{37}{section*.39}
-\contentsline {section}{\numberline {7.4}Estudo dos Operadores - Fun\IeC {\c c}\IeC {\~o}es CEC'13}{38}{section.7.4}
-\contentsline {section}{\numberline {7.5}An\IeC {\'a}lises GA - Time-slice Log-Likelihood Fitness Function}{38}{section.7.5}
-\contentsline {chapter}{\numberline {8}Resultados Obtidos}{40}{chapter.8}
-\contentsline {section}{\numberline {8.1}Simple L-test Fitness Function}{40}{section.8.1}
-\contentsline {section}{\numberline {8.2}Time-slice Log Likelihood Fitness Function}{41}{section.8.2}
-\contentsline {chapter}{\numberline {9}Conclus\IeC {\~a}o}{45}{chapter.9}
-\contentsline {chapter}{Refer\^encias}{48}{section*.40}
+\contentsline {section}{\numberline {2.1}Earthquake Likelihood Model Testing}{5}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Vector of expectations}{6}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}The Log-Likelihood Function}{6}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.3}Uncertainties in Earthquake Parameters}{7}{subsection.2.1.3}
+\contentsline {section}{\numberline {2.2}Tests for evaluating Models}{8}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}L-test - Data-consistency test}{8}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Number test or N-Test}{9}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Hypotheses Comparison Test or R-Test}{9}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.4}Evaluation}{9}{subsection.2.2.4}
+\contentsline {chapter}{\numberline {3}State of Art}{11}{chapter.3}
+\contentsline {section}{\numberline {3.1}What are Genetic Algorithms}{11}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}How does GA work}{11}{subsection.3.1.1}
+\contentsline {section}{\numberline {3.2}Evolutionary Computation and Earthquake Risk Prevision}{12}{section.3.2}
+\contentsline {chapter}{\numberline {4}Models}{15}{chapter.4}
+\contentsline {section}{\numberline {4.1}1-year Forecast Models}{16}{section.4.1}
+\contentsline {section}{\numberline {4.2}Mainshock Methods}{16}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}GAModel}{16}{subsection.4.2.1}
+\contentsline {subsubsection}{Genome Representation}{17}{section*.8}
+\contentsline {subsubsection}{Fitness Function}{17}{section*.9}
+\contentsline {subsubsection}{Evolutionary Operators}{18}{section*.10}
+\contentsline {subsection}{\numberline {4.2.2}ReducedGAModel}{19}{subsection.4.2.2}
+\contentsline {subsubsection}{Genome Representation}{19}{section*.11}
+\contentsline {subsubsection}{Fitness Function}{20}{section*.12}
+\contentsline {subsubsection}{Evolutionary Operators}{20}{section*.13}
+\contentsline {section}{\numberline {4.3}Mainshock+Aftershock Methods}{21}{section.4.3}
+\contentsline {subsubsection}{Empirical Equations}{22}{section*.14}
+\contentsline {subsection}{\numberline {4.3.1}Emp-GAModel}{23}{subsection.4.3.1}
+\contentsline {subsubsection}{Genome Representation}{23}{section*.15}
+\contentsline {subsubsection}{Fitness Function}{23}{section*.16}
+\contentsline {subsubsection}{Evolutionary Operators}{24}{section*.17}
+\contentsline {subsection}{\numberline {4.3.2}Emp-ReducedGAModel}{24}{subsection.4.3.2}
+\contentsline {subsubsection}{Genome Representation}{24}{section*.18}
+\contentsline {subsubsection}{Fitness Function}{24}{section*.19}
+\contentsline {subsubsection}{Evolutionary Operators}{24}{section*.20}
+\contentsline {chapter}{\numberline {5}An\IeC {\'a}lise dos Dados}{25}{chapter.5}
+\contentsline {section}{\numberline {5.1}Earthquake data}{25}{section.5.1}
+\contentsline {paragraph}{Kanto}{26}{section*.21}
+\contentsline {paragraph}{Kansai}{26}{section*.22}
+\contentsline {paragraph}{Touhoku}{26}{section*.23}
+\contentsline {paragraph}{East Japan}{27}{section*.24}
+\contentsline {chapter}{\numberline {6}Metodologia Proposta}{28}{chapter.6}
+\contentsline {section}{\numberline {6.1}Genoma Representation}{28}{section.6.1}
+\contentsline {section}{\numberline {6.2}Simple L-test Fitness Function}{29}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Crossover}{29}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}Mutation Operator}{30}{subsection.6.2.2}
+\contentsline {subsection}{\numberline {6.2.3}Selection Operator}{30}{subsection.6.2.3}
+\contentsline {section}{\numberline {6.3}Time-slice Log-Likelihood Fitness Function}{31}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Available Operators}{31}{subsection.6.3.1}
+\contentsline {subsubsection}{DEAP operators}{31}{section*.25}
+\contentsline {paragraph}{Crossover}{31}{section*.26}
+\contentsline {subparagraph}{One Point}{31}{section*.27}
+\contentsline {subparagraph}{Uniform}{32}{section*.28}
+\contentsline {subparagraph}{Partially Matched}{32}{section*.29}
+\contentsline {subparagraph}{Uniform and Partially Matched}{32}{section*.30}
+\contentsline {subparagraph}{Ordered}{33}{section*.31}
+\contentsline {subparagraph}{Simulated Binary}{33}{section*.32}
+\contentsline {paragraph}{Mutation}{33}{section*.33}
+\contentsline {subparagraph}{Shuffle Indexes}{33}{section*.34}
+\contentsline {subparagraph}{Uniform Integer}{33}{section*.35}
+\contentsline {paragraph}{Selection}{34}{section*.36}
+\contentsline {subparagraph}{Roulette}{34}{section*.37}
+\contentsline {subparagraph}{Random}{34}{section*.38}
+\contentsline {subparagraph}{Best}{34}{section*.39}
+\contentsline {subparagraph}{Worst}{34}{section*.40}
+\contentsline {section}{\numberline {6.4}CEC'13 Functions}{35}{section.6.4}
+\contentsline {section}{\numberline {6.5}GA with Time-slice Log Likelihood Fitness Function}{35}{section.6.5}
+\contentsline {section}{\numberline {6.6}The GAModel Experiment}{36}{section.6.6}
+\contentsline {subsection}{\numberline {6.6.1}The Relative Intensity Algorithm}{36}{subsection.6.6.1}
+\contentsline {subsection}{\numberline {6.6.2}Model Examples X Real data}{37}{subsection.6.6.2}
+\contentsline {section}{\numberline {6.7}GAModel X RI Algorithm}{38}{section.6.7}
+\contentsline {subsection}{\numberline {6.7.1}Hypothesis}{38}{subsection.6.7.1}
+\contentsline {subsection}{\numberline {6.7.2}Results}{39}{subsection.6.7.2}
+\contentsline {section}{\numberline {6.8}All Models Experiments}{41}{section.6.8}
+\contentsline {subsection}{\numberline {6.8.1}A Brief Recapitulation of the Models}{41}{subsection.6.8.1}
+\contentsline {subsection}{\numberline {6.8.2}The Catalogs}{41}{subsection.6.8.2}
+\contentsline {subsection}{\numberline {6.8.3}The Experiment}{41}{subsection.6.8.3}
+\contentsline {subsection}{\numberline {6.8.4}ANOVA test and HSD Tukey}{41}{subsection.6.8.4}
+\contentsline {subsection}{\numberline {6.8.5}Results}{42}{subsection.6.8.5}
+\contentsline {section}{\numberline {6.9}Paired Design}{45}{section.6.9}
+\contentsline {chapter}{\numberline {7}Resultados Obtidos}{47}{chapter.7}
+\contentsline {section}{\numberline {7.1}Simple L-test Fitness Function}{47}{section.7.1}
+\contentsline {section}{\numberline {7.2}Time-slice Log Likelihood Fitness Function}{48}{section.7.2}
+\contentsline {chapter}{\numberline {8}Conclus\IeC {\~a}o}{53}{chapter.8}
+\contentsline {chapter}{Refer\^encias}{56}{section*.41}

@@ -1,50 +1,48 @@
+%TODO: add names of the models (gamodel mostly and adequade the params and stuff)
 %\chapter{Metodologia Proposta}\label{chapter6}
-\section{Estrutura da solução}
-Antes de começar o desenvolvimento do código do algoritmo genético foi necessário criar estruturas, funções e cálculos, assim como estabelecer quais seriam os dados utilizados, como obtê-los e depois como definir qual grupo dentre os dados seriam utilizados para treino.\\
+%TODO: Add section about regions data, move it from the catalog data
+%TODO: heat maps
+%TODO: boxplot
+%TODO: how to produce forecast
+%TODO:  how to evaluate
+%TODO: add paired test results
+\section{Genoma Representation}
+Each individual represents an earthquake risk model. It has a number of bins chose to fit the area of study and each bin has a probability value. The areas of study are: Kanto, Kansai, East Japan or Touhoku, see section~\ref{capitulo5}. To obtain the number of earthquakes by the value of the bin, we use the modified Poisson distribution~\cite{NumericalRecipes}.   
+	
+\begin{algorithm}
+  \caption{Obtaining values between $[0,1)$ from the Poissonian curve.}
+  \label{InversePoisson}
+  \begin{algorithmic}
+    \STATE Parameters $0 \leq x < 1, \mu \geq 0$
+    \STATE $L \gets \exp{(-\mu)}, k \gets 0, prob \gets 1$
+    \REPEAT 
+    \STATE $\text{increment }k$
+    \STATE $prob \gets prob*x$
+    \UNTIL{$prob > L$}
+    \RETURN $k$
+  \end{algorithmic}
+\end{algorithm}	
 
-%arrumar aqui por causa dos dados
-A primeira estrutura definida foi relacionada aos {\it bins}, $b \in \beta$. Foi necessário definir qual seria o tamanho ideal para cada {\it bin}, pois, como foi dito no capítulo anterior, a resolução de uma previsão é inversamente proporcional ao tamanho do {\it bin}. Foi decidido que cada {\it bin} teria um valor escolhido para representar a variação geográfica de 5 quilômetros, 0.1 graus, utilizado para a construção de cada {\it bin}.\\
+The scale chosen for the bins of each area were defined by taking into account that the resolution of a prevision model is inversely proportional to the size of the bin. That means that the smaller the bin scale, the higher is the resolution of this model. Also, we decided that each bin would have a scale depeding of the area. Once both Kansai and Kanto regions cover an area of 25 Km$^2$ the scale of theirs bins is set to 0.05 degress. Once they cover a smaller area, when compared with the areas of Touhoku and East Japan, we definided, for Touhoku and East Japan, a scale of the bin a little bigger, being 0.1.\\
 
-%arrumar aqui por causa dos dados
-%Em seguida, era necessário estruturar o vetor de expectativas, $\lambda_i$, baseado nos eventos reais, $\omega_i$. Para isso, primeiramente era fundamental possuir dados confiáveis das observações de sismos ocorridos no Japão, com seus parâmetros disponíveis. Esses dados foram obtidos na página da {\it Japan Metereological Agency} - JMA\footnote[2]{\url {http://www.jma.go.jp/jma/index.html}}. Os dados obtidos eram compostos por longitude, latitude, data e horário da ocorrência, magnitude e profundidade. Para os dados de treino, foram separados os sismos 
-%considerados mais homogêneos, formando o grupo cuja latitude e longitude na superfície representam abalos em áreas terrestres (terremotos), pouco profundos (acima de 20 km de profundidade) e com magnitude acima de 2.5 grau na escala Richter, durante os anos de 1997 a 2013. Ao separar os dados em grupos mais similares, espera-se que o algoritmo genético possa aprender características semelhantes que possam existir nos dados.\\
-%inserir: The Elevation API provides elevation data for all locations on the surface of the earth, including depth locations on the ocean floor (which return negative values). In those cases where Google does not possess exact elevation measurements at the precise location you request, the service will interpolate and return an averaged value using the four nearest locations.
+To accelerate the development of the prototype we used the {\it Distributed Evolutionary Algorithms in Python} - DEAP \cite{DeRainville:2012:DPF:2330784.2330799}, a framework for Genetic Algorithms.
+Its design seeks to make algorithms explicit and data structures transparent. \cite{DeRainville:2012:DPF:2330784.2330799}.\\
 
-%{\it The Google Elevation API}\footnote[3]{\url {https://developers.google.com/maps/documentation/elevation/?hl=pt-es}} tem como objetivo fornecer informações sobre todos os locais sobre a superfície terrestre e oceânica. Ela foi utilizada por oferecer uma interface HTTP para consulta de dados de elevação territorial, que recebe via url os parâmetros latitude e longitude e retorna, em formato {\it JavaScript Object Notation} (JSON), o resultado da pesquisa.\\
+\section{Simple L-test Fitness Function}
+We first intented to used the L-test, see~\ref{Ltest}, as fitness function. Once the main goal was to find if this fitness fuction would produce good results, we focus ours effort only in developing a application that would provides us fast results. Therefore, no study related with the GA paramerters and its values were made. We calculated the L-test the individuals and the one with the biggest value would be maintained into the next generation.\\
 
-%Como a informação sobre o local do evento (sismos que caracterizavam terremotos ou não) não estava disponível no dados colhidos da JMA, a {\it Application Programming Interface} (API) acima descrita foi utilizada para calcular a altitude relativa ao nível do mar baseada na latitude e longitude do evento. Os abalos cuja coordenadas na superfície terrestre tivessem altitude relativa ao nível do mar acima de 0.0 foram selecionados.\\
+Once no effort was made to analyse the GA initial population and number of generations, we chose them by trial and error, until an acceptable convergency time were achieved.\\
 
-%arrumar o próximo parágrafo
-%sensor (required) specifies whether the application requesting elevation data is using a sensor (such as a GPS device) to determine the user's location. Accepts true or false.
-%locations (required) defines the location(s) on the earth from which to return elevation data.
-%Depois de particionar o resultado da pesquisa, o campo do vetor, {\it results}, na posição {\it elevation} mostra a altitude relativa ao mar. Em seguida, seguem dois exemplos compostos pela url utilizada para a pesquisa e o resultado, em JSON, encontrado. \\
-
-Em seguida, era necessário estruturar o vetor de expectativas, $\lambda_i$, baseado nos eventos reais, $\omega_i$. Após obter os vetores de expectativas, a função do {\it log-likelihood} e a de L-test foram desenvolvidos como especificado na Seção 2.2.1. Para um maior entendimento do seu comportamento, o valor do {\it Log-likelihood} foi calculado tanto para os eventos quanto para um vetor de expectativas e observações pseudo-aleatório, e uma comparação entre eles foi feita. E para o entendimento do L-test, esses valores anteriores foram utilizados como os parâmetros da função.
-
-\section{Definição do Algoritmo Genético - Simple L-test Fitness Function}
-Inicialmente, para acelerar a prototipação, foi decidido que o Algoritmo Genético seria implementado utilizando {\it Distributed Evolutionary Algorithms in Python} - DEAP \cite{DeRainville:2012:DPF:2330784.2330799}, um {\it framework} para prototipação rápida que almeja por deixar estruturas de dados e algoritmos transparentes \cite{DeRainville:2012:DPF:2330784.2330799}. Para começar o aprendizado de implementações foram utilizados os exemplos de algoritmo genético disponíveis no sub-diretório do framework como base de aprendizado.\\
-
-Foi priorizado o desenvolvimento de um aplicação simples, para que fosse possível analisar o comportamento da função de {\it fitness}. Por esse motivo, por enquanto, o foco das atividades não foi direcionado para os parâmetros da evolução. Por exemplo, {\it crossover} e mutação ainda possuem valores fixos que não consideram a características da população ou dos indivíduos, porém são capazes de garantir uma evolução da população, não prejudicando o objetivo inicial da aplicação.\\
-
-Para a função de {\it fitness} foi utilizado o L-test, comparando o {\it likelihood} dos eventos com o {\it likelihood} dos indivíduos que compõe a população. O indivíduo mais apto, aquele com maior valor do L-test, era mantido na próxima geração, garantindo que a solução de uma geração seja  igual ou maior que a da geração anterior.\\
-
-Janikow e Michalewicz, em \cite{janikow1991experimental}, indicam que utilizar uma representação em ponto flutuante deve ter maior precisão, ser mais consistente, possuir acurácia em performance maior quando comparada a uma representação por bits. Portanto, a escolha de utilizar indivíduos definidos como vetores de números reais, iniciados pseudo-aleatoriamente, pode ser explicada tanto pelos motivos acima descritos tanto pela definição do próprio problema (calcular um modelo de probabilidades).\\
-
-Uma vez que não foi investido muito esforço na análise dos valores escolhidos, o tamanho da população inicial (assim como os valores dos parâmetros) foi definido por tentativa e erros, até que um tempo de convergência aceitável fosse encontrado.\\
-
+We used all earthquake data available in Kanto, not taking into account the anual slices~\ref{capitulo5}.\\
 
 \subsection{Crossover}
+The results from the executions of the Simple L-test Fitness Function were obtained by using two crossover operators the Blend and the Two Points operators.\\
 
-Os resultados obtidos a partir de execuções do {\it Simple L-test Fitness Function} utilizaram dois operadores de {\it crossover}, o {\it Blend} e o {\it Two Points}, que serão descritos a seguir.\\
-
-
-%O operarador de {\it crossover} utilizado foi o cxBlend, implementado pelo pacote DEAP,
-
-O {\it crossover Blend}, (BLX-$\alpha$) é um operador para representações em ponto flutuante. Como foi definido em \cite{takahashi2001crossover}, a geração futura é gerada da seguinte forma:
+As defined in~\cite{takahashi2001crossover}, the Blend crossover is as follows:uinte forma:
 
 \begin{enumerate}
-  \item Escolha dois pais, $x^1$ e $x^2$, aleatoriamente.
-  \item Um valor para cada elemento do filho $x^c_i$ da próxima geração é escolhido aleatoriamente do intervalo $[X^1_i, X^2_i]$ da seguinte distribuição:
+  \item Choose two parents, $x^1$ e $x^2$, at random.
+  \item A value for each element of the children $x^c_i$ of the next population is randomly chosen of the interval $[X^1_i, X^2_i]$ of the following distribuition:
 \begin{center}
 	\begin{equation}
 	\begin{split}
@@ -54,325 +52,556 @@ d_i = |x^1_i,x^2_i| \\
 	\end{split}
 	\end{equation}
 \end{center}
-onde $x^1_i$ e $x^2_i$ são o i-ésimo elementos de $x^1_i$ e $x^2_i$, respectivamente, e $\alpha$ é um parâmetro positivo.
+where $x^1_i$ and $x^2_i$ are the $i$-th element of $x^1_i$ e $x^2_i$, respectively, and $\alpha$ is a positive parameter.
 \end{enumerate}
 
-Herrera, Lozano e Verdegay~\cite{herrera1998tackling} afirmam que com valor de $\alpha$ = 0.5 a relação entre convergência ({\it exploitation}) e divergência ({\it exploration}) alcança equilíbrio. A escolha do valor de$\alpha$ da aplicação GA é de 0.5, baseada nesta afirmação e na relação de equilíbrio.\\
+Herrera, Lozano and Verdegay~\cite{herrera1998tackling} state that with an $\alpha$ = 0.5 there is balance between exploitation and exploration. Based on this, the value used for $\alpha$ was set to 0.5.\\
 
-O {\it crossover Two Points} foi utilizado para efeito de comparação entre o operador para números reais e operadores tradicionais. Definido por Goldeberg em \cite{Goldberg:1989:GAS:534133}, pode seguir dois passos. Esse {\it crossover} é uma instância do {\it n-point crossover}, que por sua vez é uma generalização do {\it simple crossover}, \cite{herrera1998tackling}.\\
+the Two Points crossover was used to compared the effect between different kinds of crossover operators. As it is defined by Goldeberg,~\cite{Goldberg:1989:GAS:534133}, it is considired a two-step operator. This crossover operator is an instance of the n-point crossover operator (where ${\it n} = 2$) which are a generalization of the simple crossover,~\cite{herrera1998tackling}.\\
 
-Primeiro, dois pais são escolhidos para a reprodução aleatoriamente. Depois, cada pai é dividido em duas partes em uma posição {\it k} selecionada uniformemente e aleatoriamente entre 1 e o tamanho {\it l} dos indivíduos menos 1, $[1, {\it l} -1]$. O filho é, então, gerado ao trocar os dados das posições ${\it k} + 1$ até o fim do indivíduo.\\
+The first step of the Two Points crossover is to choose two parents, at random. After that, each parent is splited into two parts, given a position k. This value is a number randomly chosen from a uniform distribuition, with the limits 1 to the maximum length of the individuals minus 1, $[1, {\it l} -1]$. The children then is generating by swapping the data from the parents.\\
 
-Em \cite{herrera1998tackling}, os autores citam o trabalho de Schaffer, Caruana, Eshelman \cite{schaffer1989study}, para definir o {\it n-point crossover}. O {\it crossover} em questão, segue os mesmos princípios que o {\it simple crossover}, porém escolhe {\it n} posições aleatoriamente e esses segmentos criados que são trocados para gerar o filho. No caso do {\it Two Points}, ${\it n} = 2$.
+\subsection{Mutation Operator}
 
-\subsection{Mutação}
+The mutation operator chosen was the FlipBit. It swaps the bit value from each element and uses a value between $0$ to $1$ to decide if an idividual will be altered by the it~\cite{Goldberg:1989:GASac:534133}.
+\subsection{Selection Operator}
+For the selection operator we used the Simple Tournament and Elitism. The Simple Tournament was used to select individuals to participate on the reproduction, based on the fitness values they obtained. The elitism were used to impose that the best individual fromthe current generation would be part of the next generation, ensuring that the next generation has quality at least as good as the former one.\\
 
-O operador de mutação escolhido foi o {\it FlipBit} que é desenvolvido para implementações binárias. Ele inverte o valor de um atributo escolhido aleatoriamente da entrada do indivíduo e usa uma probabilidade para decidir se um atributo sofrerá a mutação, novamente definido em \cite{Goldberg:1989:GAS:534133}.
-
-
-\subsection{Seleção}
-
-Para seleção foi utilizado Torneio Simples e Elitismo. O Torneio Simples foi utilizado para selecionar, baseado nos valores de {\it fitness} obtidos, os indivíduos para reprodução. O Elitismo foi empregado a fim de ter-se o melhor membro da população presente na geração seguinte, garantindo que a geração atual seja igual ou superior a anterior, quando analisados valores de {\it fitness}.\\
-
-Os parâmetros utilizados pela aplicação {\it Simple L-test} estão descritos na tabela \ref{GAParameters}.\\
+The parameters from the application with the Simple L-test are estão described in the next chart~\ref{GAParameters-Ltest}:\\
 
 \begin{table}[!h]
   \begin{center}
   \begin{tabular}{|l|r|}
     \hline
-    Tamanho da população & 500\\
-    Número de gerações & 100\\
-    cxBlend $\alpha$ & 0.5\\
-    Mutação FlipBit & 0.2\\
-    Mutação do atributo (indpb) & 0.05 \\
-    Tamanho do torneio & 3\\
+    Population size & 500\\
+   	Number of generations & 100\\
+    Blend crossver $\alpha$ & 0.5\\
+    Mutation FlipBit & 0.2\\
+    Probability of Mutation(indpb) & 0.05 \\
+    Tournament size & 3\\
     \hline    
   \end{tabular}
   \end{center}
-  \caption{Parâmetros utilizados.}
-  \label{GAParameters----}
+  \caption{Used Parameters.}
+  \label{GAParameters-Ltest}
 \end{table}
 
-\section{Definição do Algoritmo Genético - Time-slice Log-Likelihood Fitness Function}
-Após análises realizadas a partir dos resultados obtidos pela metodologia anterior que demonstram a ocorrência de {\it overfitting} (situação descrita no Capítulo 6), algumas alterações foram realizadas.\\
+\section{Time-slice Log-Likelihood Fitness Function}
+After some analyses made on the last application, we realized that our model were overfitting with the data. Once this is not interesting, some changes were made.\\
 
-%arrumar aqui por causa dos dados
-A primeira mudança foi em relação a função de {\it fitness}. Ela foi modificada, passando-se a utilizar o valor do {\it Log-Likelihood}. Já a segunda mudança, foi em relação a base de treino. Ela foi alterada para gerar fatias anuais da base de treino anterior, baseadas nos dados cronológicos disponíveis nos dados da JMA. As fatias são definidas da seguinte forma: Se a base refere-se a sismos ocorridos em um espaço de 10 anos, a base será divida por 10, gerando fatias anuais (por exemplo, de 2004 até 2005). A última foi em relação a área analisada. Como buscamos entender os padrões dos sismos, escolhemos uma região do Japão para focar o experimento, a região de Kanto. Essa região foi escolhida por conter uma grande quantidade de dados terrestres.\\
-
-
-%Novamente, como feito anteriormente, a primeira estrutura definida foi relacionada aos {\it bins}.  Foi decidido que cada {\it bin} teria um valor escolhido para representar cada uma da regiões geográficas já definidas, Kanto, Tohoku, Leste do Japão e Kansai. Cada {\it bin} é representado por uma variável do tipo {\it double} que em Python tem precisão IEEE 754 (utiliza 64 bits) e contém a expectativa de ocorrência de terremotos na área por ele delimitada. Para converter os valores de expectativas para um valor inteiro que representasse a quantidade de ocorrências para cada {\it bin}, utilizamos um algoritmo modificado de extração desviada de Poisson\citep{NumericalRecipes} (Capítulo 7.3.12).\\
+First, we changed the fitness function from the L-test to the Log-likelihood value~\ref{log-fuction}. We also started using the the anual slices, described in the chapter~\ref{capitulo5} for the region of Kanto.\\
 
 
+\subsection{Available Operators}
+In this case, a wider experiment was made. We compared all operators from the DEAP framework and selected the group that achieve greater results.\\ 
 
-\subsection{Operadores Estudados}
-A escolha dos operadores do {\it Time-slice Log-Likelihood Fitness Function} será feita diferentemente do ocorrido com o {\it Simple L-test Fitness Function}. Para o segundo, as escolhas tiveram de caráter arbitrário e, em contrapartida, as escolhas para o primeiro serão feitas comparações entre o desempenho da aplicação para cada combinação de operadores. \\
+\subsubsection{DEAP operators}
 
-A fim de obter resultados consistentes e gerais, foram feitas 50 rodadas de execuções de cada combinação de operadores visando analisar valores médios. Dessa forma, pontos dispersos que não representam o comportamento da aplicação terão pequena ou nenhuma influência nas análises finais. 
-
-\subsubsection{Descrição dos Operadores do pacote DEAP}
-%arrumar aqui, descrevendo paramentros de entrada e saida, essas coisas todas dos operadores
-%falar de como foi feito mais os testes do cec
-Uma vez que operadores específicos ainda não foram definidos, todos os operadores disponíveis no pacote DEAP possíveis de serem testados serão explicados a seguir (com exceção para o {\it Two Points}, o {\it Blend}, {\it Flip Bit} e o {\it Tournament} (já descritos anteriormente). Todas as descrições a seguir foram adaptadas da página do DEAP\footnote[4]{\url {http://deap.gel.ulaval.ca/doc/default/api/tools.html}}.\\
-
-Os parâmetros utilizados pela aplicação {\it Time-slice Log-Likelihood} estão descritos na tabela \ref{GAParameters-2}.\\
+The parameters used in Time-slice Log-Likelihood are the ones from the chart~\ref{GAParameters-2}.\\
 
 \begin{table}[!h]
   \begin{center}
   \begin{tabular}{|l|r|}
     \hline
-    Tamanho da população & 500\\
-    Número de gerações & 100\\
-    Operador de {\it crossover} & 0.9\\
-    Operador de mutação & 0.1\\
+    Popluation size & 500\\
+    Numner of generations & 100\\
+    Crossover operator & 0.9\\
+    Mutation operator & 0.1\\
     \hline    
   \end{tabular}
   \end{center}
-  \caption{Parâmetros utilizados.}
+  \caption{Used parameters.}
   \label{GAParameters-2}
 \end{table}
 
+The operators from DEAP are described as follows. All descriptions were obatined from the DEAP framework webapge~\cite{webDeap}.\\
+
 \paragraph{Crossover}
-Os operadores de {\it crossover} testados foram: {\it One Point}, {\it Uniform}, {\it Two Points}, {\it Partially Matched}, {\it Ordered} e {\it Simulated Binary}.\\
+The operators used were: {\it One Point}, {\it Uniform}, {\it Two Points}, {\it Partially Matched}, {\it Ordered} and {\it Simulated Binary}.\\
 
 \subparagraph{One Point}
-Executa o {\it crossover} de um ponto. Os dois indivíduos de entrada (pais) são modificados e os indivíduos resultantes (filhos) tem o mesmo tamanho dos pais, respectivamente.\\
+It executes the one point crossover. Both parents are modified and the children have the same length as the parents.\\
 
 \begin{table}[!h]
   \begin{center}
   \begin{tabular}{|l|r|}
     \hline
-    Parâmetro (1) & O primeiro indivíduo participante da operação \\
-    Parâmetro (2) & O segundo indivíduo participante da operação \\
-    Retorno & 2 indivíduos modificados\\
+    Parameter (1) & An inidividual\\
+    Parameter (2) & An inidividual\\
+    Return & 2 modified individuals\\
     \hline    
   \end{tabular}
   \end{center}
-  \caption{Parâmetros e retorno do {\it One Point}}
+  \caption{Parameters and return of the One Point crossover}
   \label{One Point}
 \end{table}
 
 \subparagraph{Uniform}
-Executa um {\it crossover} uniforme que modifica os dois pais. Os atributos são trocados de acordo com uma probabilidade, usualmente com valor 0.5.\\
+It executes the uniform crossover that modifies two parents. The elements are modified to a new value from an uniform distribuition according to a given probability, genneralt set to 0.5.\\
 
 \begin{table}[!h]
   \begin{center}
   \begin{tabular}{|l|r|}
     \hline
-    Parâmetro (1) & O primeiro indivíduo participante da operação \\
-    Parâmetro (2) & O segundo indivíduo participante da operação \\
-    Parâmetro (3) & Probabilidade independente para troca de cada atributo\\
-    Retorno & 2 indivíduos modificados\\
+    Parameter (1) & An inidividual\\
+    Parameter (2) & An inidividual\\
+    Parameter  (3) & A probabilty value\\
+    Return & 2 modified individuals\\
     \hline    
   \end{tabular}
   \end{center}
-  \caption{Parâmetros e retorno do {\it Uniform}}
+  \caption{Parameters and return of the Uniform crossover}
   \label{Uniform}
 \end{table}
 
 \subparagraph{Partially Matched}
-Executa, nos pais, um {\it crossover} parcialmente correspondido. Os indivíduos gerados são criados pela correspondência de pares de índices dos pais em um dado intervalo e pela troca dos valores de seus índices.\\
+It executes on the two parents a partially matched crossover. The individuals are created by matching the index pais of the parents given a interval and then exchanging their values.\\
 
 \begin{table}[!h]
   \begin{center}
   \begin{tabular}{|l|r|}
     \hline
-    Parâmetro (1) & O primeiro indivíduo participante da operação \\
-    Parâmetro (2) & O segundo indivíduo participante da operação \\
-%    Parâmetro (3) & Probabilidade independente para troca de cada atributo\\
-    Retorno & 2 indivíduos modificados\\
+    Parameter (1) & An inidividual\\
+    Parameter (2) & An inidividual\\
+    Return & 2 modified individuals\\
     \hline    
   \end{tabular}
   \end{center}
-  \caption{Parâmetros e retorno do {\it Partially Matched}}
+  \caption{Parameters and return of the  Partially Matched crossover}
   \label{Partially Matched}
 \end{table}
 
 \subparagraph{Uniform and Partially Matched}
-Executa uma combinação entre o {\it Uniform} e o {\it Partially Matched}. Segue o mesmo comportamento desse último, porém o pareamento dos índices é feito aleatoriamente a partir de uma probabilidade, assim como o {\it Uniform}.\\
+It executes a combination of the Uniform and Partially Matched crossovers. In follows the same behavior as the last one but index matching is done randomly as in the Uniform crossover.\\
 
 \begin{table}[!h]
   \begin{center}
   \begin{tabular}{|l|r|}
     \hline
-    Parâmetro (1) & O primeiro indivíduo participante da operação \\
-    Parâmetro (2) & O segundo indivíduo participante da operação \\
-%    Parâmetro (3) & Probabilidade independente para troca de cada atributo\\
-    Retorno & 2 indivíduos modificados\\
+    Parameter (1) & An inidividual\\
+    Parameter (2) & An inidividual\\
+    Return & 2 modified individuals\\
     \hline    
   \end{tabular}
   \end{center}
-  \caption{Parâmetros e retorno do {\it Uniform and Partialy Matched}}
+  \caption{Parameters and return of the Uniform and Partialy Matched crossover}
   \label{Uniform and Partially Matched}
 \end{table}
 
 \subparagraph{Ordered}
-Gera "buracos" nos indivíduos de entrada. São criados quando um atributo de um indivíduo está entre 2 pontos de outro indivíduo. O elemento é rotacionado de tal forma que todos os elementos entre os pontos de {\it crossover} são preenchidos com os elementos removidos, em ordem.\\
+Executes an ordered crossover on the two parents. It select a interval of indexes from a parent and swaps the values from this intervals with the values from the other parent the the same interval of indexes, in order.\\
 
 \begin{table}[!h]
   \begin{center}
   \begin{tabular}{|l|r|}
     \hline
-    Parâmetro (1) & O primeiro indivíduo participante da operação \\
-    Parâmetro (2) & O segundo indivíduo participante da operação \\
-%    Parâmetro (3) & Probabilidade independente para troca de cada atributo\\
-    Retorno & 2 indivíduos modificados\\
+    Parameter (1) & An inidividual\\
+    Parameter (2) & An inidividual\\
+    Return & 2 modified individuals\\
     \hline    
   \end{tabular}
   \end{center}
-  \caption{Parâmetros e retorno do {\it Ordered}}
+  \caption{Parameters and return of the Ordered}
   \c{Ordered}
 \end{table}
 
 \subparagraph{Simulated Binary}
-Faz um {\it crossover} por simulação binária que modifica os indivíduos de entrada. Espera uma seqüência de indivíduos em ponto flutuante. Além de dois indivíduos, recebe também um valor para $\beta$ (Um $\beta$ alto produz filhos parecidos com os pais e um $\beta$ baixo produz filhos mais diferentes).\\
+Executes a crossover by a binary simulation. It receives two parents and a $\beta$ value. With  higher $beta$ values the children are more similar to the parentsa nd with lower values, the children are less similar to the parents.\\
 
 
-\paragraph{Mutação}
-Os operadores de mutação testados foram: {\it Shuffle Indexes} e {\it Uniform Integer}.\\
+\paragraph{Mutation}
+The mutation operators tested are: Shuffle Indexes andUniform Integer.\\
 \subparagraph{Shuffle Indexes}
-Embaralha os atributos do indivíduo de entrada. Geralmente aplicada em vetor de índices.\\
+It shuffles the indexes from the individual.\\
 
 \begin{table}[!h]
   \begin{center}
   \begin{tabular}{|l|r|}
     \hline
-    Parâmetro (1) & O primeiro indivíduo participante da operação \\
-%    Parâmetro (2) & O segundo indivíduo participante da operação \\
-    Parâmetro (2) & Prob. independente para troca de cada atributo para outra posição\\
-    Retorno & 1 indivíduo modificado\\
+    Parameter (1) & An inidividual\\
+    Parâmetro (2) & Probability of shuffling\\
+    Return & 1 modified individuals\\
     \hline    
   \end{tabular}
   \end{center}
-  \caption{Parâmetros e retorno do {\it Shuffle Indexes}}
+  \caption{Parameters and return of the Shuffle Indexes}
   \label{Shuffle Indexes}
 \end{table}
 
 \subparagraph{Uniform Integer}
-Aplica mutação no indivíduo ao substituir alguns de seus atributos por um inteiro uniformemente retirado de um intervalo definido.\\
+It substitutes the some elements of the individual by a value taken from an uniform distribuition in a given interval.\\
+
 
 \begin{table}[!h]
   \begin{center}
   \begin{tabular}{|l|r|}
     \hline
-    Parâmetro (1) & O primeiro indivíduo participante da operação \\
-%    Parâmetro (2) & O segundo indivíduo participante da operação \\
-    Parâmetro (2) & Prob. independente para troca de cada atributo para outra posição\\
-    Retorno & 1 indivíduo modificado\\
+    Parameter (1) & An inidividual\\
+    Parâmetro (2) & Probability of applying the mutation\\
+    Return & 1 modified individuals\\
     \hline    
   \end{tabular}
   \end{center}
-  \caption{Parâmetros e retorno do {\it Uniform Integer}}
+  \caption{Parameters and return of the Uniform Integer}
   \label{Uniform Integer}
 \end{table}
 
-\paragraph{Seleção}
-Os operadores de seleção testados foram: {\it Roulette} e {\it Random}, {\it Best} e {\it Worst}.\\
+\paragraph{Selection}
+The selection operators tests are: Roulette, Random, Best and Worst.\\
 
 \subparagraph{Roulette}
-Seleciona indivíduos a partir de giros da roleta. A seleção é feita levando-se em conta espaços que representam a aptidão relativa de cada indivíduo.\\
+It selects individuals by spins of a roulette. The selection is make by given priority to individuals with higher fitness value.\\
 
 \begin{table}[!h]
   \begin{center}
   \begin{tabular}{|l|r|}
     \hline
-    Parâmetro (1) & 1 lista de indivíduos a serem selecionados \\
-    Parâmetro (2) & K, número de indivíduos a selecionar \\
-%    Parâmetro (3) & Prob. independente para troca de cada atributo para outra posição\\
-    Retorno & 1 lista dos indivíduos selecionados\\
+    Parameter (1) & An list of inidividuals\\
+    Parameter (2) & A number of individual to select\\
+    Return &  A list of individuals\\
     \hline    
   \end{tabular}
   \end{center}
-  \caption{Parâmetros e retorno do {\it Roulette}}
+  \caption{Parameters and return of the Roulette}
   \label{Roulette}
 \end{table}
 
 \subparagraph{Random}
-Seleciona indivíduos aleatoriamente da entrada, com substituição. \\
+It selects random individuals. \\
 
 \begin{table}[!h]
   \begin{center}
   \begin{tabular}{|l|r|}
     \hline
-    Parâmetro (1) & 1 lista de indivíduos a serem selecionados \\
-    Parâmetro (2) & K, número de indivíduos a selecionar \\
-%    Parâmetro (3) & Prob. independente para troca de cada atributo para outra posição\\
-    Retorno & 1 lista dos indivíduos selecionados\\
+    Parameter (1) & An list of inidividuals\\
+    Parameter (2) & A number of individual to select\\
+    Return &  A list of individuals\\
     \hline    
   \end{tabular}
   \end{center}
-  \caption{Parâmetros e retorno do {\it Random}}
+  \caption{Parameters and return of the Random}
   \label{Random}
 \end{table}
 
 \subparagraph{Best}
-Seleciona os melhores indivíduos.\\
+It selects the best individuals. \\
 
 \begin{table}[!h]
   \begin{center}
   \begin{tabular}{|l|r|}
     \hline
-    Parâmetro (1) & 1 lista de indivíduos a serem selecionados \\
-    Parâmetro (2) & K, número de indivíduos a selecionar \\
-%    Parâmetro (3) & Prob. independente para troca de cada atributo para outra posição\\
-    Retorno & 1 lista dos indivíduos selecionados\\
+    Parameter (1) & An list of inidividuals\\
+    Parameter (2) & A number of individual to select\\
+    Return &  A list of individuals\\
     \hline    
   \end{tabular}
   \end{center}
-  \caption{Parâmetros e retorno do {\it Best}}
+  \caption{Parameters and return of the Best}
   \label{Best}
 \end{table}
 
 \subparagraph{Worst}
-Seleciona os piores indivíduos.\\
+It selects the worst individuals. \\
 
 \begin{table}[!h]
   \begin{center}
   \begin{tabular}{|l|r|}
     \hline
-    Parâmetro (1) & 1 lista de indivíduos a serem selecionados \\
-    Parâmetro (2) & K, número de indivíduos a selecionar \\
-%    Parâmetro (3) & Prob. independente para troca de cada atributo para outra posição\\
-    Retorno & 1 lista dos indivíduos selecionados\\
+    Parameter (1) & An list of inidividuals\\
+    Parameter (2) & A number of individual to select\\
+    Return &  A list of individuals\\
     \hline    
   \end{tabular}
   \end{center}
-  \caption{Parâmetros e retorno do {\it Worst}}
+  \caption{Parameters and return of the Worst}
   \label{Worst}
 \end{table}
 
 \clearpage
 
-\section{Estudo dos Operadores - Funções CEC'13}
-Com objetivo único de aprimorar os conhecimentos sobres os operadores do DEAP e entender melhor o comportamento de Algoritimos Genéticos em problemas de otimização, as primeiras análises foram feitos sobre a suíte de testes do CEC'13 - Congress on Evolutionary Computation - que inclui 28 funções de referência. Dentre as 28 funções, oito representavam um grupo interessante para nossos objetivos. Todas as oitos são funções compostas que combinam as propriedades das sub-funções além de terem comportamento contínuo próximo ao ótimos locais e global. Para maiores informações acerca das funções, recomendamos a leitura do artigo \cite{liang2013problem}.\\
+\section{CEC'13 Functions}
+Before doing any experiments with the Log-Likehood fitness fuction on our GA application we used the CEC'13 functions. The goal here was to better understand the available operators in a optimization problem. For that, we chose to use the CEC'13 - Congress on Evolutionary Computation - suit testx. In there, there are 28 function,~\cite{liang2013problem}, of which 8 were considered as a group of interest. 
 
-O CEC, além de fornecer todas as informações necessárias para o entendimento das funções e suas características, ainda disponibiliza códigos da suíte em C, Java e Matlab.\\% para {\it download}\footnote[5]{\url {http://www.ntu.edu.sg/home/EPNSugan/index_files/CEC2013/CEC2013.htm}}.\\
+After integrating the code made available from the CEC group with a GA application made with DEAP, we analysed the results, and against expected, these experiments did not indicated a group of operatores that lead to any better performance.\\
 
-Uma vez que a integração entre Python e C é facilitada pelo uso da biblioteca {\it ctypes}, não foi necessário implementar nenhuma das oito funções. Somente foi necessário criar essa integração entre o código em C disponibilizado e a aplicação de GA em python. O método utilizado pode ser encontrado junto ao repositório Git do Peabox \footnote[6]{\url {https://github.com/stromatolith/peabox/tree/master/cec2013_testfuncs_via_ctypes}}.\\
+\section{GA with Time-slice Log Likelihood Fitness Function}
+After the experiments with CEC'13 functions, we did some experiments within the context of our study. We splited our efforts into two directions: to test the GA with the Time-slice Log Likelihood Fitness Function and to test the GA with operators with adaptive weights.\\
+
+The adaptive weights technique uses values that will vary during the an experiment. These values generally are adjusted to reflect the recent performance an operator. The major reason to apply this is because during an experiment, the influence of a operators may change and its value should also change.\\
+
+Once the experiments with CEC'13 functions showed no difference between the groups of operators, we chose a group of operators arbitrarily. They were the Two Point for crossover, with 0.9 chance of occurance, the Shuffle Indexes for mutation, with 0.1, and the roulette for selection, also arbitrarily chosen. By the end of a execution of our application, the search space is already defined, meaning that we objective to specify the search. Therefore, we raised the chance of mutation operator to a higher value, 30\% and lowered the chance of the crossover operator also by 30\%. This was done gradually, with an equal variation per round given by the value = [30\%/(numer of generations)].\\
+
+By the time we analysed the resutlts from the former experiments, we realized that the code had some errors that needed to be refactored.\\
+
+\section{The GAModel Experiment}
+	After reforming our GA application, we developed the GAModel. It is revised version and updated from our Ga application with the Time-slice Log-likelihood fitness function. Once it is viable to use this version for new experiments. We create some scenarios to compare our model with the RI - Relative Intensity Algorithm.\\
+	
+	These scenarios are defined as space/time regions. Each scenario contains the earthquakes for the Kanto region for a given year.\\
+	
+	As being a stochastic method we used the Power Test and estimated the number of repetitions, $n$, needed for detecting a significant variation. For the  {\it Power Test} we used a pilot experiment to estimate $n$.\\
+	
+	An exemple of the  {\it Power t-test}:
+
+\begin{table}[!h]
+  \begin{center}
+  \begin{tabular}{|l|r|}
+%  	\head One-sample t test power calculation 
+    \hline
+    Year & 2006\\
+    Delta & 50 (for all scenario)\\
+    Standard Deviation &  25.16513\\
+    Degree of confidence & 0.05\\
+    power & 0.95\\
+    alternative & two.sided\\
+    \hline
+    $n$: & 5.58517\\
+    \hline    
+  \end{tabular}
+  \end{center}
+  \caption{Power t-test}
+  \label{power}
+\end{table}
+
+The pilot experiments used 10 observations for calculating the {\it Power Test}. The $delta$ and $power$ values were chosen based on the results of the pilot experiment. The standard deviation is the same as the observations. All results indicate that 10 repetitions are enough to compare the GAModel via {\it Student's t-test}.\\
+
+We also needed the log-likelihood of the RI method. As being a deterministic method, 1 observation for each scenario is enough. This value is used as the target for the {\it Student's t-test}. For control, we used a random Poisson method with no data awareness.\\
+
+\subsection{The Relative Intensity Algorithm}\label{ri}
+The RI {\it Relative Intensity} (RI) algorithm is frequently used as reference for comparing methods~\cite{Nanjo2011}. The main idea behind the RI is that larger earthquakes are more likely to occur at locations of high seismology in the past.\\
+	
+The log-likelihood data for the RI for each scenario were given by Aranha,~\cite{ecta14}.\\
 
 
 
-\section{Análises GA - Time-slice Log-Likelihood Fitness Function}
-Posteriormente, estendemos os estudos para o contexto da aplicação. Seguimos duas direções para termos objetivos comparativos: a primeira, testar a GA {\it Time-slice Log Likelihood Fitness Function} com as diferentes combinações de operadores; a segunda, testar o comportamento da mesma GA juntamente da técnica de pesos adaptativos dos operadores.\\
+\subsection{Model Examples X Real data}
+	
+The Figure~\ref{modeloGAModel} shows a model from the GAModel method for the year 2010. It indicates a low earthquake intensity as green while the more intensity areas, are shown as orange (for even higher cases, white is used). The Figure~\ref{modeloRI} shows a model from the RI Algorithm for the year 2010. It indicates a low earthquake intensity as white while the more intensity areas, are shown in red. For comparison reasons, we show the Figure~\ref{realData}, that shows the earthquake occurances for the same year.\\
 
-A técnica de pesos adaptativos utiliza valores variáveis para os operadores ao longo dos ensaios, valores que periodicamente são ajustados para refletirem a performance recente do operador. A maior justificativa para seu uso é: operadores podem mudar de importância ao longo do ensaio, e, portanto, sua influência deve ser alterada de acordo com o grau de importância adequado.\\ %Conseqüentemente, essa técnica possui elevadas chances de obter valores mais próximos dos ótimos.\\
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{media2010.jpg}
+\caption{ GAModel model for the year of 2010.}
+\label{modeloGAModel}
+\end{figure}
 
-Para a nossa aplicação, utilizamos operadores mais tradicionais, a fim de facilitar futuras análises e comparações. O operador de {\it crossover} utilizado foi o  {\it Two Points}, o de mutação, {\it Shuffle Indexes} e o de seleção, a roleta. A probabilidade inicial para o {\it crossover} foi de 0.9 e para a mutação, 0.1, valores arbitrários. Como inicialmente queremos abranger o espaço de busca o máximo possível, priorizamos o operador {\it crossover}. Ao final da execução, o espaço de busca já está bem definido, e, nesse caso, queremos especificar a busca, e, portanto, elevamos a prioridade de ocorrência de mutação para 30\% mais provável (conseqüentemente, precisamos diminuir a probabilidade do {\it crossover} em 30\%). Essa variação nos valores dos operadores acontece suavemente durante os ensaios, quando, a cada rodada, os valores dos operadores é alterado pelo valor = [30\%/(número de gerações)].\\
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.22]{kanto10_RI.png}
+\caption{RI model for the year of 2010. Figure from~\cite{ecta14}.}
+\label{modeloRI}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{matriz2010_real.png}
+\caption{Earthquake occurances for the year of 2010}
+\label{realData}
+\end{figure}
 
 
-%\subsubsection{Dificuldades Enfrentadas}
 
-%arrumar aqui por causa do profiler
-Algumas adversidades foram encontradas durante as execuções, que contribuíram para o atraso da definição dos operadores. Entre elas, a de maior destaque foi a fraca performance do cálculo do fatorial, necessário para a função de {\it fitness}. Para melhor compreender o comportamento da aplicação e descobrir e confirmar quais eram gargalos da aplicação, foi utilizado um {\it profiler}\footnote[7]{\url {https://pythonhosted.org/line_profiler/}}.\\
+\section{GAModel X RI Algorithm}
+We compared the method proposed, ReducedGAModel,~\ref{ReducedGAModel}, with the non-variated method, GAModel~\ref{GAModel}, and with the Relative Intensity Algorithm,~\ref{ri}, using its log-likelihood values. The values are comparece via Student’s t-test, so we could understand the if there is any statistic significant difference between the methods. The data used was JMA catalog. 
 
-Um {\it profiler} é uma ferramenta para análise dinâmica da execução de programas. A motivação é analisar o quanto de recurso computacional cada parte do código consome. Em específico, o {\it profiler} verifica a freqüência e a duração das chamadas do código. Após a descoberta dos pontos críticos e a confirmação de que o função de cálculo do fatorial realmente era um ponto crítico, substituímos a função por uma tabela em memória dos valores do fatorial.\\
 
-%Ainda é possível que, a partir de análise de complexidade e reexecuções do {\it profiler}, outros gargalos sejam descobertos e tratados, melhorando a performance temporal da aplicação.\\
+\subsection{Hypothesis}
+There are 3 tests hypothesis for this experiment that we want to analyse. 
 
-As análises realizadas com as funções CEC'13, ao contrário do esperado, não nos direcionaram na escolha de um grupo de operadores capaz de oferecer uma desempenho significativamente maior, seja ele em termos de convergência mais rápida ou em termos de soluções mais robustas.\\
+The first is if the mean values of the log-likelihood for the ReducedGA are equal to the RI values.
+$$\begin{cases} H_0: \mu = RI log-likelihood value&\\H_1: \mu != RI log-likelihood value\end{cases}$$
 
-%TODO: Add section about regions data, move it from the catalog data
-%TODO: heat maps
-%TODO: boxplot
-%TODO: how to proceude forecast
-%TODO:  how to evaluate
-%TODO: 
+The second is if the mean values of the log-likelihood for the ReducedGA are equal to the GAModel values.
+$$\begin{cases} H_0: \mu = GAModel log-likelihood value&\\H_1: \mu != GAModel log-likelihood value\end{cases}$$
+
+And the last hypotheses is if the mean values of the log-likelihood for the GAModel are equal to the RI values.
+$$\begin{cases} H_0: \mu = RI log-likelihood value&\\H_1: \mu != RI log-likelihood_value\end{cases}$$
+
+\subsection{Results}
+
+The results of the experiments are in the Table~\ref{gaxriTable} and in the box-plots Figure~\ref{boxPlot2007} and Figure~\ref{boxPlot2009}. The column labeled Random shows the result of the RandomModel, and the idea is the same for the ones labeled GAModel and RI. The ``p-value'' shows the significance value of the {\it Student's t-test} for the null hypothesis `` The mean of the log-likelihood values is greater that the values for RI''.\\
+
+As expected, the RandomModel has lower values than the GAModel. When compared with the RI, the results show that the GAModel is competitive with the RI and that it is promising to use GA to generate earthquake forecasts.\\
+
+\begin{table*}[!ht]
+	\begin{center}
+		\begin{tabular}{|l|l|c|cc|c|}
+			\hline
+			\multicolumn{1}{|c|}{Scenario} & \multicolumn{5}{|c|}{Log Likelihood} \\
+			\hline
+			\multicolumn{1}{|c|}{Year} & \multicolumn{1}{|c|}{Random} & \multicolumn{1}{|c|}{RI} & \multicolumn{2}{c}{GAModel} & \multicolumn{1}{|c|}{p-value} \\    
+			%    Ano & Random & RI & GAModel & p-value\\
+			\hline
+			2000 &-2413.89 &-2124.44 &\raggedright  -2094.05 &\raggedleft (8.80) & 0.01\\%better
+			2001 &-2418.14 &-2103.19 &\raggedright  -2101.65 &\raggedleft  (69.49) & 0.57\\%equal
+			2002 &-2385.04 &-2094.43 &\raggedright  -2100.01 &\raggedleft (72.62) & 0.07\\%equal
+			2003 &-2401.00 &-2104.65 &\raggedright  -2100.76 &\raggedleft (156) & 0.35\\%equal
+			2004 &-2421.92 &-2101.92 &\raggedright  -2098.30 &\raggedleft (55.28) & 0.16\\%equal
+			2005 &-2643.38 &-2248.40 &\raggedright  -2114.00 &\raggedleft (779) & 0.01\\%better
+			2006 &-2616.50 &-2226.93 &\raggedright  -2115.6 &\raggedleft (633) & 0.01\\%better
+			2007 &-2451.68 &-2109.13 &\raggedright  -2122.03 &\raggedleft (615) &  0.13\\%equal
+			2008 &-2433.23 &-2112.92 &\raggedright  -4435.34 &\raggedleft (657) & 0.14\\%equal
+			2009 &-2884.74 &-2438.10 &\raggedright  -2113.1 &\raggedleft (814) & 0.01\\%better
+			2010 &-2418.18 &-2114.60 &\raggedright -2112.07 &\raggedleft (843) & 0.79\\%equal
+			\hline
+		\end{tabular}
+	\end{center}
+	\caption{Experiments result.}
+	\label{gaxriTable}
+\end{table*}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.45]{boxPlot2007.pdf}
+	\caption{Box-plot of the values obtained by the models for the year 2007.}
+	\label{boxPlot2007}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.45]{boxPlot2009.pdf}
+	\caption{Box-plot of the values obtained by the models for the year 2009.}
+	\label{boxPlot2009}
+\end{figure}
+
+
+\section{All Models Experiments}
+\subsection{A Brief Recapitulation of the Models}
+
+Based on our promissing results and because we aim to improve them, we developed the ReducedGAModel. It a simplified version of the GAModel. We want to compare the behavior of this new method against the GAModel method.\\
+
+We also wanted to explore how adding domain knowledge would improve the avarage performance of the GAModel or the ReducedGAMOdel. They are versions of GAModel/ReducedGAModel combined with emperical laws.\\ 
+
+\subsection{The Catalogs}
+
+The data used was JMA catalog and a version of a cluster catalog.\\ 
+(JMA X métodoJanelaJMA=>clustered). How do I explain this? The EXPLANATION SHOULD BE IN THE FORMER CHAPTER
+here is just a recap
+\subsection{The Experiment}
+For this new experiment, we used even more scenarios (space/time regions) than the ones. Each scenario contains the earthquakes for the regions of Kanto, Kansai, Touhoku and East Japan for a given year (2005-2010). We wanted to explore if there exists any influence in the performance of the models that are caused by the depth of an earthquake. So, the scenarios are also composed by introducing a 3 groups depths thresholds. They are: of earthquakes with depth smaller than 25km, or between 0km and 60km or even between 0km and 100km.\\
+
+These method are stochastic method and hence are variations of the GAModel, we decided to maintain the number of repetitions without redoing a Power Test.\\
+
+\subsection{ANOVA test and HSD Tukey}
+
+The goal here is to find if there is any variation between the methods and which are the most influencial variables. For achieve that, we will use the ANOVA Test.\\
+
+In the ANOVA test, if a variable is out of the 5\% confidence interval, with P < 0.05 it means that there exists a statistical significant different for that variable.\\
+
+There are some tests hypothesis for this experiment that we want to analyse. They all can be generalized as follows:\\
+
+$$\begin{cases} H_0: \text{The population means are equal populacionais são iguais.} &\\
+H_1: \text{The population means are different.}&\\
+\end{cases}$$\\
+
+Then we apply a post hoc test, the HSD Tukey test, on the results obtained from the ANOVA test to specify which groups differ. \\
+
+\subsection{Results}
+A one-way between subjects ANOVA was conducted to compare the effects of the models, the depths, the years and regions on the log-likelihood value. In this study there are 6 options for model: lista, gaModel, hybridgaModel, hybridlist, gaModelCluster and listaCluster. Based on the results of the test, there was a not a significant effect of the depths or years variables. For both cases at the we obtaind p>0.05 level for the depths condition [F(2) = 2.072, p = 0.126] and we also obtained p>0.05 for the years condition  [F(5) = 0.050, p = 0.999]. There was a significant effect of the models condition (p>0.05 [F(5) = 9699.690, p<2e-16]) and regions condition (p>0.05 [F(3) = 764.220, p<2e-16]). Therefore, we conduct a new anova test, with only the last two variables to verify the influence of those conditions more accurately. The results only changed a little, maintaining the significant effect of both conditions, p>0.05 [F(5) = 9705.6, p<2e-16] and p>0.05 [F(3) = 764.7, p <2e-16], respectively.\\
+
+The results of the experiments are in the Table~\ref{anovatest}. 
+
+The column labeled Random shows the result of the RandomModel, and the idea the is same for the ones labeled GAModel and RI.
+ means of several groups are equal,e t-test to more than two groups.
+ The ``p-value'' shows significance value of the {\it Student's t-test} for null hypothesis `` The mean of the log-likelihood values is greater that the values for RI''.\\
+
+\begin{table*}[!ht]
+	\centering
+	\begin{tabular}{|l|l|l|l|l|l|}
+		\hline
+		{Variable} & {Degrees of Freedom} & {Sum Sq}    & {Mean Sq}   & {F Value} & {Pr(\textgreater F)} \\
+		\hline
+		Model    & 31424058           & 6284812   & 6284812   & 255.0   & \textless2e-16     \\
+		\hline
+		Depth    & 2                  & 16077491  & 8038746   & 326.2   & \textless2e-16     \\
+		\hline
+		Year     & 5                  & 57908014  & 11581603  & 470.0   & \textless2e-16     \\
+		\hline
+		Region   & 3                  & 878253346 & 292751115 & 11879.4 & \textless2e-16\\    
+		\hline
+	\end{tabular}
+	\caption{ANOVA test results.}
+	\label{anovatest}
+\end{table*}
+
+Because we found statistically significant result, we applied a Post hoc comparisons using the Tukey HSD test. It compared each condition with all others. For example, it compares the values from the gaModel with the gaModelClustered, see~\ref{modelANOVA}. It indicated that the gaModelCluster and ReducedGAModelCluster, when comparared with all other models, achieve greater log-likelihood values. Furthermore, we noticed that the depths conditions show a greater influence when the depth in smaller or equal to 25 km, see Figure~\ref{depthsANOVA}\\
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.45]{modelANOVA.pdf}
+	\caption{.}
+	\label{modelANOVA}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.45]{depthsClusterANOVA.pdf}
+	\caption{.}
+	\label{depthsANOVA}
+\end{figure}
+
+When comparing the models from the ReducedGAModel and from the gaModel against themselves, with or without using clustering catalogs, we found that there is no statistically significant result between the methods. That implies it can be considered that the methods are obtain statistically equal results.\\
+
+Therefore, based on the result of HSD test, we performed a new AVOVA test, considering only the gaModelClustered and the listaClustered. That was meant not only to verify the previous results but also to certify if the depth influence is preserved.\\
+
+\begin{table*}[!ht]
+	\centering
+	\begin{tabular}{|l|l|l|l|l|l|}
+		\hline
+		{Variable} & {Degrees of Freedom} & {Sum Sq}    & {Mean Sq}   & {F Value} & {Pr(\textgreater F)} \\
+		\hline
+		Model    & 1           & 174862   & 174862   & 12.22   & \textless0.000488     \\
+		\hline
+		
+		Depth    & 2                  & 391370  & 195685   & 13.67   & \textless1.32e-06     \\
+		\hline
+		Year     & 5                  & 18810831  & 3762166  & 262.82   & \textless2e-16     \\
+		\hline
+		Region   & 3                  & 249741769 & 83247256 & 5815.53 & \textless2e-16\\    
+		\hline
+	\end{tabular}
+	\caption{ANOVA test results.}
+	\label{anovatest}
+\end{table*}
+
+
+Taken together, these results suggest that the using cluster and depth smaller or equal to 25km, see Figure~\ref{depthsClusterANOVA} showed the best results.\\
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.45]{depthsClusterANOVA.pdf}
+	\caption{.}
+	\label{depthsClusterANOVA}
+\end{figure}
+
+\section{Paired Design}
+
+To further explore the only the variations from the models on the regions, disconsidering any other variable, we applied an paired Student’s t-test. 
+ tem que fazer isso pra kanto, kansai, touhoku e EastJapan?
+%TODO: tem que fazer isso pra kanto, kansai, touhoku e EastJapan?
+\begin{table*}[!ht]
+	\begin{center}
+		\begin{tabular}{|l|l|c|cc|c|}
+			\hline
+			\multicolumn{1}{|c|}{Scenario} & \multicolumn{5}{|c|}{Log Likelihood} \\
+			\hline
+			\multicolumn{1}{|c|}{Year} & \multicolumn{1}{|c|}{Random} & \multicolumn{1}{|c|}{RI} & \multicolumn{2}{c}{GAModel} & \multicolumn{1}{|c|}{p-value} \\    
+			%    Ano & Random & RI & GAModel & p-value\\
+			\hline
+			2000 &-2413.89 &-2124.44 &\raggedright  -2094.05 &\raggedleft (8.80) & 0.01\\%better
+			2001 &-2418.14 &-2103.19 &\raggedright  -2101.65 &\raggedleft  (69.49) & 0.57\\%equal
+			2002 &-2385.04 &-2094.43 &\raggedright  -2100.01 &\raggedleft (72.62) & 0.07\\%equal
+			2003 &-2401.00 &-2104.65 &\raggedright  -2100.76 &\raggedleft (156) & 0.35\\%equal
+			2004 &-2421.92 &-2101.92 &\raggedright  -2098.30 &\raggedleft (55.28) & 0.16\\%equal
+			2005 &-2643.38 &-2248.40 &\raggedright  -2114.00 &\raggedleft (779) & 0.01\\%better
+			2006 &-2616.50 &-2226.93 &\raggedright  -2115.6 &\raggedleft (633) & 0.01\\%better
+			2007 &-2451.68 &-2109.13 &\raggedright  -2122.03 &\raggedleft (615) &  0.13\\%equal
+			2008 &-2433.23 &-2112.92 &\raggedright  -4435.34 &\raggedleft (657) & 0.14\\%equal
+			2009 &-2884.74 &-2438.10 &\raggedright  -2113.1 &\raggedleft (814) & 0.01\\%better
+			2010 &-2418.18 &-2114.60 &\raggedright -2112.07 &\raggedleft (843) & 0.79\\%equal
+			\hline
+		\end{tabular}
+	\end{center}
+	\caption{Experiments result.}
+	\label{gaxriTable}
+\end{table*}
+

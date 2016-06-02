@@ -1,49 +1,38 @@
 %\chapter{Análise dos Dados}\label{chapter5}
-%TODO: statistical analysis, filtres(?). char, main/afeter shocks, histograms
+%TODO: statistical analysis, filtres(?). char, main/after shocks, histograms
 %pesquisar alguma coisa sobre dados e GA só pra formular uma intro
-\section{Dados de sismos}
-O foco dessa pesquisa é estudar padrões existentes nas ocorrências de sismos. Para isso é essencial que tenhamos acesso a dados confiáveis, seguros e ricos em detalhes. Pela página da {\it Japan Metereological Agency} fomos capazes de acessar dados fiéis aos nossos interesses. Os dados obtidos são compostos por longitude, latitude, data e horário da ocorrência, magnitude e profundidade. \\
-%- JMA\footnote[2]{\url {http://www.jma.go.jp/jma/index.html}}
+%TODO: inserir histogramas parte de 3.0>mag
+%TODO: inserir informações sobre os dados do gabriel
+\section{Earthquake data}
+The goal of this research is to find existing patterns in the occurrence of earthquakes. For that it is essential to access trustful data and to explore its details. From the  {\it Japan Metereological Agency} webpage we obtained earthquake data about quakes in Japan. In this data there are information about earthquakes that happened in or nearby Japan,  with the variables: time of the occurrence, magnitude, latitude and longitude and epicenter profundity, for the years of 2000 to 2013.\\
 
-Para a base de treino, foram separados os sismos considerados mais uniformes, formando o grupo cuja latitude e longitude na superfície representam abalos em áreas terrestres (terremotos), pouco profundos (acima de 20 km de profundidade) e com magnitude acima de 2.5 grau na escala Richter, durante os anos de 2000 a 2013.\\
+From our first analysis, we discovered a higher number of occurences of earthquakes during the year of 2011, when the 9.0 $M_w$ earthquake happened, see section~\ref{chapter1}. This earthquake triggered too many aftershocks in all Japan. It is considered that big earthquakes may cause others earthquakes (also called aftershocks)~\cite{zhuang2004analyzing}. In~Figure \ref{ocorrenciasAno} it is possible to visualize a great number of quakes for the year of 2011. Because of this abnormal behavior and because we decided to focus on more stable occurances, we liminated the tranning base to earthquakes until 2010.\\
 
-Para selecionar terremotos, foi preciso extrapolar as informações contidas nos dados e buscar uma forma de, a partir dos dados disponíveis, deduzir quais sismos serão considerados terremotos e quais serão considerados maremotos. Para isso foi utilizamos {\it The Google Elevation API}\footnote[3]{\url {https://developers.google.com/maps/documentation/elevation/?hl=pt-es}}, uma {\it Application Programming Interface} (API) que tem como objetivo fornecer informações sobre todos os locais sobre a superfície terrestre e oceânica. \\
+\begin{figure}[!htb]
+\centering
+\includegraphics[scale=0.9]{img/ocorrenciasAno.pdf}
+\caption{Amount of earthquake by year.}
+\label{ocorrenciasAno}
+\end{figure}
 
-A API foi utilizada por oferecer uma interface HTTP para consulta de dados de elevação territorial, que recebe via url os parâmetros latitude e longitude e retorna, em formato {\it JavaScript Object Notation} (JSON), dados como a altitude relativa à coordenadas fornecidas, dado este necessário para nossos estudos. Os abalos cuja coordenadas na superfície terrestre tivessem altitude relativa ao nível do mar acima de 0.0 foram selecionados.\\
+Based on the statement done before and considering that we want earthquakes that follow more stable patterns, we selected the ones that happened in land areas or very shallow sea areas, with maximum depth of 100 kilometers and magnitude above 3.0 in the Richter Scale.\\
 
-Ao analisar a nova base de treino percebe-se um elevado aumento na quantidade de terremotos em 2011, ano que o terremoto de Tohoku, magnitude 9 na escala Ritcher, ocorreu, Figura \ref{ocorrenciasAno}. Esse terremoto causou aumento desproporcional de sismos em todo o Japão, fato que levou a decisão de limitar a base de treino até o ano de 2010.\\
+For the experiments, the data was changed into slices for every year. Each slice is as follows: if the base contains data about a time interval of 10 years, it will be split in 10 slices.\\
 
-%pq???
-Ainda em relação a base de treino, ela foi alterada para gerar fatias anuais da base de treino anterior, baseadas nos dados cronológicos disponíveis nos dados da JMA. As fatias são definidas da seguinte forma: se a base refere-se a sismos ocorridos em um espaço de 10 anos, a base será divida por 10, gerando fatias anuais (por exemplo, de 2004 até 2005). Dessa forma, espera-se minimizar o {\it overfitting} (super ajustes) a base de dados.\\
+We also selected some sub-areas in Japan to better extract and understand earthquakes characteristics and patterns. Those areas are Kanto, Kansai, Touhoku and East Japan. The Figure~\ref{alljapan} shows how we defined them. They are discribed as follows:
 
-{\it Overfitting} é o uso de modelos ou procedimentos que violam parcimônia, isto é, que incluem mais termos que o necessário ou usam abordagens mais complicadas do que necessárias \cite{hawkins2004problem}. Visar minimiza-lo, na aplicação GA, é importante para que tenhamos boas generalizações.\\
+\paragraph{Kanto} Kanto is the region around Tokyo. It is area with high simologic activity during the years we studied. Its coordenates are 34.8 North, 138.8 West, with  2025 bins. Each bin covers an area of approximately 25km$^2$.\\
 
-Outra limitação imposta a base de dados foi em relação a área analisada. Como buscamos entender os padrões dos sismos, escolhemos quatro regiões do Japão para focar o experimento, Kanto, Kansai, Touhoku e East Japan. A Figura \ref{alljapan} propõe uma visualização dessas regiões no Japão. A seguir descreveremos as quatro regiões.\\
+\paragraph{Kansai} Kansai is the region that includes Kyoto, Osaka and many others historical cities. In this area, rather than Kanto area, there is a small sismic activity. Its coordenates are 34 North, 134.5 West, with 1600 bins. Each bin covers an area of approximately 25km$^2$.\\
 
-\paragraph{Kanto} Kanto é a região ao redor de Tóquio. É uma área com elevada atividade sísmica durante o período estudado. Essa região foi definida com coordenadas começando em 34.8 Norte, 138.8 Oeste, com  2025 {\it bins}. Cada {\it bin} corresponde a uma área de 25km2.\\
+\paragraph{Touhoku} Touhoku is the region in the North of the main japanese island. It has some clusters of sismic activities during the the years we studied. Its coordenates are 37.8 North, 139.8 West, with  800 bins. Each bin covers an area of approximately 100km$^2$. \\
 
-\paragraph{Kansai} Kansai é a região que inclui cidades Kyoto, Osaka e outras. Essa área, ao contrário da região de Kanto, possui uma baixa atividade sísmica. Essa região foi definida com coordenadas começando em 34 Norte, 134.5 Oeste, com  1600 {\it bins}. Cada {\it bin} corresponde a uma área de 25km2.\\
+\paragraph{East Japan} Is the region that is related with the east coast of Japan. It is the most different area, because it has eathquakes that happend both in land or in the sea. It was in this region that the 9.0 $M_w$ earthquake happened. Its coordenates are 37 North, 140 West, with 1600 bins. Each bin covers an area of approximately 100km$^2$. \\
 
-\paragraph{Touhoku} Touhoku é a região definida como a região ao norte da ilha principal japonesa. Ela possui alguns {\it clusters} de atividade sísmicas durante o período estudado. Essa região foi definida com coordenadas começando em 37.8 Norte, 139.8 Oeste, com  800 {\it bins}. Cada {\it bin} corresponde a uma área de 100km2. \\
+\begin{figure}[!htb]
+\centering
+\includegraphics[scale=0.5]{alljapan.png}
+\caption{Japan and the areas used in this studied.}
+\label{alljapan}
+\end{figure}
 
-\paragraph{Leste do Japão} É a região corresponde a costa leste do Japão. Ela se diferencia da área anterior por incluir tanto áreas terrestres como não-terrestres. Foi nessa área que o sismo M9 de 2011 aconteceu. Essa região foi definida com coordenadas começando em 37 Norte, 140 Oeste, com  1600 {\it bins}. Cada {\it bin} corresponde a uma área de 100km2. \\
-
-%\begin{figure}[!htb]
-%\centering
-%\includegraphics[scale=0.9]{ocorrenciasAno}
-%\caption{Quantidade de sismos pelos anos.}
-%\label{ocorrenciasAno}
-%\end{figure}
-%
-%\begin{figure}[!htb]
-%\centering
-%\includegraphics[scale=0.5]{alljapan.png}
-%\caption{Áreas priorizadas e suas localização.}
-%\label{alljapan}
-%\end{figure}
-
-
-
-%A última, se refere diretamente a nova base de treino. Ao analizar
-
-1'
