@@ -3,50 +3,49 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: monografia.aux
 The style file: unb-cic.bst
 Database file #1: bibliografia.bib
-Warning--I didn't find a database entry for "Goldberg:1989:GAS:534133"
 Warning--I didn't find a database entry for "zechartheme"
 Warning--empty journal in eberhard2014multiscale
 Warning--empty journal in omori1895after
 Warning--empty journal in wilkinson20152015
-You've used 41 entries,
+You've used 35 entries,
             2118 wiz_defined-function locations,
-            774 strings with 12931 characters,
-and the built_in function-call counts, 14562 in all, are:
-= -- 1443
-> -- 738
-< -- 12
-+ -- 294
-- -- 248
-* -- 1056
-:= -- 2422
-add.period$ -- 128
-call.type$ -- 41
-change.case$ -- 245
+            735 strings with 11498 characters,
+and the built_in function-call counts, 12459 in all, are:
+= -- 1233
+> -- 641
+< -- 9
++ -- 254
+- -- 216
+* -- 922
+:= -- 2086
+add.period$ -- 108
+call.type$ -- 35
+change.case$ -- 211
 chr.to.int$ -- 0
-cite$ -- 44
-duplicate$ -- 527
-empty$ -- 1076
-format.name$ -- 248
-if$ -- 3025
+cite$ -- 38
+duplicate$ -- 443
+empty$ -- 909
+format.name$ -- 216
+if$ -- 2571
 int.to.chr$ -- 0
-int.to.str$ -- 41
-missing$ -- 40
-newline$ -- 208
-num.names$ -- 84
-pop$ -- 240
+int.to.str$ -- 35
+missing$ -- 34
+newline$ -- 177
+num.names$ -- 72
+pop$ -- 198
 preamble$ -- 1
-purify$ -- 204
+purify$ -- 176
 quote$ -- 0
-skip$ -- 394
+skip$ -- 329
 stack$ -- 0
-substring$ -- 869
-swap$ -- 117
-text.length$ -- 12
+substring$ -- 756
+swap$ -- 92
+text.length$ -- 9
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 160
+type$ -- 138
 warning$ -- 3
-while$ -- 145
-width$ -- 43
-write$ -- 454
-(There were 5 warnings)
+while$ -- 125
+width$ -- 37
+write$ -- 385
+(There were 4 warnings)

@@ -1,235 +1,239 @@
-%\chapter{Resultados Obtidos}\label{chapter7}
-\section{Simple L-test Fitness Function}
-O operador escolhido como parâmetro de {\it crossover} foi o {\it Blend}, e a preferência por ele dentre os demais implementados pelo pacote DEAP foi pela observação empírica de crescimento dos valores de L-test e pelo fato de o operador ser específico para indivíduos formados por números reais, situação encontrada na aplicação. A média do resultado de 10 execuções:  \\
-%arrumar dados
-%O L-test do melhor indivíduo da população inicial é: 2.57371265858 e o valor mais alto de L-test obtido é: 6328.5844906
 
-\begin{table}[!h]
-  \begin{center}
-  \begin{tabular}{|l|r|}
-    \hline
-    Primeira geração (s) & 145.6644\\
-    Última geração (s) & 113.4796\\
-    Valor do L-test da primeira geração & -0.635949214\\
-    Valor do L-test da última geração & -0.009772415\\
-    \hline    
-  \end{tabular}
-  \end{center}
-  \caption{Tempo gasto e valor do L-test na média de 10 execuções com Blend.}
-  \label{GAParameters--}
-\end{table}
+\section{Results from the GAModel Experiment}
 
-Operador de {\it crossover} {\it Two Points} foi utilizado por motivos de comparação. A média do resultado de 10 execuções: \\
-%por em tabela
-\begin{table}[!h]
-  \begin{center}
-  \begin{tabular}{|l|r|}
-    \hline
-    Primeira geração (s) & 129.03775\\
-    Última geração (s) & 97.00832\\
-    Valor do L-test da primeira geração & -0.635856248\\
-    Valor do L-test da última geração & 0.042102222\\
-    \hline    
-  \end{tabular}
-  \end{center}
-  \caption{Tempo gasto e valor do L-test na média de 10 execuções com Two Points.}
-  \label{GAParameters---}
-\end{table}
+The results of the experiments are in the Table~\ref{gaxriTable} and in the box-plots Figure~\ref{boxPlot2007} and Figure~\ref{boxPlot2009}. The column labelled Random shows the result of the RandomModel, and the idea is the same for the ones labelled GAModel and RI. The ``p-value'' shows the significance value of the {\it Student's t-test} for the null hypothesis `` The mean of the log-likelihood values is greater that the values for RI''.\\
 
-Tanto o modelo preferido quanto o modelo comparativo foram capazes de evoluírem, obtendo valores finais médios superiores aos valores médios aleatórios iniciais.\\
+As expected, the RandomModel has lower values than the GAModel. When compared with the RI, the results show that the GAModel is competitive with the RI and that it is promising to use GA to generate earthquake forecasts.\\
 
-Surpreendemente, por \cite{janikow1991experimental}, era esperado que representações em ponto flutuante tivessem um desempenho de maior acurácia. Porém, o desempenho do operador específico para números reais, o {\it Blend}, foi menor quando comparado a um operador de uso mais geral, o {\it Two Points}, sendo mais lento e obtendo valores de L-test menores, na média.	\\
-	
-Todos os dados foram obtidos após a execução do algoritmo em um computador Apple MacBook Pro com processador 2.9 GHz Intel Core i7, memória RAM 8 GB 1600 MHz DDR3 com sistema operacional OS X 10.9.1 (13B42).\\
+\begin{table*}[!ht]
+	\begin{center}
+		\begin{tabular}{|l|l|c|cc|c|}
+			\hline
+			\multicolumn{1}{|c|}{Scenario} & \multicolumn{5}{|c|}{Log Likelihood} \\
+			\hline
+			\multicolumn{1}{|c|}{Year} & \multicolumn{1}{|c|}{Random} & \multicolumn{1}{|c|}{RI} & \multicolumn{2}{c}{GAModel} & \multicolumn{1}{|c|}{p-value} \\    
+			\hline
+			2000 &-2413.89 &-2124.44 &\raggedright  -2094.05 &\raggedleft (8.80) & 0.01\\%better
+			2001 &-2418.14 &-2103.19 &\raggedright  -2101.65 &\raggedleft  (69.49) & 0.57\\%equal
+			2002 &-2385.04 &-2094.43 &\raggedright  -2100.01 &\raggedleft (72.62) & 0.07\\%equal
+			2003 &-2401.00 &-2104.65 &\raggedright  -2100.76 &\raggedleft (156) & 0.35\\%equal
+			2004 &-2421.92 &-2101.92 &\raggedright  -2098.30 &\raggedleft (55.28) & 0.16\\%equal
+			2005 &-2643.38 &-2248.40 &\raggedright  -2114.00 &\raggedleft (779) & 0.01\\%better
+			2006 &-2616.50 &-2226.93 &\raggedright  -2115.6 &\raggedleft (633) & 0.01\\%better
+			2007 &-2451.68 &-2109.13 &\raggedright  -2122.03 &\raggedleft (615) &  0.13\\%equal
+			2008 &-2433.23 &-2112.92 &\raggedright  -4435.34 &\raggedleft (657) & 0.14\\%equal
+			2009 &-2884.74 &-2438.10 &\raggedright  -2113.1 &\raggedleft (814) & 0.01\\%better
+			2010 &-2418.18 &-2114.60 &\raggedright -2112.07 &\raggedleft (843) & 0.79\\%equal
+			\hline
+		\end{tabular}
+	\end{center}
+	\caption{Experiments result.}
+	\label{gaxriTable}
+\end{table*}
 
-%Pelo expressivo tempo total da aplicação, durante várias análises, utilizou-se um nú- mero menor de gerações (principalmente quando o objetivo era comparar outros trechos de código que não o trecho de evolução da população).\\
+\begin{figure}[H]
+	\centering
+	\begin{minipage}{0.45\textwidth}
+		\centering
+		\includegraphics[scale=0.55]{boxPlot2007.png}
+		\caption{Box-plot of the values obtained by the models for the year 2007.}
+		\label{boxPlot2007}
+	\end{minipage}\hfill
+	\begin{minipage}{0.45\textwidth}
+		\centering
+		\includegraphics[scale=0.55]{boxPlot2009.png}
+		\caption{Box-plot of the values obtained by the models for the year 2009.}
+		\label{boxPlot2009}
+	\end{minipage}
+\end{figure}
 
+\subsection{Models Example and The Real Data}
 
-Para melhor visualização e aumentar o poder de comparação, quatro figuras podem ser analisadas a seguir. As Figuras \ref{popXmediaLtest_CXBLEND(1)} e \ref{popXmediaLtest_2POINTS(1)} mostram as médias do valores do L-test para a todas as populações enquanto que as figuras \ref{popXmediaG_CXBLEND(1)} e \ref{popXmediaG_2POINTS(1)} mostram as médias valores do tempo também para todas as populações. Figuras \ref{popXmediaLtest_CXBLEND(1)} e \ref{popXmediaG_CXBLEND(1)} são referentes a execuções com o {\it crossover Blend} e as figuras\ref{popXmediaLtest_2POINTS(1)} e \ref{popXmediaG_2POINTS(1)}, com o {\it crossover Two Points}. \\
-
-%A mutação, FlipBit foi escolhida por estar presente nos exemplos fornecidos pelo pacote e ter sido facilmente entendida e pois dentre os operadores mutação implementados não foram de agrado, e futuramente deverá ser criada uma função específica para a aplicação.\\
-
-Por observação empírica das diversas execuções realizadas o maior tempo gasto é com cálculos de L-test, sendo influenciado principalmente pela quantidade de observações e pelo tamanho escolhido para {\it bins}. Quanto menor for o tamanho escolhido para o {\it bin} maior será a resolução do terreno analisado e, conseqüentemente, mais informações sobre ele teremos e maior será o espaço de busca, aumentando o tempo total gasto.\\
-
-Há um grande aumento do valor do L-test entre a vigésima geração e a quadragésima geração. Isso significa que a função de {\it fitness} resulta em um excessivo valor de {\it overfitting}, um super ajuste a base de dados.\\
-%onde fica isso?
-% Possivelmente, alterar a função utilizada pela mutação e alterar seu valor de acordo com a população deve ser capaz de minimizar a questão.
+The Figure~\ref{modeloGAModel} shows a model from the GAModel method for the year 2010. It indicates a low earthquake intensity as green while the more intensity areas, are shown as orange (for even higher cases, white is used). The Figure~\ref{modeloRI} shows a model from the RI Algorithm for the year 2010. It indicates a low earthquake intensity as white while the more intensity areas, are shown in red. For comparison reasons, we show the Figure~\ref{realData}, that shows the earthquake occurrences for the same year.\\
 
 
-
-%Em um segundo momento, baseado nas observações anteriores, algumas modificações foram realizadas.
-%%FIGURAS%%
-%1
-%\begin{figure}[!htb]
-%\centering
-%\includegraphics[scale=0.4]{popXmediaLtest_CXBLEND(1)}
-%\caption{Média dos valores de L-test de cada população( com {\it crossover Blend.})}
-%\label{popXmediaLtest_CXBLEND(1)}
-%\end{figure}
-%
-%%2
-%\begin{figure}[!htb]
-%\centering
-%\includegraphics[scale=0.4]{popXmediaLtest_2POINTS(1)}
-%\caption{Média dos valores de L-test de cada população (com {\it crossover Two Points.})}
-%\label{popXmediaLtest_2POINTS(1)}
-%\end{figure}
-%
-%%3
-%\begin{figure}[!htb]
-%\centering
-%\includegraphics[scale=0.4]{popXmediaG_CXBLEND(1)}
-%\caption{Média tempo gasto (em segundos) por cada população, com {\it crossover Blend.}}
-%\label{popXmediaG_CXBLEND(1)}
-%\end{figure}
-%
-%%4
-%\begin{figure}[!htb]
-%\centering
-%\includegraphics[scale=0.4]{popXmediaG_2POINTS(1)}
-%\caption{Média do tempo gasto (em segundos) por cada população, com {\it crossover Two Points.}}
-%\label{popXmediaG_2POINTS(1)}
-%\end{figure}
-
-\section{Time-slice Log Likelihood Fitness Function}
-
-Os resultados da aplicação GA {it Log Likelihood  Fitness Function} serão demonstrados a seguir.\\
-
-Foram feitas comparações entre os resultados dos valores de {\it fitness} dos melhores indivíduos e o desvio padrão da população a que ele pertence. Esses resultados comparados são referentes ao estudo dos grupos de operadores e a técnica de pesos adaptativos. A seguir, além dos resultados obtidos, algumas Figuras utilizadas para comparações serão mostradas.\\
-
-As Figuras \ref{2000-media_melhores-1point} e \ref{2010-media_melhores-1point} demonstram o resultado das 50 execuções, mostrando dados referentes a execuções do conjunto de operadores {\it One Point, Worst} e {\it Shuffle Indexes} para os anos de 2000 (quando há um ganho de desempenho ao utilizar-se a tabela) e de 2010 (quando há uma perda de desempenho). As Figuras mostram o melhor indivíduo e o desvio padrão de sua população. Está claro que existe os resultados não são consistentes e que existe alguma falha na aplicação.\\
-
-Essa falha ficou clara após a mudança do cálculo de fatorial pela tabela em memória. Até onde x = 27 (x se refere ao número da execução), os valores obtidos vieram de cálculos do fatorial, a partir disso, foi utilizada a tabela. Porém, devido a essa falha, não é possível qualificar se algum grupo gerou indivíduos mais aptos. Portanto é essencial corrigi-la para novas execuções sejam geradas e as comparações possam ser refeitas.\\
-
-Foram duas as causas levantadas para essa falha. A primeira, refere-se ao valor limitante para a tabela do fatorial. Uma vez que a tabela possui valores até o fatorial de 100, quaisquer valores acima desse limitante terão seus fatoriais arredondados a 100. Há casos que essa aproximação foi vantajosa e a aplicação respondeu com modelos de melhor desempenho, mas em alguns casos, a aproximação foi desvantajosa.\\
-
-A segunda, refere-se a um erro no código da execução. Após uma análise superficial do código, 
-é provável que o mapeamento dos dados coletados esteja propagando algum erro. Esforços futuros serão direcionados para a correção deste erro.\\
+\begin{figure}[H]
+	\centering
+	\begin{minipage}{0.45\textwidth}
+		\centering
+		\includegraphics[scale=0.4]{media2010.jpg}
+		\caption{ GAModel model for the year of 2010 in Kanto.}
+		\label{modeloGAModel}
+	\end{minipage}\hfill
+	\begin{minipage}{0.45\textwidth}
+		\centering
+			\includegraphics[scale=0.18]{kanto10_RI.png}
+			\caption{RI model for the year of 2010 in Kanto. Figure from~\cite{ecta14}.}
+			\label{modeloRI}
+	\end{minipage}
+	\begin{minipage}{0.45\textwidth}
+		\centering
+		\includegraphics[scale=0.4]{matriz2010_real.png}
+		\caption{Earthquake occurrences in the year of 2010 in Kanto}
+		\label{realData}
+	\end{minipage}
+\end{figure}
 
 
-%As Figuras \ref{2000-media_melhores-1point} e \ref{2010-media_melhores-1point} exemplificam o ocorrido, mostrando dados referentes a execuções do conjunto de operadores {\it One Point, Worst} e {\it Shuffle Indexes} para os anos de 2000 (quando há um ganho de desempenho ao utilizar-se a tabela) e de 2010 (quando há uma perda de desempenho). Até onde x = 27, os valores obtidos vieram de cálculos do fatorial, a partir disso, foi utilizada a tabela.\\
+\section{Results from The Main-shock Models Main-shock with After-shock Models Experiment}
+A one-way between subjects ANOVA was conducted to compare the effects of the models, the depths, the years and regions on the log-likelihood value. In this study there are 6 options for model: ReducedGAModel, GAModel, Emp-GAModel, Emp-ReducedGAModel, GAModelClustered and ReducedGAModelClustered. \\
 
-Ainda assim, a tabela em memória do valores do fatorial resultou em um avanço em termos de performance temporal. Uma vez que a segunda possível causa seja o verdadeiro erro da aplicação, acredita-se que o uso da tabela será capaz de facilitar futuras execuções.\\
+For all, the confidence interval is set to 5\%.\\
 
-Os resultados obtidos pela técnica de pesos adaptativos não foram tão elevadas quanto o esperado. Para efeitos comparativos dois grupos de figuras são mostrados a seguir. As Figuras \ref{2000-media_melhores} e \ref{2000-AUTO-media_melhores} mostram os valores dos melhores indivíduos e o desvio padrão da população para o ano de 2000 e compõem o primeiro grupo, já o segundo grupo é composto pelas figuras \ref{2010-media_melhores} e \ref{2010-AUTO-media_melhores} e segue o mesmo princípio, porém para o ano de 2010. No primeiro grupo, a Figura \ref{2000-media_melhores} refere-se aos dados da técnica em questão, enquanto que a outra Figura refere-se ao mesmo conjunto de operadores utilizados ({\it crossover}, {\it Two Points} e {\it Shuffle Indexes}), mas com pesos fixos. O segundo grupo é descrito da mesma maneira.\\
+Based on the results of the test, there was a not a significant effect of the depths or years variables. For both cases at the we obtaind p>0.05 level for the depths condition [F(2) = 2.072, p = 0.126] and we also obtained p>0.05 for the years condition  [F(5) = 0.050, p = 0.999]. There was a significant effect of the models condition (p>0.05 [F(5) = 9699.690, p<2e-16]) and regions condition (p>0.05 [F(3) = 764.220, p<2e-16]). Therefore, we conduct a new ANOVA test, with only the last two variables to verify the influence of those conditions more accurately. The results only changed a little, maintaining the significant effect of both conditions, p>0.05 [F(5) = 9705.6, p<2e-16] and p>0.05 [F(3) = 764.7, p <2e-16], respectively.\\
 
-Não fica claro, pelos dados mostrados, quais são os benefícios que a técnica introduz para a aplicação em questão. Após os mais diversos tipos de análises, análises sobre a influência dos grupos de operadores, seja na própria aplicação GA ou mesmo nas funções da CEC'13 e análises sobre diferentes técnicas para estruturação da abordagem GA, não ficou claro qualquer tipo de variação substancial capaz de direcionar os estudos e definir uma abordagem única para os experimentos. Portanto, deve-se fazer a devida ponderação: será que as variações realmente influem pouco nos resultados da aplicação, ou a aplicação deve passar por refinamentos, que levem a resultados mais consistentes?\\
+The results of the experiments are in the Table~\ref{anovatest}. 
 
-Para responder essa ponderação devemos analisar as escolhas feitas para a criação de nosso modelo. Pela própria estrutura definida pelo modelo proposto, cada {\it bin} é tratado independentemente dos seus vizinhos, não considerando a influência de sismos próximos. Porém, pela características inerentes aos sismos é claro que poucos são os casos de sismos completamente independentes entre si. Podemos considerar, logo, que a influência da independência influi consideravelmente e é ela a principal causa da mínima variação pré-citada. \\
+The column labelled Random shows the result of the RandomModel, and the idea the is same for the ones labelled GAModel and RI. The ``p-value'' shows significance value of the {\it Student's t-test} for null hypothesis `` The mean of the log-likelihood values is greater that the values for RI''.\\
 
-Por outro lado, as funções CEC'13 são funções unicamente matemáticas e por isso a questão levantada anteriormente não é suficiente para sugerir que a resposta a nossa ponderação deva ser direcionada somente para o segundo ponto da pergunta, ``a aplicação deve passar por refinamentos''. Devemos deixar claro, entretanto, que essa independência entre os {\it bins} deve ser melhor explorada a fim de encontrar uma solução que possibilite considerar a dependência dos sismos. Nesse ponto, percebemos que a complexidade da questão é elevada. \\ 
+\begin{table*}[!ht]
+	\centering
+	\begin{tabular}{|l|l|l|l|l|l|}
+		\hline
+		{Variable} & {Degrees of Freedom} & {Sum Sq}    & {Mean Sq}   & {F Value} & {Pr(\textgreater F)} \\
+		\hline
+		Model    & 31424058           & 6284812   & 6284812   & 255.0   & \textless2e-16     \\
+		\hline
+		Depth    & 2                  & 16077491  & 8038746   & 326.2   & \textless2e-16     \\
+		\hline
+		Year     & 5                  & 57908014  & 11581603  & 470.0   & \textless2e-16     \\
+		\hline
+		Region   & 3                  & 878253346 & 292751115 & 11879.4 & \textless2e-16\\    
+		\hline
+	\end{tabular}
+	\caption{Simple ANOVA Test Results.}
+	\label{anovatest}
+\end{table*}
 
-Apesar da utilização da técnica de pesos adaptativos não ter contribuído para uma performance mais significativa, fomos capazes de observar que os valores médios do melhores indivíduos durante os anos foram muito mais coesos do que quando comparados aos valores similares dos ensaios com pesos fixos. Isso nos leva a crer que utilizar a técnica indiretamente influiu positivamente em nossos resultados. Consequentemente, a idéia de abranger uma área maior de busca e posteriormente especifica-la, mostrou-se, como esperado, bastante adequada.\\
+Because we found statistically significant result, we applied a Post hoc comparisons using the Tukey HSD test. It compared each condition with all others. For example, it compares the values from the GAModel with the GAModelClustered, see~\ref{modelANOVA}. It indicated that the GAModelClustered and ReducedGAModelClustered, when compared with all other models, achieve greater log-likelihood values. Furthermore, we noticed that the depths conditions show a greater influence when the depth in smaller or equal to 25 km, see Figure~\ref{depthsANOVA}.\\
 
-Ainda em relação a técnica anterior, é possível que outras contribuições não tenham sido percebidas e que, de acordo com as devidas mudanças, sejamos capazes de percebê-las. Essas mudanças tanto podem ser algumas das já citadas como também na porcentagem de variação dos pesos dos operadores, que é de 30\% (escolhido arbitrariamente), nos valores desses pesos na situação inicial, entre outras, ou seja, variações na estrutura utilizada juntamente com a técnica.\\
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.45]{modelANOVA.pdf}
+	\caption{ANOVA results - Models.}
+	\label{modelANOVA}
+\end{figure}
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.45]{depthsClusterANOVA.pdf}
+	\caption{ANOVA results - Depths.}
+	\label{depthsANOVA}
+\end{figure}
 
-%%%FIGURAS%%%%
-%5
-%\begin{figure}[!h]
-%\centering
-%\textbf{Ano 2000}\par\medskip
-%\includegraphics[scale=0.5]{2000-media_melhores-1point.pdf}
-%%\small
-%\caption{Melhor indivíduo e desvio padrão da população(y) em cada execução(x), desempenho médio superior com a tabela do fatorial.}
-%\label{2000-media_melhores-1point}
-%\end{figure}
-%
-%%6
-%\begin{figure}[!h]
-%\centering
-%\textbf{Ano 2010}\par\medskip
-%\includegraphics[scale=0.5]{2010-media_melhores-1point.pdf}
-%\caption{Melhor indivíduo e desvio padrão da população(y) em cada execução(x), desempenho médio inferior com a tabela do fatorial.}
-%\label{2010-media_melhores-1point}
-%\end{figure}
-%
-%%7
-%\begin{figure}[!h]
-%\centering
-%\textbf{Ano 2000}\par\medskip
-%\includegraphics[scale=0.5]{2000-media_melhores.pdf}
-%\caption{Melhor indivíduo e desvio padrão da população(y) em cada execução(x), pesos fixos.}
-%\label{2000-media_melhores}
-%\end{figure}
-%
-%%8
-%\begin{figure}[!h]
-%\centering
-%\textbf{Ano 2000}\par\medskip
-%\includegraphics[scale=0.5]{2000-AUTO-media_melhores.pdf}
-%\caption{Melhor indivíduo e desvio padrão da população(y) em cada execução(x), GA com pesos adaptativos.}
-%\label{2000-AUTO-media_melhores}
-%\end{figure}
-%
-%%9
-%\begin{figure}[!h]
-%\centering
-%\textbf{Ano 2010}\par\medskip
-%\includegraphics[scale=0.5]{2010-media_melhores.pdf}
-%\caption{Melhor indivíduo e desvio padrão da população(y) em cada execução(x), pesos fixos.}
-%\label{2010-media_melhores}
-%\end{figure}
-%
-%%10
-%\begin{figure}[!h]
-%\centering
-%\textbf{Ano 2010}\par\medskip
-%\includegraphics[scale=0.5]{2010-AUTO-media_melhores.pdf}
-%\caption{Melhor indivíduo e desvio padrão da população(y) em cada execução(x), GA com pesos adaptativos.}
-%\label{2010-AUTO-media_melhores}
-%\end{figure}
+When comparing the models from the ReducedGAModel and from the GAModel against themselves, with or without using clustering catalogues, we found that there is no statistically significant result between the methods. That implies it can be considered that the methods are obtain statistically equal results.\\
 
-There are 3 tests hypotheses for this experiment that we would like to check. 
+Therefore, based on the result of HSD test, we performed a new ANOVA test, considering only the GAModelClustered and the ReducedGAModelClustered That was meant not only to verify the previous results but also to certify if the depth influence is preserved.\\
 
-The first is if the mean values of the log-likelihood for the ReducedGA are equal to the RI values.
-$$\begin{cases} H_0: \mu = RI_log-likelihood_value&\\H_1: \mu != RI_log-likelihood_value\end{cases}$$
-
-The second is if the mean values of the log-likelihood for the ReducedGA are equal to the GAModel values.
-$$\begin{cases} H_0: \mu = GAModel_log-likelihood_value&\\H_1: \mu != GAModel_log-likelihood_value\end{cases}$$
-
-And the last hypotheses is if the mean values of the log-likelihood for the GAModel are equal to the RI values.
-$$\begin{cases} H_0: \mu = RI_log-likelihood_value&\\H_1: \mu != RI_log-likelihood_value\end{cases}$$
-Summary
- 
-O objeto é descobrir se existem variações ente os métodos e quais são as variáveis mais influentes.
-
-%Os métodos utilizados para comparação são o gaModel,a versão com listas, os sistemas híbridos (hybrid_gaModel e hybrid_lista). Para cada um dos métodos temos algumas variações nas varíaveis utilizadas. Variamos os anos (2005-2010), as regiões (Kanto, EastJapan, Touhoku e Kansai), a profundidade ( <25km, <60km, <100km) e finalmente o catálogo utilizado (JMA X métodoJanelaJMA=>clustered).
-
-STAtistical Analysis
-ANOVA test and HSD Tukey
-
-Vou utilizar o ANOVA para nos dados obtidos para verificar qual composição de variáveis e métodos mais influênciam no resultado final.
-
-%Para isso executei o *gaModel*, *versão com Listas*, *hybrid_gaModel* e *hybrid_lista* para cada conjunto de variáveis 10 vezes. Cada grupo para um método é composto por: região, ano, profundidade e catálogo. Um grupo para um cenário será chamado cenário de execução.
-%
-%Após as execuções vou aplicar o ANOVA em uma data.frame composto pelos dados das **médias dos melhores indivíduos da última geração** para cada cenário de execução. 
-%
-%Caso uma variável esteja fora do intervalo de confiança (P < 0.05), vou aplicar novamente o ANOVA retirando essa variável do teste. 
-
-Aplico um teste post hoc nos resultados do ANOVO oara especificar quais são os grupos que diferem. O teste utilizado foi o Tukey teste.
-
-É importante resaltar que para todos os casos, aplico uma função de limite, que altera os valores do bins com mais que 12 ocorrências para 12.
-
-Começo a análise carregando o data.frame com os dados, seguindo para a aplicação do teste ANOVA e finalizando com o uso do Tukey teste.
+\begin{table*}[!ht]
+	\centering
+	\begin{tabular}{|l|l|l|l|l|l|}
+		\hline
+		{Variable} & {Degrees of Freedom} & {Sum Sq}    & {Mean Sq}   & {F Value} & {Pr(\textgreater F)} \\
+		\hline
+		Model    & 1           & 174862   & 174862   & 12.22   & \textless0.000488     \\
+		\hline
+		
+		Depth    & 2                  & 391370  & 195685   & 13.67   & \textless1.32e-06     \\
+		\hline
+		Year     & 5                  & 18810831  & 3762166  & 262.82   & \textless2e-16     \\
+		\hline
+		Region   & 3                  & 249741769 & 83247256 & 5815.53 & \textless2e-16\\    
+		\hline
+	\end{tabular}
+	\caption{ANOVA Test Results - Only Clustered Data.}
+	\label{newanovatest}
+\end{table*}
 
 
-Faço o ANOVA somente para os modelos "clusterizados"
+Taken together, these results suggest that the using cluster and depth smaller or equal to 25km, see Figure~\ref{depthsClusterANOVA} showed the best results.\\
 
-Aplico o anova, com a regressão para modelos, profundidades, anos e regiões.
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.45]{depthsClusterANOVA.pdf}
+	\caption{Second ANOVA results - Depths.}
+	\label{depthsClusterANOVA}
+\end{figure}
 
-Agora faço o Paired Design t.test aplicando para todas as combinações possíveis de modelos, em todas as regiões e profundidades, para todos os anos.
+\subsection{The Models Examples And The Real Data}
 
-Baseado nos arquivos que explicam o Paired Desing, escrevi o código a seguir. Porém não entendi porque ao fazer desta forma pode ser considerado um teste pareado. Os slides comparam duas formas de realizar este tipo de teste. Uma delas tem 
-*seta* um parametro da função com **True**, explicitando que é um teste pareado. Já para o outra forma, esse parametro fica com **False**.
+The Figure~\ref{gamodel2005eastjapan} shows a model from the GAModel method for the year 2005 in East Japan. The next Figure,~\ref{reduced2005eastjapan} shows a model from the ReducedGAModel~\ref{reducedGAModel} method for the year 2005 in East Japan.\\
 
-%A one-way between subjects ANOVA was conducted to compare the effects of the models, the depths, the years and regions on the log-likelihood value. In this study there are 6 options for model: lista, gaModel, hybrid_gaModel, hybrid_list, gaModelCluster and listaCluster. Based on the results of the test, there was a not a significant effect of the depths or years variables. For both cases at the we obtaind p>0.05 level for the depths condition [F(2) = 2.072, p = 0.126] and we also obtained p>0.05 for the years condition  [F(5) = 0.050, p = 0.999]. There was a significant effect of the models condition (p>0.05 [F(5) = 9699.690, p<2e-16]) and regions condition (p>0.05 [F(3) = 764.220, p<2e-16]). Therefore, we conduct a new anova test, with only the last two variables to verify the influence of those conditions more accurately. The results only changed a little, maintaining the significant effect of both conditions, p>0.05 [F(5) = 9705.6, p<2e-16] and p>0.05 [F(3) = 764.7, p <2e-16], respectively.
-%
-%Because we found statistically significant result, we applied a Post hoc comparisons using the Tukey HSD test. It compared each condition with all others. For example, it compares the values from the gaModel with the gaModelClustered. It indicated that the gaModelCluster and the listaCluster, when comparared with all other models, achieve greater log-likelihood values. Furthermore, we noticed that the depths conditions show a greater influence when the depth in smaller or equal to 25 km.
+All Figures,~\ref{gamodel2005eastjapan}~\ref{reduced2005eastjapan}~\ref{hybridgamodel2005eastjapan}~\ref{hybridreduced2005eastjapan},  indicate a low earthquake intensity as white while the more intensity areas, are shown in red. They are, in order, the data visualisation for the model from: the GAModel, the ReducedGAModel, the Emp-GAModel and the Emp-ReducedGAModel for East Japan in 2005. The Figure~\ref{real2005eastjapan} represents the earthquake occurrences in the same region and year.\\
 
-When comparing the models from the lista method and from the gaModel against themselves, with or without using clustering techniques, we found that there is no statistically significant result between the methods. That implies that it can be considered that the methods are obtain statistically equal results.
 
-Therefore, based on the result of the HSD test, we performed a new AVOVA test, considering only the gaModelClustered and the listaClustered. That was meant not only to verify the previous results but also to certify if the depth influence is preserved.
+\begin{figure}[H]
+	\centering
+	\begin{minipage}{0.45\textwidth}
+		\centering
+		\includegraphics[scale=0.2]{gamodel2005eastjapan.png}
+		\caption{GAModel model for the year of 2005 in East Japan.}
+		\label{gamodel2005eastjapan}
+	\end{minipage}
+	\begin{minipage}{0.45\textwidth}
 
-Taken together, these results suggest that the using cluster and depth smaller or equal to 25km showed the best results. 
-%TODO: add paired test results
+	\end{minipage}
+\end{figure}
+
+
+\begin{figure}[H]
+	\centering
+	\begin{minipage}{0.45\textwidth}
+		\centering
+		\includegraphics[scale=0.2]{reduced2005eastjapan.png}
+		\caption{ReducedGAModel model for the year of 2005 in East Japan.}
+		\label{reduced2005eastjapan}
+	\end{minipage}
+	\begin{minipage}{0.45\textwidth}
+		\centering
+		\includegraphics[scale=0.2]{hybridgamodel2005eastjapan.png}
+		\caption{Em-GAModel model for the year of 2005 in East Japan.}
+		\label{hybridgamodel2005eastjapan}
+	\end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+	\begin{minipage}{0.45\textwidth}
+		\centering
+			\includegraphics[scale=0.2]{hybridreduced2005eastjapan.png}
+			\caption{Emp-ReducedGAModel model for the year of 2005 in East Japan.}
+			\label{hybridreduced2005eastjapan}
+	\end{minipage}
+	\begin{minipage}{0.45\textwidth}
+		\centering
+		\includegraphics[scale=0.2]{real2005eastjapan.png}
+		\caption{Earthquake occurrences in the year of 2005 in East Japan.}
+		\label{real2005eastjapan}
+	\end{minipage}
+\end{figure}
+
+
+\subsection{Paired Design}
+
+To further explore the only the variations from the models on the regions, disregarding any other variable, we applied an paired Student’s t-test. 
+%TODO: tem que fazer isso pra kanto, kansai, touhoku e EastJapan?
+\begin{table*}[!ht]
+	\begin{center}
+		\begin{tabular}{|l|l|c|cc|c|}
+			\hline
+			\multicolumn{1}{|c|}{Scenario} & \multicolumn{5}{|c|}{Log Likelihood} \\
+			\hline
+			\multicolumn{1}{|c|}{Year} & \multicolumn{1}{|c|}{Random} & \multicolumn{1}{|c|}{RI} & \multicolumn{2}{c}{GAModel} & \multicolumn{1}{|c|}{p-value} \\    
+			\hline
+			2000 &-2413.89 &-2124.44 &\raggedright  -2094.05 &\raggedleft (8.80) & 0.01\\%better
+			2001 &-2418.14 &-2103.19 &\raggedright  -2101.65 &\raggedleft  (69.49) & 0.57\\%equal
+			2002 &-2385.04 &-2094.43 &\raggedright  -2100.01 &\raggedleft (72.62) & 0.07\\%equal
+			2003 &-2401.00 &-2104.65 &\raggedright  -2100.76 &\raggedleft (156) & 0.35\\%equal
+			2004 &-2421.92 &-2101.92 &\raggedright  -2098.30 &\raggedleft (55.28) & 0.16\\%equal
+			2005 &-2643.38 &-2248.40 &\raggedright  -2114.00 &\raggedleft (779) & 0.01\\%better
+			2006 &-2616.50 &-2226.93 &\raggedright  -2115.6 &\raggedleft (633) & 0.01\\%better
+			2007 &-2451.68 &-2109.13 &\raggedright  -2122.03 &\raggedleft (615) &  0.13\\%equal
+			2008 &-2433.23 &-2112.92 &\raggedright  -4435.34 &\raggedleft (657) & 0.14\\%equal
+			2009 &-2884.74 &-2438.10 &\raggedright  -2113.1 &\raggedleft (814) & 0.01\\%better
+			2010 &-2418.18 &-2114.60 &\raggedright -2112.07 &\raggedleft (843) & 0.79\\%equal
+			\hline
+		\end{tabular}
+	\end{center}
+	\caption{Experiments result - Paired Design.}
+	\label{gaxriTable??}
+\end{table*}

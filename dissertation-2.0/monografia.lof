@@ -6,16 +6,28 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Amount of earthquake by year.}}{26}{figure.5.1}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Japan and the areas used in this studied.}}{27}{figure.5.2}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces GAModel model for the year of 2010.}}{37}{figure.6.1}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces RI model for the year of 2010. Figure from~\cite {ecta14}.}}{38}{figure.6.2}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Earthquake occurances for the year of 2010}}{38}{figure.6.3}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Box-plot of the values obtained by the models for the year 2007.}}{40}{figure.6.4}
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Box-plot of the values obtained by the models for the year 2009.}}{40}{figure.6.5}
-\contentsline {figure}{\numberline {6.6}{\ignorespaces .}}{43}{figure.6.6}
-\contentsline {figure}{\numberline {6.7}{\ignorespaces .}}{44}{figure.6.7}
-\contentsline {figure}{\numberline {6.8}{\ignorespaces .}}{45}{figure.6.8}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Amount of earthquake by year.}}{28}{figure.6.1}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Japan and the areas used in this studied.}}{28}{figure.6.2}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Japan and the areas used in this studied.}}{29}{figure.6.3}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Kansai.}}{29}{figure.6.4}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Touhoku.}}{29}{figure.6.5}
+\contentsline {figure}{\numberline {6.6}{\ignorespaces East of Japan.}}{30}{figure.6.6}
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Depth Histogram of earthquakes.}}{30}{figure.6.7}
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Histogram of earthquakes stronger than 3.0 in the Richter Scale in Kanto}}{31}{figure.6.8}
 \addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {8.1}{\ignorespaces Box-plot of the values obtained by the models for the year 2007.}}{39}{figure.8.1}
+\contentsline {figure}{\numberline {8.2}{\ignorespaces Box-plot of the values obtained by the models for the year 2009.}}{39}{figure.8.2}
+\contentsline {figure}{\numberline {8.3}{\ignorespaces GAModel model for the year of 2010 in Kanto.}}{40}{figure.8.3}
+\contentsline {figure}{\numberline {8.4}{\ignorespaces RI model for the year of 2010 in Kanto. Figure from~\cite {ecta14}.}}{40}{figure.8.4}
+\contentsline {figure}{\numberline {8.5}{\ignorespaces Earthquake occurrences in the year of 2010 in Kanto}}{40}{figure.8.5}
+\contentsline {figure}{\numberline {8.6}{\ignorespaces ANOVA results - Models.}}{42}{figure.8.6}
+\contentsline {figure}{\numberline {8.7}{\ignorespaces ANOVA results - Depths.}}{43}{figure.8.7}
+\contentsline {figure}{\numberline {8.8}{\ignorespaces Second ANOVA results - Depths.}}{44}{figure.8.8}
+\contentsline {figure}{\numberline {8.9}{\ignorespaces GAModel model for the year of 2005 in East Japan.}}{45}{figure.8.9}
+\contentsline {figure}{\numberline {8.10}{\ignorespaces ReducedGAModel model for the year of 2005 in East Japan.}}{45}{figure.8.10}
+\contentsline {figure}{\numberline {8.11}{\ignorespaces Em-GAModel model for the year of 2005 in East Japan.}}{45}{figure.8.11}
+\contentsline {figure}{\numberline {8.12}{\ignorespaces Emp-ReducedGAModel model for the year of 2005 in East Japan.}}{46}{figure.8.12}
+\contentsline {figure}{\numberline {8.13}{\ignorespaces Earthquake occurrences in the year of 2005 in East Japan.}}{46}{figure.8.13}
 \addvspace {10\p@ }

@@ -13,7 +13,7 @@ Ali~Firat Cabalar e Abdulkadir Cevik.
   recent earthquakes in turkey.
 \newblock {\em Computers and Geosciences}, 35:1884--1896, October 2009.
 
-\bibitem{DeRainville:2012:DPF:2330784.2330799}
+\bibitem{DeRainville}
 Fran\c{c}ois-Michel De~Rainville, F{\'e}lix-Antoine Fortin, Marc-Andr{\'e}
   Gardner, Marc Parizeau, e Christian Gagn{\'e}.
 \newblock Deap: A python framework for evolutionary algorithms.
@@ -34,12 +34,6 @@ David~E. Goldberg.
 \newblock Addison-Wesley Longman Publishing Co., Inc., Boston, MA, USA, 1st
   edition, 1989.
 
-\bibitem{herrera1998tackling}
-Francisco Herrera, Manuel Lozano, e Jose~L. Verdegay.
-\newblock Tackling real-coded genetic algorithms: Operators and tools for
-  behavioural analysis.
-\newblock {\em Artificial intelligence review}, 12(4):265--319, 1998.
-
 \bibitem{ijse5762}
 A.~M. Huda e Bagus Santosa.
 \newblock Subsurface structure in japan based on p and s waves travel time
@@ -51,12 +45,6 @@ T~Serkan Irmak, B{\"u}lent Do{\u{g}}an, e Ahmet Karaka{\c{s}}.
 \newblock Source mechanism of the 23 october, 2011, van (turkey) earthquake (m
   w= 7.1) and aftershocks with its tectonic implications.
 \newblock {\em Earth, Planets and Space}, 64(11):991--1003, 2012.
-
-\bibitem{janikow1991experimental}
-Cezary~Z Janikow e Zbigniew Michalewicz.
-\newblock An experimental comparison of binary and floating point
-  representations in genetic algorithms.
-\newblock In {\em ICGA}, pages 31--36, 1991.
 
 \bibitem{Kennett1992}
 B.~L.~N. Kennet e M.~S. Sambridge.
@@ -93,14 +81,6 @@ John~R. Koza, Martin~A. Keane, e Matthew~J. Streeter.
 \newblock What's ai done for me lately? genetic programming's human-competitive
   results.
 \newblock {\em IEEE Intelligent Systems}, 18(3):25--31, 2003.
-
-\bibitem{liang2013problem}
-JJ~Liang, BY~Qu, PN~Suganthan, e Alfredo~G Hern{\'a}ndez-D{\'\i}az.
-\newblock Problem definitions and evaluation criteria for the cec 2013 special
-  session on real-parameter optimization.
-\newblock {\em Computational Intelligence Laboratory, Zhengzhou University,
-  Zhengzhou, China and Nanyang Technological University, Singapore, Technical
-  Report}, 201212, 2013.
 
 \bibitem{michalewicz1996heuristic}
 Zbigniew Michalewicz.
@@ -140,20 +120,6 @@ Yosihiko Ogata e Jiancang Zhuang.
 Fusakichi Omori.
 \newblock On the after-shocks of earthquakes.
 \newblock 1895.
-
-\bibitem{NumericalRecipes}
-William~H. Press, Saul~A. Teukolsky, Willian~T. Vetterling, e Brian~P.
-  Flannery.
-\newblock {\em Numerical Recipes, The Art of Scientific Computing}.
-\newblock Cambridge University Press, third edition, 2007.
-
-\bibitem{webDeap}
-Deap Project.
-\newblock Evolutionary tool.
-\newblock
-  \url{http://deap.gel.ulaval.ca/doc/default/api/tools.html\#deap.tools.mutPolynomialBounded},
-  July 2015.
-\newblock [Online; acessado: 08-07-2015].
 
 \bibitem{Ramos2011}
 Josafath I.~Espinosa Ramos e Roberto~A. V\'azques.
@@ -197,13 +163,6 @@ Mark Simons, Sarah~E Minson, Anthony Sladen, Francisco Ortega, Junle Jiang,
 \newblock The 2011 magnitude 9.0 tohoku-oki earthquake: Mosaicking the
   megathrust from seconds to centuries.
 \newblock {\em science}, 332(6036):1421--1425, 2011.
-
-\bibitem{takahashi2001crossover}
-Masato Takahashi e Hajime Kita.
-\newblock A crossover operator using independent component analysis for
-  real-coded genetic algorithms.
-\newblock In {\em Evolutionary Computation, 2001. Proceedings of the 2001
-  Congress on}, volume~1, pages 643--649. IEEE, 2001.
 
 \bibitem{utsu1995centenary}
 Tokuji Utsu e Yosihiko Ogata.
@@ -256,7 +215,6 @@ Feiyan Zhou e Xiaofeng Zhu.
 Jiancang Zhuang, Yosihiko Ogata, e David Vere-Jones.
 \newblock Analyzing earthquake clustering features by using stochastic
   reconstruction.
-\newblock {\em Journal of Geophysical Research: Solid Earth (1978--2012)},
-  109(B5), 2004.
+\newblock {\em Journal of Geophysical Research: Solid Earth}, 109(B5), 2004.
 
 \end{thebibliography}

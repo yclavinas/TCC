@@ -1,0 +1,30 @@
+%\chapter{Introduction}\label{chapter1}
+Nesse capítulo, apresentamos uma especificação geral do problema abordado, sua relevância e quais são os objetivos do estudo.\\
+
+\section{Terremotos}
+Terremotos causam muito danos ao meio ambiente e suas consequências podem representar, direta ou indiretamente, riscos aos seres humanos. Eles se manifestam por tremores e movimentações terrestres. Terremotos podem causar terremotos, deslizamentos de terras, atividades vulcânicas, etc.\\
+
+Existem muitos exemplos que mostram a força devastadora dos terremotos. Em Abril de 2015, aconteceu um tremor no Nepal, com magnitude de momento de $M_w$ 7.8 e considerado o maior terremoto desde 1934. Ele destruiu muitos prédios e infraestrutura, desencadeou muitos deslizamentos de terra e pedras em regiões montanhosas~\cite{wilkinson20152015}. Muito outros terremotos dependentes deste~\cite{van2012seismicity},aconteceram após ele, incluindo dois grandes \textit{after-shocks} com magnitude de $M$ 6.7 e $M$ 7.3 que causaram ainda mais danos~\cite{wilkinson20152015}.\\
+
+Outro exemplo aconteceu em Março de 2011, no Japão. Ele foi um terremoto de magnitude de momento de $M_w$ 9.0 ~\cite{simons20112011}, e foi considerado como o terremoto mais poderoso que já aconteceu no Japão. Ele casou \textit{tsunamis} que chegaram mais de 39 metros, moveu a ilha principal do Japão em mais de 2 metros como também alterou o eixo da Terra. Foi descrito que ele cause mais de 14 mil mortes, fez mais de 244000 pessoas desabrigadas e ainda provocou o derretimento do complexo \textit{Fukushima Daiichi Nuclear Power Plant}. Muitos outros terremotos seguiram este evento~\cite{mimura2011damage}. Também em 2011, um terremoto de magnitude de momento $M_w$ 7.1 aconteceu em Van, Turquia e causou muitas mortes e muitos danos. Este são alguns exemplos recentes do quão perigosos podem ser os terremotos.~\cite{irmak2012source}.\\
+
+Este terremotos, e muitos outros que podem causar danos a sociedade, tem características em comum. Eles não somente são terremotos muito fortes, como também aconteceram em áreas habitadas, causando ainda mais danos. Para diminuir o quanto for possível futuros desastres, muito pode ser feito. Isto inclui desenvolver estruturas com técnicas mais resistentes a terremotos, criar sistemas de alarme de terremotos, criar sistemas de engenharia mais preciso, etc.\\
+
+Para prevenir quantas casualidades quanto possível, é necessário entender os padrões e mecanismos por trás das ocorrências do terremotos. Precisamos aprender se existe alguma relação entre a localização dos eventos e o tempo destes, como essa relação ocorre, et cetera. Com esta informação, é possível criar melhores modelos de previsão de ocorrência de terremotos, indicando quais regiões demonstram uma probabilidade maior de ocorrências de terremotos em um certo período de tempo.\\
+
+Até agora, é difícil de entender claramente como as diferentes variáveis sísmicas (tempo da ocorrência, magnitude, local, profundidade, ...) influenciam os abalos sísmicos e se existem um modelos matemáticos capazes de fornecer modelos detalhados e informações precisas sobre as relações e como estimá-las. Portanto, desenvolver um modelo de previsão de risco de terremotos pode se comprovar muito complexo.\\
+
+
+\section{Earthquake Prediction}
+Koza~\cite{Koza2003}, disse que Computação Evolutiva (EC) pode achar, por tentativa e erro e baseado em uma grande quantidade de dados, melhores soluções para problemas que seres humanos podem ter dificuldade em resolver. EC é a família do sub-campo da inteligência artificial que visa extrair padrões e resolver problemas usando uma grande quantidade de dados históricos. Podemos também dizer que sem qualquer conhecimento sobre o problema a ser controlado, a EC pode aprender e achar soluções para o problema.~\cite{Michie94machinelearning}.\\
+
+Algoritmos Genéticos (GA) é a técnica de EC que é utilizada neste estudo. Ela é constituída pela categoria de busca heurística, são algoritmos estocásticos e o método de busca deles é baseado em herança genética e sobrevivência do mais adaptado~\cite{michalewicz1996heuristic}. São técnicas interessantes de serem usadas em casos onde é difícil entendimento e que o conhecimento sobre o caso ainda está suficientemente disponível.\\
+
+Em vista dessas informações e nas dificuldades de entender como terremotos se comportam, procuramos explorar dados históricos de terremoto usando GA. Esperamos que ajudará a encontrar novas ideias sobre o estudo de terremotos, seus padrões e mecanismos por trás de suas ocorrências. Para isso, precisamos primeiro determinar o problema de previsão, depois verificar se é adequado utilizar EC para o problema de gerar um modelo de previsão de sismos.\\
+
+Previsão de terremotos é uma área polêmica. Nenhuma pesquisa ainda foi capaz de sugerir que um terremoto de larga escala pode ser previsto~\cite{ecta14} e muito cientistas acreditam que previsão de terremotos pode ser tanto impossível como as informações para fazer a predição estejam foram do alcance da ciência~\cite{eberhard2014multiscale}.\\
+
+No contexto desse estudo, não buscamos prever nenhum terremoto individualmente ou suas características. Nosso objetivo está no definido no fato de terremotos se agruparem no espaço tempo. Queremos usar técnicas de computação para aprender e gerar modelos de risco. Existe diversas utilidades por detrás do estudo dos mecanismos dos terremotos, com o objetivo de gerar modelos estatísticos de previsão de riscos~\cite{Nature1999}.\\
+
+Posteriormente, buscaremos estudar modos de melhorar os métodos gerados, usando tanto GA como outras técnicas computacionais a também qualquer conhecimento sismológico. Para isso, propomos diferentes representações que buscam refinar a performance do algoritmo e para incorporar métodos da sismologia para os métodos já presentes.\\
+
