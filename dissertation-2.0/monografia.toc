@@ -64,11 +64,12 @@
 \contentsline {subsection}{\numberline {7.4.2}Evolutionary Operators}{35}{subsection.7.4.2}
 \contentsline {subsection}{\numberline {7.4.3}Models Comparison}{36}{subsection.7.4.3}
 \contentsline {subsection}{\numberline {7.4.4}Statistical Analysis Of The Results}{36}{subsection.7.4.4}
-\contentsline {chapter}{\numberline {8}Results}{38}{chapter.8}
-\contentsline {section}{\numberline {8.1}Results from the GAModel Experiment}{38}{section.8.1}
-\contentsline {subsection}{\numberline {8.1.1}Models Example and The Real Data}{39}{subsection.8.1.1}
-\contentsline {section}{\numberline {8.2}Results from The Main-shock Models Main-shock with After-shock Models Experiment}{40}{section.8.2}
-\contentsline {subsection}{\numberline {8.2.1}The Models Examples And The Real Data}{44}{subsection.8.2.1}
-\contentsline {subsection}{\numberline {8.2.2}Paired Design}{46}{subsection.8.2.2}
-\contentsline {chapter}{\numberline {9}Conclusion}{47}{chapter.9}
+\contentsline {section}{\numberline {7.5}Magnitude Experiment}{37}{section.7.5}
+\contentsline {chapter}{\numberline {8}Results}{39}{chapter.8}
+\contentsline {section}{\numberline {8.1}Results from the GAModel Experiment}{39}{section.8.1}
+\contentsline {subsection}{\numberline {8.1.1}Models Example and The Real Data}{40}{subsection.8.1.1}
+\contentsline {section}{\numberline {8.2}Results from The Main-shock Models Main-shock with After-shock Models Experiment}{41}{section.8.2}
+\contentsline {subsection}{\numberline {8.2.1}The Models Examples And The Real Data}{45}{subsection.8.2.1}
+\contentsline {section}{\numberline {8.3}Magnitude Study}{46}{section.8.3}
+\contentsline {chapter}{\numberline {9}Conclusion}{48}{chapter.9}
 \contentsline {chapter}{Refer\^encias}{50}{section*.25}

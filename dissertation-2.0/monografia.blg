@@ -7,45 +7,45 @@ Warning--I didn't find a database entry for "zechartheme"
 Warning--empty journal in eberhard2014multiscale
 Warning--empty journal in omori1895after
 Warning--empty journal in wilkinson20152015
-You've used 35 entries,
+You've used 36 entries,
             2118 wiz_defined-function locations,
-            735 strings with 11498 characters,
-and the built_in function-call counts, 12459 in all, are:
-= -- 1233
-> -- 641
+            741 strings with 11714 characters,
+and the built_in function-call counts, 12676 in all, are:
+= -- 1255
+> -- 648
 < -- 9
-+ -- 254
-- -- 216
-* -- 922
-:= -- 2086
-add.period$ -- 108
-call.type$ -- 35
-change.case$ -- 211
++ -- 257
+- -- 218
+* -- 928
+:= -- 2123
+add.period$ -- 112
+call.type$ -- 36
+change.case$ -- 215
 chr.to.int$ -- 0
-cite$ -- 38
-duplicate$ -- 443
-empty$ -- 909
-format.name$ -- 216
-if$ -- 2571
+cite$ -- 39
+duplicate$ -- 450
+empty$ -- 931
+format.name$ -- 218
+if$ -- 2619
 int.to.chr$ -- 0
-int.to.str$ -- 35
+int.to.str$ -- 36
 missing$ -- 34
-newline$ -- 177
-num.names$ -- 72
-pop$ -- 198
+newline$ -- 183
+num.names$ -- 74
+pop$ -- 206
 preamble$ -- 1
-purify$ -- 176
+purify$ -- 179
 quote$ -- 0
-skip$ -- 329
+skip$ -- 335
 stack$ -- 0
-substring$ -- 756
-swap$ -- 92
+substring$ -- 761
+swap$ -- 93
 text.length$ -- 9
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 138
+type$ -- 142
 warning$ -- 3
-while$ -- 125
-width$ -- 37
-write$ -- 385
+while$ -- 127
+width$ -- 38
+write$ -- 397
 (There were 4 warnings)

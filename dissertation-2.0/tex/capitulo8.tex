@@ -1,39 +1,34 @@
-%TODO: add contribuitions and future works
-%\chapter{Conclusão}\label{chapter8}
-Este projeto apresentou uma proposta de desenvolvimento de um modelo de previsão de probabilidades elaborado a partir de uma implementação simples de algoritmos genéticos. Foi possível perceber uma evolução do modelo em relação ao modelo completamente aleatório, caracterizado pela população inicial.\\
+%TODO: add contributions and future works
 
-Foram muitos os desafios enfrentados ao utilizar os testes propostos pelo RELM como função de {\it fitness} pelo algoritmo genético. O primeiro está relacionada ao tempo de execução e o uso desses a cada geração como função de {\it fitness}. Por se tratar de testes com uma grande quantidade de cálculos em grande quantidades de observações, o tempo gasto para analisar as informações poderia ser demasiado grande para ser viável continuar a utilizar os testes junto ao algoritmo. O segundo problema estava vinculado ao comportamento desses testes em uma aplicação de algoritmos genéticos, pois não havia conhecimento anterior sobre a aplicabilidade desses com Computação Evolutiva e se aplicável, se o resultado seria promissor.\\
+Este trabalho procurou responder questões sobre a possibilidade de utilização de algoritmos
+genéticos para realizar a tarefa de projetar circuitos digitais. Enquanto um
+dos objetivos principais, o estudo de soluções sequenciais, não pôde ser realizado devido
+aos problemas técnicos descritos, resultados interessantes surgiram mesmo apenas para o
+projeto de circuitos combinacionais.
 
-Pelos resultados finais do L-test, foi verificado que tanto o primeiro desafio quanto o segundo, não foram suficientes para impossibilitar o uso dos testes e que as gerações de populações resultaram em indivíduos mais aptos para a previsão de sismos. Pelos resultados mostrados o trabalho mostra que aplicar Computação Evolutiva para prever ocorrências de sismos é minimamente promissor, uma vez que há uma evolução do modelo em relação ao modelo pseudo-aleatório.\\
+In this work we proposed some methods to generate earthquake risk model. We described how they were built and their characteristics. All models were based on the GAModel, and differ from it in the genome representation, the use of seismological equations or the catalogue used. \\
 
-Foi possível, portanto, vincular os testes proposto pelo RELM com algoritmos genéticos. A partir disso, agora, deve-se explorar as características da aplicação, tornar os testes implementados mais completos e estruturados, definir os operadores genéticos visando um comportamento adequado em relação aos indivíduos como para as populações evoluídas.\\
+Initially, we studied the CSEP framework.  Based on it we proposed a GA method to generate a earthquake risk model. We implemented the method and did some experiments comparing it with the model from the RI Algorithm. The scenario used for this experiments was composed by the years of 2000 to 2010 for the region of Kanto. The results showed that this method is competitive with the RI Algorithm.\\
 
-Posteriormente, o primeiro desafio foi minimizado, pelo uso de uma tabela em memória do fatorial. Alguns estudos deverão ser realizados para compreendermos melhor o porquê da alteração dos valores após a introdução da tabela.\\
+Supported on this results and because we wanted to improve the performance of the method in terms of log-likelihood values, we proposed two methodologies. The first, is to change the genome representation. The other is to use seismological equations that would improve the accuracy of the methods by adding domain awareness to them.\\
 
-O uso de operadores de peso adaptativos mostrou-se interessante e é provável que, sua inclusão na GA estudada traga ainda mais benefícios assim que outros problemas forem resolvidos. Problemas, tais quais, a independência dos {\it bins}, que influenciaram negativamente a performance da aplicação e serão alvos de maiores esforços.\\
+The main goal of changing the genome representation is to minimise the search space. We expected that by doing so, the GA would have to consider less possibilities and would find a good solution with less computational effort and/or could lead to models with higher log-likelihoods models.\\
+
+The new representation achieved similar results as the one from the GAModel. Hence we expected to achieve greater log-likelihood values than the GAModel, we consider that more efforts should be direct to refine this representation. We think that this representation would benefit if we consider areas that contained more than one bin, instead of how it is now. Because it would have some flexibility in positioning the earthquakes.\\
+
+Secondly, we studied the ETAS model and the seismological equations that it uses. That lead to the study of the Omori-Utsu formula and some others related formula. From this study, we encountered many difficulties, mostly related to lack of earthquake background knowledge. Although, during this study we realised that it would be interesting to analyse how the depths influence our methods and to consider a classification of the earthquakes into main-shocks and after-shocks. \\
+
+The usage of the seismological equations show no improvement to the models. We think, though, that there is still space to improve the usage of these equations. If we better understand how the seismological equations behave and when is the best time to use them, probably this would lead to some improvement to the models. Also, we may want to try some other group of equations, once we focused on the Omori-Utsu formula and its relative equations.\\
+
+We compared the models generated for each scenario. From the statistical analysis, we could analyse how the earthquakes variables influence the models and which combination result in models with higher log-likelihood values.\\
+
+From the analysis, we discovered that more stable earthquake are easier to predict. These earthquakes have depth smaller or equal to 25km, magnitude higher than 4.0 in the Richter Scale. We also discovered that to classify earthquakes into main-shocks and after-shocks improve our methods predicting ability.\\
+
+After considering all analysis, the method that achieve better results in the statistical analysis, was the \textit{GAModelWindow}. We propose a comparison of this method models with the RI Algorithm and the GAModel to proof test this method.\\
 
 
-
-Algumas propostas de melhorias e trabalhos futuros podem ser listadas:\\
-
-• Compará-lo com um outro modelo de previsão de terremotos, como por exemplo, o {\it Relative Intensity} (RI). Para melhores efeitos de comparação, é interessante acrescentar cálculos de confiabilidade estatísca, como {\it p-value}, e criar um mapa demonstrativo da previsão relativa de cada área representada pelos {\it bins};\\%acho que tem no artigo 
-
-• Implementar o operador de mutação específico para números reais e que tenha um comportamento direcionado a aplicação, capaz de alterar seus valores no decorrer das gerações capaz de equilibrar {\it explotaition} e {\it exploration};\\
-
-• Aplicar alguns testes sugeridos por Zechar\cite{zechartheme} afim de definir a qualidade do modelo desenvolvido;\\
-
-• Fazer analises de complexidade do algoritmo executado;\\
-
-• Criar múltiplas observações para cada indivíduo para que o cálculo de incertezas possa ser aplicado e, assim, aumentarmos a qualidade dos modelos;\\
-
-• Realizar experimentos em outras áreas do Japão, além de Kanto;\\
-
-• Especializar a abordagem de algoritmo genético ({\it crossover} mais apropriado, mutação específica, ...) ou  utilizar soluções híbridas, entre algoritmo genéticos e outras técnicas de aprendizado de máquina;\\
-
-• Incrementar os cálculos estatísticos com as ferramentas adequadas, desvio padrão, variância, etc, que compõe os cálculos dos testes demonstrados;\\
-
-• A fim de evitar o {\it over fitting}, podemos inserir dados sismológicos, como sobre de magnitude e hora da ocorrência, aumentando a área de busca da aplicação;\\
-
-• Cada {\it bin} é trato e considerado individualmente. Portanto a ocorrência de sismos em um {\it bin} não influência ocorrências de sismos em seus vizinhos, o que sabemos não ser verdade;\\
-
-• Contrariando expectativas, execuções com operadores reais obtiveram desempenho pior que com operadores tradicionais pode estar relacionado ao fato de não existir influência entre os {\it bins}, uma vez que pode haver áreas de altíssima probabilidade próximas a áreas de baixa probabilidade.\\
+%hibridizacao pra diferenciar o modelo
+%One way to mitigate the sharpness noticed in the results is by making the algorithm aware of data lo- cality. 
+%quais terremotos são mais legais :D
+%qual modelo é mais legal
+%

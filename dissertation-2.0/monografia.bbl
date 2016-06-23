@@ -13,6 +13,13 @@ Ali~Firat Cabalar e Abdulkadir Cevik.
   recent earthquakes in turkey.
 \newblock {\em Computers and Geosciences}, 35:1884--1896, October 2009.
 
+\bibitem{Campelo2015-01}
+Felipe Campelo.
+\newblock Lecture notes on design and analysis of experiments.
+\newblock \url{https://github.com/fcampelo/Design-and-Analysis-of-Experiments},
+  2015.
+\newblock Version 2.11, Chapter 7; Creative Commons BY-NC-SA 4.0.
+
 \bibitem{DeRainville}
 Fran\c{c}ois-Michel De~Rainville, F{\'e}lix-Antoine Fortin, Marc-Andr{\'e}
   Gardner, Marc Parizeau, e Christian Gagn{\'e}.

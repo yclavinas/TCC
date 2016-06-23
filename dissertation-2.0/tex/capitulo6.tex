@@ -11,7 +11,7 @@ Once no effort was made to analyse the GA initial population and number of gener
 	
 	As being a stochastic method we used the Power Test and estimated the number of repetitions, $n$, needed for detecting a significant variation. For the  {\it Power Test} we used a pilot experiment to estimate $n$.\\
 	
-	An example of the  {\it Power t-test.}:
+	An example of the  {\it Power t-test.}:\\
 
 \begin{table}[!h]
   \begin{center}
@@ -100,12 +100,12 @@ Based on our promising results and because we aim to improve them, we developed 
 
 We also wanted to explore how adding domain knowledge would improve the average performance of the GAModel or the ReducedGAModel They are versions of GAModel/ReducedGAModel combined with empirical laws.\\ 
 
-\section{The Main-shock Models and Main-shock with After-shock Method Experiments}
+\section{The Main-shock Models and Main-shock with After-shock Method Experiments}\label{bigExp}
  Here we describe the catalogues and the evolutionary operators used for the experiments and some examples of the models generated. Then we specify the models comparison.\\
  
-\subsection{The catalogues}
+\subsection{The catalogues}\label{catalogs}
 
-The data used was JMA catalogue, with the magnitude minimum of 3.0 in the Richter Scale and the two de-clustered catalogues, obtained from the methods explained in the Chapter~\ref{chapter5}, Section~\ref{Clustering}.\\ 
+The data used was JMA catalogue, with the magnitude minimum of 3.0 in the Richter Scale and the two de-clustered catalogues, obtained from the methods explained in the Chapter~\ref{chapter5}, Section~\ref{Clustering}. The models that use these catalogues have in the end of their names \textit{Window}, for the methods that used the Window declustering, or \textit{SLC}, for the methods that used the Single Link Cluster. \\ 
 
 \subsection{Evolutionary Operators}
 
@@ -138,7 +138,7 @@ For this new experiment, we used even more scenarios (space/time regions) than t
 
 These method are stochastic method and hence are variations of the GAModel, we decided to maintain the number of repetitions without redoing the Power Test.\\
 
-\subsection{Statistical Analysis Of The Results}
+\subsection{Statistical Analysis Of The Results}\label{anova}
 
 The goal is to discover if there is any variation between the methods and which are the most influential variables. For achieve that, we will use the ANOVA Test.\\
 
@@ -146,14 +146,35 @@ In the ANOVA test, if a variable is out of the 5\% confidence interval, with P <
 
 There are some tests hypothesis for this experiment that we want to analyse. They all can be generalised as follows:\\
 
-$$\begin{cases} H_0: \text{The population means are equal populacionais são iguais.} &\\
+$$\begin{cases} H_0: \text{The population means are equal.} &\\
 H_1: \text{The population means are different.}&\\
 \end{cases}$$\\
 
-Then we apply a post hoc test, the HSD Tukey test, on the results obtained from the ANOVA test to specify which groups differ. \\
+Then, if there is no statistical significant difference, we apply a post hoc test. The chosen post hoc was the HSD Tukey test. We apply it on the results obtained from the ANOVA test to specify which groups differ. \\
 
-Tukey's test compares the means of a case with the means of every other case. Doing so, it identifies differences between means:\\
+Tukey's test compares the means of a case with the means of every other case. Doing so, it identifies differences between means :
 
 $$\begin{cases}
-\mu_a-\mu_b &\\
+\mu_a-\mu_b, \text{where $\mu_a$ is the mean of the first group and $\mu_b$ is the mean of the second group.}
+\end{cases}$$
+
+In the case where statistical significant difference exists, we explore this by pairing the measures observations of two groups~\cite{Campelo2015-01}.\\
+
+That is:
+
+$$\begin{cases}
+H_0: \mu = 0, \text{where $\mu$ is the difference between measured observations is 0.}&\\
+H_1: \mu != 0, \text{where $\mu$ is the difference between measured observations is not 0.}
 \end{cases}$$\\
+
+\section{Magnitude Experiment}\label{magExp}
+
+We want to explore how the magnitude influences the performance of the log-likelihood values of the methods. That is, in each groups does the methods have higher log-likelihood values, if any group should not be taken into account.\\
+
+For that, we selected only the earthquakes of all models and the real data from a chosen magnitude slice. In this case, a slice is an closed interval of 1.0 degree in the Richter Scale, starting from 3.0 degrees, see~\ref{catalogs}, and ending in 10.0 degrees. For example, $[3.0-4.0]$ or $[7.0-8.0]$ are two different slices. Then, we calculate the log-likelihood value.\\
+
+This experiment used the same models, the same catalogues from the previous experiment~\ref{bigExp}, though it focuses on different earthquakes characteristics. Also, the statistical analysis is applied as the before.\\
+
+
+
+
